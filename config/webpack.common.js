@@ -1,8 +1,10 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin')
 
 const paths = require('./paths')
+const path = require('path')
 
 module.exports = {
   // Where webpack looks to start building the bundle
@@ -37,10 +39,80 @@ module.exports = {
     // Generates an HTML file from a template
     // Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
     new HtmlWebpackPlugin({
-      title: 'webpack Boilerplate',
+      title: 'Home',
       favicon: paths.src + '/images/favicon.png',
-      template: paths.src + '/template.html', // template file
+      template: paths.src + '/views/home.html', // template file
       filename: 'index.html', // output file
+      minify: true,
+      // minify: {
+      //   removeComments: true,
+      //   collapseWhitespace: true,
+      //   removeAttributeQuotes: true,
+      // },
+    }),
+    new HtmlWebpackPlugin({
+      title: 'About',
+      favicon: paths.src + '/images/favicon.png',
+      template: paths.src + '/views/about.html', // template file
+      filename: 'about.html', // output file
+      minify: true,
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Blog Post',
+      favicon: paths.src + '/images/favicon.png',
+      template: paths.src + '/views/blog-post.html', // template file
+      filename: 'blog-post.html', // output file
+      minify: true,
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Blog List',
+      favicon: paths.src + '/images/favicon.png',
+      template: paths.src + '/views/blog-list.html', // template file
+      filename: 'blog-list.html', // output file
+      minify: true,
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Contact',
+      favicon: paths.src + '/images/favicon.png',
+      template: paths.src + '/views/contact.html', // template file
+      filename: 'contact.html', // output file
+      minify: true,
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Product',
+      favicon: paths.src + '/images/favicon.png',
+      template: paths.src + '/views/product.html', // template file
+      filename: 'product.html', // output file
+      minify: true,
+    }),
+    new HtmlWebpackPartialsPlugin({
+      path: path.join(__dirname, '../src/views/htmlPartials/body/footer.html'),
+      location: 'footer',
+      template_filename: [
+        'index.html',
+        'about.html',
+        'contact.html',
+        'blog-post.html',
+        'blog-list.html',
+        'product.html',
+        'hero.html',
+      ],
+      options: {
+        appName: '1403.link',
+      },
+    }),
+    new HtmlWebpackPartialsPlugin({
+      path: path.join(__dirname, '../src/views/htmlPartials/body/header.html'),
+      location: 'header',
+      template_filename: [
+        'index.html',
+        'about.html',
+        'contact.html',
+        'blog-post.html',
+        'blog-list.html',
+        'product.html',
+        'hero.html',
+      ],
     }),
   ],
 
