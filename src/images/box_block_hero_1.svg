@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1280 239" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,0,39)">
+        <g id="Rectangle_16956" transform="matrix(1,0,0,1,0,-39)">
+            <path d="M0,39L0,239L1280,239L1280,96L1210,96L1210,153L1103,153L1103,193L1062,193L1062,153L955,153L955,186L871,186L871,146L830,146L830,186L745,186L745,120L535,120L535,0L325,0L325,60L218,60L218,100L177,100L177,60L70,60L70,39L0,39ZM871,187L830,187L830,227L871,227L871,187ZM1062,112L1062,153L1103,153L1103,112L1062,112ZM177,19L177,60L218,60L218,19L177,19Z" style="fill:#fcfcff;"/>
+        </g>
+    </g>
+</svg>

@@ -5,25 +5,10 @@
 
 @import 'tailwindcss/utilities';
 
-.btn2 {
-  @apply rounded-full bg-primary-dark text-center py-2 px-4 text-white transition-all delay-75;
-
-  &:hover {
-    @apply bg-red-dark;
-  }
-}
-.nihad {
-  @apply rounded-full bg-secondary text-center py-2 px-4 text-white transition-all delay-75;
-
-  &:hover {
-    @apply bg-red-dark;
-  }
-}
-
-.dzana {
-  @apply rounded-full block w-full mb-20 text-2xl text-black bg-red-dark;
-}
-
-.brrr {
-  @apply rounded-full block w-full mb-20 text-2xl text-black bg-red-dark;
-}
+// components built with tailwindcss classes
+@import 'components/buttons';
+@import 'components/utilities';
+@import 'components/nav';
+@import 'components/logo';
+@import 'components/blob';
+@import 'components/ship';

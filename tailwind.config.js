@@ -30,15 +30,15 @@ module.exports = {
         DEFAULT: '#f7931d',
       },
       gray: {
-        '-1': '#fcfcff', // Gray 1 - bg - #FCFCFF
-        '-2': '#f7f9fe', // Gray 2 - icn bg - #F1F1F6
+        1: '#fcfcff', // Gray 1 - bg - #FCFCFF
+        2: '#f7f9fe', // Gray 2 - icn bg - #F1F1F6
         light: '#9898a9', // Text inactive - #9898A9
         dark: '#4a5568',
       },
       black: colors.black,
       white: {
-        light: '#cdcee4',
         '00': tinycolor(colors.white).setAlpha(0).toRgbString(),
+        10: tinycolor(colors.white).setAlpha(0.1).toRgbString(),
         20: tinycolor(colors.white).setAlpha(0.2).toRgbString(),
         30: tinycolor(colors.white).setAlpha(0.3).toRgbString(),
         70: tinycolor(colors.white).setAlpha(0.7).toRgbString(),

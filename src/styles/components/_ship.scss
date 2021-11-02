@@ -1,0 +1,28 @@
+.shipmix {
+  @apply relative;
+
+  .ship {
+    @apply relative z-20;
+  }
+  .ship-tracks {
+    @apply absolute z-10;
+    left: -51px;
+    top: -78px;
+  }
+  .ship-1403-shade {
+    @apply absolute;
+    z-index: 5;
+    left: 25px;
+    top: -53px;
+  }
+
+  .ship-tracks-back {
+    @apply absolute;
+    z-index: 3;
+    bottom: -357px;
+    right: -117px;
+    left: auto;
+    top: auto;
+    opacity: 0.3;
+  }
+}
