@@ -12,3 +12,7 @@
 @import 'components/logo';
 @import 'components/blob';
 @import 'components/ship';
+
+html {
+  scroll-behavior: smooth;
+}
