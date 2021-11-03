@@ -69,9 +69,9 @@
   width: 3px;
   padding: 10px 11px;
   height: 35px;
-  border: 1px solid #9898a9;
+  background: #1f6eae;
+  border: 1px solid #cdcee43f;
   border-radius: 25px;
-  opacity: 0.75;
   box-sizing: content-box;
 }
 .scroller {
@@ -96,4 +96,16 @@
     transform: translateY(15px);
     opacity: 0;
   }
+}
+
+#cloudsParallax {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-image: url('../images/clouds_1.png'), url('../images/clouds_2.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: 50% 50%;
+  z-index: 9;
 }
