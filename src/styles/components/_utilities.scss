@@ -18,40 +18,26 @@
 
   &:after {
     content: '';
-    display: block;
-    position: absolute;
-    // width: 1280px;
-    width: 100%;
+    @apply block absolute w-full bg-center bg-repeat-x left-0 z-5;
     height: 239px;
     background-image: url('../images/box_block_hero_1.png');
-    background-position: center center;
-    background-repeat: repeat-x;
-    // background-size: cover;
     bottom: -1px;
-    left: 0;
-    z-index: 5;
   }
   &:before {
     content: '';
-    display: block;
-    position: fixed;
-    // width: 1280px;
-    width: 100%;
-    height: 100vh;
+    @apply block fixed w-full h-screen bg-center bg-repeat-y left-0 opacity-50;
+
     background-image: url('../images/vertical_lines.png');
-    background-position: center center;
-    background-repeat: repeat-y;
-    // background-color: rgba(18, 49, 187, 0.1);
-    left: 0;
+
     z-index: 6;
-    opacity: 0.5;
   }
 }
 
 .square-block {
+  @apply bg-cover bg-no-repeat;
+
   background-image: url('../images/box_block_hero_1.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
+
   height: 239px;
 }
 
@@ -86,28 +72,21 @@
 }
 @keyframes scroll {
   0% {
-    opacity: 0;
+    @apply opacity-0;
   }
   10% {
     transform: translateY(0);
-    opacity: 1;
+    @apply opacity-100;
   }
   100% {
     transform: translateY(15px);
-    opacity: 0;
+    @apply opacity-0;
   }
 }
 
 #cloudsParallax {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
   background-image: url('../images/clouds_1.png'), url('../images/clouds_2.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-position: 50% 50%;
-  z-index: 11;
+  @apply absolute w-full h-full bg-repeat bg-center left-0;
 }
 
 .section-img {
@@ -182,70 +161,77 @@ ul.unordered-list {
 }
 
 .section-title {
-  @apply flex flex-col items-start mb-6;
+  @apply flex flex-col items-start mb-12;
 
   .tagline {
     @apply mb-4 text-2xl font-normal tracking-widest text-primary uppercase;
   }
 
-  .title {
+  h1.title {
     @apply text-4xl font-extrabold leading-none tracking-tighter text-primary-dark md:text-4xl lg:text-4xl;
+  }
+  h2.title {
+    @apply text-2xl font-extrabold leading-none tracking-tighter text-primary-dark md:text-2xl lg:text-2xl;
   }
 }
 
 .services-section {
-  @apply relative;
+  @apply relative bg-center bg-repeat;
   background-image: url('../images/vertical_bars.png');
-  background-position: center center;
-  background-repeat: repeat;
+  margin-top: -120px;
 
   &:after {
     content: '';
-    display: block;
-    position: absolute;
-    // width: 1280px;
+    @apply block absolute bg-center bg-repeat-x bottom-0 left-0 z-5;
+
     width: 100%;
     height: 70px;
     background-image: url('../images/vertical_bars_end.png');
-    background-position: center center;
-    background-repeat: repeat-x;
-    // background-size: cover;
-    bottom: 0px;
-    left: 0;
-    z-index: 5;
   }
   &:before {
     content: '';
-    display: block;
-    position: relative;
-    // width: 1280px;
+    @apply block relative bg-center bg-repeat-x left-0;
+
     width: 100%;
     height: 140px;
     background-image: url('../images/box_block_about.png');
-    background-position: center center;
-    background-repeat: repeat-x;
-    // background-color: rgba(18, 49, 187, 0.1);
-    left: 0;
     z-index: 2;
   }
 }
 
-.services-products {
+.blog-section {
   @apply relative;
 
   &:after {
     content: '';
-    display: block;
-    position: absolute;
-    // width: 1280px;
+    @apply block absolute bg-center bg-repeat bottom-0 left-0 opacity-40;
+
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/vertical_bars.png');
+    z-index: 2;
+  }
+  &:before {
+    content: '';
+    @apply block absolute bg-center bg-repeat-x left-0 top-0 opacity-40;
+
+    width: 100%;
+    height: 70px;
+    background-image: url('../images/vertical_bars_end_invert.png');
+    z-index: 2;
+    margin-top: -70px;
+  }
+}
+
+.products-section {
+  @apply relative;
+
+  &:after {
+    content: '';
+    @apply block absolute bg-center bg-repeat-x top-0 left-0 z-5;
+
     width: 100%;
     height: 70px;
     background-image: url('../images/vertical_bars_end.png');
-    background-position: center center;
-    background-repeat: repeat-x;
-    // background-size: cover;
-    top: 0px;
-    left: 0;
-    z-index: 5;
   }
 }
