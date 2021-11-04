@@ -45,6 +45,34 @@
   }
 }
 
+.btn-outline-primary {
+  @apply border-primary bg-transparent;
+
+  span.svg {
+    svg {
+      @apply text-primary;
+    }
+  }
+
+  span.label {
+    @apply text-primary;
+  }
+
+  &:hover {
+    @apply border-primary-dark bg-white-10;
+
+    span.svg {
+      svg {
+        @apply text-primary-dark;
+      }
+    }
+
+    span.label {
+      @apply text-primary-dark;
+    }
+  }
+}
+
 .btn-primary {
   @apply border-primary bg-primary;
 

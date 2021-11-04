@@ -1,0 +1,54 @@
+.service-item {
+  @apply bg-white p-8 overflow-hidden relative cursor-pointer;
+
+  .icon-outer {
+    @apply relative z-10 flex items-center;
+
+    .icon {
+      @apply flex w-full h-24 items-start justify-start mb-6;
+
+      svg {
+        @apply w-24 h-24 text-primary-light -ml-2 transition-all duration-200 ease-in-out;
+      }
+    }
+  }
+
+  .title {
+    word-spacing: 100vw;
+    @apply transition-all duration-200 ease-in-out relative z-10 text-3xl font-extrabold leading-normal tracking-tighter text-primary-dark mb-6;
+  }
+
+  .desc {
+    @apply overflow-clip overflow-hidden h-18 flex transition-all duration-200 ease-in-out relative z-10 mx-auto text-base leading-relaxed text-gray-light mb-8;
+  }
+
+  .hover-object {
+    @apply z-5 block absolute w-1 h-1 opacity-0 bg-primary-light transition-all duration-500 ease-out animate-pulse;
+    left: 50%;
+    top: 50%;
+  }
+
+  &:hover {
+    .icon-outer {
+      .icon {
+        svg {
+          @apply text-primary;
+        }
+      }
+    }
+
+    .title {
+      @apply text-primary-dark;
+    }
+    .desc {
+      @apply text-primary;
+    }
+    .hover-object {
+      @apply w-full h-full left-0 top-0 opacity-100;
+    }
+  }
+
+  &:focus {
+    @apply outline-none ring-2 ring-offset-2 ring-white-30;
+  }
+}

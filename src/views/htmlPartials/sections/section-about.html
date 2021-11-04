@@ -1,52 +1,32 @@
-<section id="about" class="bg-gray-1">
-  <div class="px-4 py-12 mx-auto max-w-7xl sm:px-6 md:px-12 lg:px-24 lg:py-24">
-    <div class="flex flex-wrap items-center mx-auto max-w-7xl">
-      <div class="w-full lg:max-w-lg lg:w-1/2 rounded-xl">
-        <div>
-          <div class="relative w-full max-w-lg">
-            <div
-              class="
-                absolute
-                top-0
-                rounded-full
-                bg-violet-300
-                -left-4
-                w-72
-                h-72
-                mix-blend-multiply
-                filter
-                blur-xl
-                opacity-70
-                animate-blob
-              "
-            ></div>
-            <div
-              class="
-                absolute
-                rounded-full
-                bg-fuchsia-300
-                -bottom-24
-                right-20
-                w-72
-                h-72
-                mix-blend-multiply
-                filter
-                blur-xl
-                opacity-70
-                animate-blob
-                animation-delay-4000
-              "
-            ></div>
-            <div class="relative">
-              <img
-                class="object-cover object-center mx-auto rounded-lg shadow-2xl"
-                alt="hero"
-                src="https://d33wubrfki0l68.cloudfront.net/374d3e75d4ab6cf2141b12e76a8de965299dff67/9e8fe/images/placeholders/square.svg"
-              />
-            </div>
+<section id="about" class="relative z-10 pb-24">
+  <div class="px-4 py-4 mx-auto max-w-7xl sm:px-6 md:px-12 lg:px-14 bg-blue-600x">
+    <div class="flex flex-wrap items-stretch mx-auto max-w-7xl bg-redx">
+      <!-- image column -->
+      <div
+        class="w-full lg:max-w-lg lg:w-1/2 flex items-stretch bg-purple-500x"
+        data-aos="fade-right"
+      >
+        <div class="section-img">
+          <div class="img-squares-mix ism-tr">
+            <span class="sq1"></span>
+            <span class="sq2"></span>
+            <span class="sq3"></span>
+          </div>
+
+          <div class="img-squares-mix ism-bl">
+            <span class="sq1"></span>
+            <span class="sq2"></span>
+            <span class="sq3"></span>
+          </div>
+
+          <div class="img-squares-mix ism-br">
+            <span class="sq1"></span>
           </div>
         </div>
       </div>
+      <!-- END image column -->
+
+      <!-- text column -->
       <div
         class="
           flex flex-col
@@ -59,42 +39,53 @@
           md:mb-0
           xl:mt-0
         "
+        data-aos="fade-left"
       >
-        <span class="mb-8 text-xs font-bold tracking-widest text-blue-400 uppercase">
-          Your tagline
-        </span>
-        <h1
-          class="
-            mb-8
-            text-4xl
-            font-bold
-            leading-none
-            tracking-tighter
-            text-neutral-600
-            md:text-7xl
-            lg:text-5xl
-          "
-        >
-          Medium length display headline.
-        </h1>
-        <p class="mb-8 text-base leading-relaxed text-left text-gray-300">
-          Free and Premium themes, UI Kit's, templates and landing pages built with Tailwind CSS,
-          HTML &amp; Next.js.
+        <!-- section title -->
+        <div class="section-title">
+          <span class="tagline"> About us </span>
+          <h1 class="title">Who we are?</h1>
+        </div>
+        <!-- END section title -->
+        <p class="mb-4 text-base leading-relaxed text-left text-primary-dark">
+          Gingerbread cake croissant halvah jelly. Gummies cookie cupcake jujubes bonbon chocolate
+          bar. Jujubes lollipop icing donut cupcake brownie donut liquorice donut. Biscuit pie cake
+          chocolate cake bear claw tart tiramisu marshmallow sugar plum. Dessert shortbread muffin
+          halvah pie tiramisu. Donut oat cake topping marzipan tiramisu tiramisu cake.
         </p>
-        <p class="mb-8 text-base leading-relaxed text-left text-gray-300">
-          Free and Premium themes, UI Kit's, templates and landing pages built with Tailwind CSS,
-          HTML &amp; Next.js.
+        <p class="mb-4 text-base leading-relaxed text-left text-primary-dark">
+          Candy marzipan sweet roll marshmallow pie. Biscuit caramels donut jujubes soufflé tiramisu
+          tart. Candy tiramisu lollipop tootsie roll ice cream icing.
         </p>
         <div class="flex-col mt-0 lg:mt-6 max-w-7xl sm:flex">
-          <div class="prose prose-md">
-            <ul>
-              <li class="text-gray-300">Ain't no sunshine when she's gone.</li>
-              <li class="text-gray-300">Expensive feature.</li>
-              <li class="text-gray-300">Really good feauture.</li>
-            </ul>
-          </div>
+          <ul class="unordered-list">
+            <li>Dessert pudding biscuit tart bear claw apple pie</li>
+            <li>Gummies cookie cupcake jujubes bonbon</li>
+            <li>Cookie macaroon croissant donut marshmallow</li>
+            <li>Cake croissant sesame snaps gingerbread</li>
+          </ul>
+        </div>
+
+        <div class="flex-row mt-0 lg:mt-6 max-w-7xl sm:flex">
+          <a href="#_" class="btn btn-primary">
+            <span class="svg">
+              <svg class="w-4 h-4">
+                <use xlink:href="../../../images/sprite.svg#chevron-right" />
+              </svg>
+            </span>
+            <span class="label">Products</span>
+          </a>
+          <a href="#_" class="btn btn-outline-primary ml-6">
+            <span class="svg">
+              <svg class="w-4 h-4">
+                <use xlink:href="../../../images/sprite.svg#chevron-right" />
+              </svg>
+            </span>
+            <span class="label">Contact Us</span>
+          </a>
         </div>
       </div>
+      <!-- END text column -->
     </div>
   </div>
 </section>

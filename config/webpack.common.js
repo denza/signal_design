@@ -112,6 +112,7 @@ module.exports = {
         'blog-list.html',
         'product.html',
         'hero.html',
+        'sprite.svg',
       ],
     }),
   ],
