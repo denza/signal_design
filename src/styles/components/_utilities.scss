@@ -91,11 +91,15 @@
 
 .section-img {
   @apply block w-11/12 h-full ml-auto bg-cover bg-center bg-no-repeat relative;
-  background-image: url('../images/pexels-thisisengineering-3862632.jpg');
+  // background-image: url('../images/pexels-thisisengineering-3862632.jpg');
+
+  img {
+    @apply w-full h-full object-cover object-center mx-auto;
+  }
 
   &:after {
     content: '';
-    @apply block absolute w-full h-full bg-primary opacity-50;
+    @apply block absolute w-full h-full bg-primary opacity-50 z-5 left-0 top-0;
     mix-blend-mode: color;
   }
 
