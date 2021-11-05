@@ -54,8 +54,33 @@
     }
 
     &:hover {
+      .cat {
+        i {
+          @apply bg-primary;
+
+          svg {
+            @apply text-white;
+          }
+        }
+
+        span {
+          @apply text-primary;
+        }
+      }
       .title {
         @apply text-primary;
+      }
+
+      .date {
+        i {
+          svg {
+            @apply text-primary;
+          }
+        }
+
+        span {
+          @apply text-primary;
+        }
       }
     }
   }

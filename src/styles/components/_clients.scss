@@ -1,7 +1,7 @@
 .clients-item {
-  @apply flex py-4 px-4;
+  @apply flex py-4 px-4 bg-white;
   img {
-    @apply h-10 mx-auto grayscale  transition-all duration-150 ease-in-out;
+    @apply h-10 mx-auto grayscale transition-all duration-150 ease-in-out;
   }
 
   &:hover {
