@@ -1,0 +1,62 @@
+.home-blog-list {
+  @apply grid grid-cols-2 gap-x-12 gap-y-12 mx-auto lg:grid-cols-2 justify-center;
+
+  .blog-item {
+    @apply flex flex-col items-start bg-white border border-primary-light px-8 py-6;
+
+    .cat {
+      @apply flex flex-row justify-start items-center mb-6 overflow-hidden;
+
+      i {
+        @apply w-8 h-8  bg-gray-light mr-4 flex items-center justify-center;
+
+        svg {
+          @apply w-6 h-6 text-white;
+        }
+      }
+
+      span {
+        @apply text-xs text-gray-light uppercase;
+      }
+    }
+
+    .title {
+      @apply text-xl text-primary-dark font-semibold text-left h-22 overflow-clip overflow-hidden;
+    }
+
+    .date {
+      @apply flex flex-row justify-start items-center mt-6 overflow-hidden;
+
+      i {
+        @apply w-8 h-8  mr-4 flex items-center justify-center;
+
+        svg {
+          @apply w-6 h-6 text-gray-light uppercase;
+        }
+      }
+
+      span {
+        @apply text-xs text-gray-light uppercase;
+      }
+    }
+
+    &:nth-child(1) {
+      @apply -ml-6 mr-6;
+    }
+    &:nth-child(2) {
+      @apply -ml-6 mr-6;
+    }
+    &:nth-child(3) {
+      @apply ml-6 -mr-6;
+    }
+    &:nth-child(4) {
+      @apply ml-6 -mr-6;
+    }
+
+    &:hover {
+      .title {
+        @apply text-primary;
+      }
+    }
+  }
+}
