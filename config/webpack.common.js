@@ -85,22 +85,22 @@ module.exports = {
       filename: 'product.html', // output file
       minify: true,
     }),
-    new HtmlWebpackPartialsPlugin({
-      path: path.join(__dirname, '../src/views/htmlPartials/body/footer.html'),
-      location: 'footer',
-      template_filename: [
-        'index.html',
-        'about.html',
-        'contact.html',
-        'blog-post.html',
-        'blog-list.html',
-        'product.html',
-        'hero.html',
-      ],
-      options: {
-        appName: '1403.link',
-      },
-    }),
+    // new HtmlWebpackPartialsPlugin({
+    //   path: path.join(__dirname, '../src/views/htmlPartials/body/footer.html'),
+    //   location: 'footer',
+    //   template_filename: [
+    //     'index.html',
+    //     'about.html',
+    //     'contact.html',
+    //     'blog-post.html',
+    //     'blog-list.html',
+    //     'product.html',
+    //     'hero.html',
+    //   ],
+    //   options: {
+    //     appName: '1403.link',
+    //   },
+    // }),
     new HtmlWebpackPartialsPlugin({
       path: path.join(__dirname, '../src/views/htmlPartials/body/header.html'),
       location: 'header',
