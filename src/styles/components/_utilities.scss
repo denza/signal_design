@@ -187,6 +187,18 @@ ul.unordered-list {
   }
 }
 
+.page-title {
+  @apply flex flex-col items-start mb-12;
+
+  .breadcrumbs {
+    @apply mb-2 text-xs font-normal tracking-widest text-primary-light uppercase;
+  }
+
+  h2.title {
+    @apply text-4xl font-extrabold leading-none tracking-wide text-white md:text-3xl lg:text-4xl;
+  }
+}
+
 .services-section,
 .team-section {
   @apply relative bg-center bg-repeat;
