@@ -26,10 +26,20 @@
   &:before {
     content: '';
     @apply block fixed w-full h-screen bg-center bg-repeat-y left-0 opacity-50;
-
     background-image: url('../images/vertical_lines.png');
-
     z-index: 6;
+  }
+
+  &--sub {
+    height: 350px;
+
+    &:after {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+
+    &:before {
+    }
   }
 }
 
@@ -90,8 +100,7 @@
 }
 
 .section-img {
-  @apply block w-11/12 h-full ml-auto bg-cover bg-center bg-no-repeat relative;
-  // background-image: url('../images/pexels-thisisengineering-3862632.jpg');
+  @apply block h-full bg-cover bg-center bg-no-repeat relative;
 
   img {
     @apply w-full h-full object-cover object-center mx-auto;
@@ -99,8 +108,7 @@
 
   &:after {
     content: '';
-    @apply block absolute w-full h-full bg-primary opacity-50 z-5 left-0 top-0;
-    mix-blend-mode: color;
+    @apply block absolute w-full h-full bg-primary opacity-50 z-5 left-0 top-0  mix-blend-color;
   }
 
   .img-squares-mix {
@@ -179,7 +187,8 @@ ul.unordered-list {
   }
 }
 
-.services-section {
+.services-section,
+.team-section {
   @apply relative bg-center bg-repeat;
   background-image: url('../images/vertical_bars.png');
   margin-top: -120px;
@@ -228,6 +237,19 @@ ul.unordered-list {
 }
 
 .products-section {
+  @apply relative;
+
+  &:after {
+    content: '';
+    @apply block absolute bg-center bg-repeat-x top-0 left-0 z-5;
+
+    width: 100%;
+    height: 70px;
+    background-image: url('../images/vertical_bars_end.png');
+  }
+}
+
+.technologies-section {
   @apply relative;
 
   &:after {

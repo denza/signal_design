@@ -1,0 +1,39 @@
+.team-item {
+  @apply bg-white p-8 h-96 flex flex-col justify-end overflow-hidden relative cursor-pointer;
+
+  .name {
+    word-spacing: 100vw;
+    @apply opacity-20 transition-all duration-200 ease-in-out relative z-10 text-2xl font-bold leading-normal tracking-wide text-white mb-4;
+  }
+
+  .title {
+    @apply opacity-20 overflow-clip overflow-hidden flex transition-all duration-200 ease-in-out relative z-10 mr-auto text-base leading-relaxed text-white;
+  }
+
+  img {
+    @apply absolute w-full h-full object-cover z-0 left-0 top-0 filter grayscale;
+  }
+
+  .hover-object {
+    @apply z-5 block absolute w-full h-full left-0 top-0 opacity-20 bg-gradient-to-b from-primary-light-15 via-primary to-primary transition-all duration-500 ease-out;
+  }
+
+  &:hover {
+    .name {
+      @apply opacity-100;
+    }
+    .title {
+      @apply opacity-100;
+    }
+    img {
+      @apply filter-none;
+    }
+    .hover-object {
+      @apply opacity-90 bg-blend-color animate-pulse;
+    }
+  }
+
+  &:focus {
+    @apply outline-none ring-2 ring-offset-2 ring-white-30;
+  }
+}

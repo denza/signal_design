@@ -81,6 +81,7 @@ module.exports = {
       20: '5rem', // 80px
       22: '5.5rem', // 88px
       24: '6rem', // 96px
+      25: '6.25rem', // 100px
       28: '7rem',
       32: '8rem',
       36: '9rem',
