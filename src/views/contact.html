@@ -7,7 +7,81 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
 
-  <body>
-    <h1><%= htmlWebpackPlugin.options.title %></h1>
+  <body
+    class="
+      text-primary-dark
+      antialias
+      leading-normal
+      tracking-normal
+      font-sans
+      bg-gray-1
+      overflow-x-hidden
+    "
+  >
+    <!-- resolution check -->
+    <div
+      class="
+        fixed
+        top-0
+        right-0
+        rounded-full
+        p-3
+        text-xs
+        font-mono
+        text-white
+        h-8
+        w-8
+        flex
+        items-center
+        justify-center
+        bg-gray-700
+        sm:bg-pink-500
+        md:bg-purple-500
+        lg:bg-green-500
+        xl:bg-secondary
+        2xl:bg-red
+      "
+      style="z-index: 9999"
+    >
+      <div class="block sm:hidden md:hidden lg:hidden xl:hidden">al</div>
+      <div class="hidden sm:block md:hidden lg:hidden xl:hidden">sm</div>
+      <div class="hidden sm:hidden md:block lg:hidden xl:hidden">md</div>
+      <div class="hidden sm:hidden md:hidden lg:block xl:hidden">lg</div>
+      <div class="hidden sm:hidden md:hidden lg:hidden xl:block">xl</div>
+      <div class="hidden sm:hidden md:hidden xl:hidden 2xl:block">2xl</div>
+    </div>
+    <!-- END:resolution check -->
+
+    <!-- hero -->
+    <%= require('html-loader!./htmlPartials/body/classic_sub_header.html').default %>
+    <!-- END hero -->
+
+    <!-- contact content -->
+    <section class="sub-section">
+      <div
+        class="
+          relative
+          items-start
+          w-full
+          flex flex-row
+          justify-between
+          px-5
+          mx-auto
+          md:px-12
+          lg:pl-24 lg:pr-14
+          max-w-7xl
+          z-20
+        "
+      >
+        <div class="w-8/12 pr-8 mb-20">contact form</div>
+        <div class="w-4/12 grid grid-cols-1 gap-y-4 mb-20">contact address phone</div>
+      </div>
+    </section>
+
+    <!-- END contact content -->
+
+    <!-- footer -->
+    <%= require('html-loader!./htmlPartials/body/footer.html').default %>
+    <!-- END footer -->
   </body>
 </html>

@@ -40,6 +40,7 @@ module.exports = {
     // Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
     new HtmlWebpackPlugin({
       title: 'Home',
+      footer: 'v1',
       favicon: paths.src + '/images/favicon.png',
       template: paths.src + '/views/home.html', // template file
       filename: 'index.html', // output file
@@ -52,6 +53,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'About',
+      footer: 'v1',
       favicon: paths.src + '/images/favicon.png',
       template: paths.src + '/views/about.html', // template file
       filename: 'about.html', // output file
@@ -59,6 +61,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'Blog Post',
+      footer: 'v2',
       favicon: paths.src + '/images/favicon.png',
       template: paths.src + '/views/blog-post.html', // template file
       filename: 'blog-post.html', // output file
@@ -66,6 +69,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'Blog List',
+      footer: 'v2',
       favicon: paths.src + '/images/favicon.png',
       template: paths.src + '/views/blog-list.html', // template file
       filename: 'blog-list.html', // output file
@@ -73,6 +77,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'Contact',
+      footer: 'v2',
       favicon: paths.src + '/images/favicon.png',
       template: paths.src + '/views/contact.html', // template file
       filename: 'contact.html', // output file
@@ -80,6 +85,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'Product',
+      footer: 'v1',
       favicon: paths.src + '/images/favicon.png',
       template: paths.src + '/views/product.html', // template file
       filename: 'product.html', // output file
