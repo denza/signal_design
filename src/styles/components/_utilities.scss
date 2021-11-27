@@ -209,7 +209,7 @@ ul.unordered-list {
 }
 
 .sub-section {
-  @apply relative;
+  @apply relative z-20 -mt-20;
 
   &:after {
     content: '';
