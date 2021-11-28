@@ -56,4 +56,12 @@
       }
     }
   }
+
+  &--outside-visible {
+    @apply overflow-visible;
+
+    .blob-wrapper {
+      @apply overflow-visible;
+    }
+  }
 }

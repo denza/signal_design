@@ -1,0 +1,5 @@
+.product-image-overview {
+  --perspective: 900px;
+  transform: perspective(var(--perspective)) rotateX(7.64deg) rotateY(0.09deg) scale3d(1, 0.7, 1);
+  margin-top: calc(var(--perspective) - 85%);
+}

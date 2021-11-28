@@ -162,3 +162,25 @@
     @apply border-primary-light bg-gray-2;
   }
 }
+
+.btn-white {
+  @apply border-white-30 bg-white;
+
+  span.svg {
+    svg {
+      @apply text-primary;
+    }
+  }
+
+  span.label {
+    @apply text-primary;
+  }
+
+  &:hover {
+    @apply border-primary-dark bg-primary-dark;
+
+    span.label {
+      @apply text-white;
+    }
+  }
+}

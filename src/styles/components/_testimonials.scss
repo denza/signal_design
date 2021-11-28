@@ -1,0 +1,28 @@
+.testimonial-item {
+  @apply z-40 scale-90 w-96 bg-white p-11 border border-primary-light opacity-50 transition-all duration-150 ease-in-out;
+
+  .ref-image {
+    @apply flex flex-col items-center justify-center mb-10;
+
+    img {
+      @apply w-22 h-22 rounded-full mb-6;
+    }
+
+    span {
+      @apply font-bold text-primary-dark text-sm;
+    }
+  }
+
+  .ref-msg {
+    @apply relative text-xl italic leading-relaxed tracking-wide text-primary-dark font-light;
+
+    &:before {
+      content: '"';
+      @apply block absolute text-8xl z-0 text-primary-light left-0 top-0 -mt-3 -ml-6 font-serif;
+    }
+  }
+
+  &--active {
+    @apply opacity-100 z-50 -ml-40 -mr-40 scale-100;
+  }
+}

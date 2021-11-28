@@ -44,6 +44,18 @@
     &:before {
     }
   }
+
+  &--product {
+    height: 110vh;
+
+    &:after {
+      content: '';
+      @apply block absolute w-full bg-center bg-repeat-x left-0 z-5;
+      height: 150px;
+      background-image: url('../images/box_block_sub.png');
+      bottom: -15px;
+    }
+  }
 }
 
 .square-block {
@@ -100,6 +112,7 @@
 #cloudsParallax {
   background-image: url('../images/clouds_1.png'), url('../images/clouds_2.png');
   @apply absolute w-full h-full bg-repeat bg-center left-0;
+  z-index: 15;
 }
 
 .section-img {
@@ -112,6 +125,25 @@
   &:after {
     content: '';
     @apply block absolute w-full h-full bg-primary opacity-50 z-5 left-0 top-0  mix-blend-color;
+  }
+
+  &--product {
+    @apply drop-shadow-xl;
+    &--three-d-r {
+      img {
+        transform: perspective(900px) rotateX(0) rotateY(9deg) scale3d(1, 1, 1);
+      }
+    }
+
+    &--three-d-l {
+      img {
+        transform: perspective(900px) rotateX(0) rotateY(-9deg) scale3d(1, 1, 1);
+      }
+    }
+
+    &:after {
+      display: none;
+    }
   }
 
   .img-squares-mix {
@@ -192,6 +224,16 @@ ul.unordered-list {
   &--blog {
     h1.title {
       @apply text-5xl;
+    }
+  }
+
+  &--product {
+    .tagline {
+      @apply mb-4 text-2xl font-normal tracking-widest text-primary uppercase;
+    }
+
+    h1.title {
+      @apply text-4xl font-extrabold leading-10 tracking-normal text-primary-dark md:text-4xl lg:text-5xl;
     }
   }
 }
