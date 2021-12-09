@@ -85,6 +85,18 @@ module.exports = {
       filename: 'product.html', // output file
       minify: true,
     }),
+    // ADMIN PART
+    // ADMIN PART
+    // ADMIN PART
+    // ADMIN PART
+
+    new HtmlWebpackPlugin({
+      title: 'admin_main',
+      favicon: paths.src + '/images/favicon.png',
+      template: paths.src + '/views/admin/admin_main.html', // template file
+      filename: 'admin/admin_main.html', // output file
+      minify: true,
+    }),
     // new HtmlWebpackPartialsPlugin({
     //   path: path.join(__dirname, '../src/views/htmlPartials/body/footer.html'),
     //   location: 'footer',

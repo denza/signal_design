@@ -368,20 +368,52 @@
       </div>
       <!-- END title -->
       <!-- image overview -->
-      <div class="w-9/12 h-auto mx-auto flex flex-col relative z-20 product-image-overview">
-        <div
-          class="
-            w-full
-            h-full
-            flex
-            items-center
-            justify-center
-            bg-primary-light-30
-            p-6
-            drop-shadow-2xl
-          "
-        >
-          <img src="../../../images/product/overview.webp" class="w-full drop-shadow-2xl" />
+      <div class="w-9/12 h-auto mx-auto flex flex-col relative z-20 -mt-10">
+        <div class="w-full h-full flex items-center justify-center relative">
+          <img
+            id="img1"
+            src="../../../images/product/overview.webp"
+            class="
+              w-full
+              z-10
+              drop-shadow-2xl
+              absolute
+              left-0
+              top-0
+              border-20 border-white-30
+              product-image-overview
+            "
+          />
+          <div
+            id="pin1"
+            class="overview-pin overview-pin--1"
+            data-aos="fade-up"
+            data-aos-anchor="#img1"
+            data-aos-offset="500"
+            data-aos-duration="500"
+          >
+            <span>monitoring irregularities</span>
+          </div>
+          <div
+            id="pin2"
+            class="overview-pin overview-pin--3"
+            data-aos="fade-up"
+            data-aos-anchor="#pin1"
+            data-aos-offset="500"
+            data-aos-duration="500"
+          >
+            <span>incidents type</span>
+          </div>
+          <div
+            id="pin3"
+            class="overview-pin overview-pin--2"
+            data-aos="fade-up"
+            data-aos-anchor="#pin2"
+            data-aos-offset="500"
+            data-aos-duration="500"
+          >
+            <span>notifications of irregularities</span>
+          </div>
         </div>
       </div>
       <!-- END image overview -->

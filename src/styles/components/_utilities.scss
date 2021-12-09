@@ -46,7 +46,7 @@
   }
 
   &--product {
-    height: 130vh;
+    @apply overflow-visible mb-20 h-screen;
 
     &:after {
       content: '';

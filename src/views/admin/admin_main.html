@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+
+  <body
+    class="
+      text-primary-dark
+      antialias
+      leading-normal
+      tracking-normal
+      font-sans
+      bg-gray-1
+      overflow-x-hidden
+    "
+  >
+    <!-- teams section -->
+    <%= require('html-loader!../htmlPartials/sections/section-teams.html').default %>
+    <!-- END teams section -->
+  </body>
+</html>
