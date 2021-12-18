@@ -18,8 +18,23 @@
       overflow-x-hidden
     "
   >
-    <!-- teams section -->
-    <%= require('html-loader!../htmlPartials/sections/section-teams.html').default %>
-    <!-- END teams section -->
+    <div class="flex h-screen overflow-hidden bg-white">
+      <!-- aside -->
+
+      <%= require('html-loader!./htmlPartials/aside.html').default %>
+      <!-- END aside -->
+
+      <!-- main -->
+      <div class="flex flex-col flex-1 w-0 overflow-hidden">
+        <!-- header -->
+        <%= require('html-loader!./htmlPartials/header.html').default %>
+        <!-- END header -->
+
+        <!-- content -->
+        <%= require('html-loader!./htmlPartials/content-home.html').default %>
+        <!-- END content -->
+      </div>
+      <!-- END main -->
+    </div>
   </body>
 </html>
