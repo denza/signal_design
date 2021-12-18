@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+
+  <symbol id="add" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </symbol>
+  <symbol id="lines" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+  </symbol>
+  <symbol id="chevron-right" viewBox="0 0 9.345 16" fill="currentColor" stroke="none">
+    <path d="M8.93,3.586,7.586,4.93l6.655,6.655L7.586,18.241,8.93,19.586l8-8Z" transform="translate(-7.586 -3.586)" fill="currentColor" />
+  </symbol>
+  <symbol id="search" width="100%" height="100%" viewBox="0 0 24 24" fill="none">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20C13.125 20 15.078 19.2635 16.6177 18.0319L21 22.4142L22.4142 21L18.0319 16.6177C19.2635 15.078 20 13.125 20 11C20 6.02944 15.9706 2 11 2ZM4 11C4 7.13401 7.13401 4 11 4C14.866 4 18 7.13401 18 11C18 14.866 14.866 18 11 18C7.13401 18 4 14.866 4 11Z" fill="currentColor" />
+  </symbol>
+  <symbol id="pencil" width="100%" height="100%" viewBox="0 0 24 24" fill="none">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.4493 1.89346L22.1061 7.55032L9.0853 20.5711L3.42845 20.5711L3.42845 14.9143L16.4493 1.89346ZM16.4493 4.72189L15.0262 6.14495L17.8546 8.97337L19.2777 7.55032L16.4493 4.72189ZM16.4404 10.3876L13.612 7.55916L5.42845 15.7427L5.42845 18.5711L8.25688 18.5711L16.4404 10.3876Z" fill="currentColor" />
+  </symbol>
+  <symbol id="calendar" width="100%" height="100%" viewBox="0 0 24 24" fill="none">
+    <path d="M6 9.375H8.5V11.875H6V9.375Z" fill="currentColor" />
+    <path d="M8.5 14.125H6V16.625H8.5V14.125Z" fill="currentColor" />
+    <path d="M10.75 9.375H13.25V11.875H10.75V9.375Z" fill="currentColor" />
+    <path d="M13.25 14.125H10.75V16.625H13.25V14.125Z" fill="currentColor" />
+    <path d="M15.5 9.375H18V11.875H15.5V9.375Z" fill="currentColor" />
+    <path d="M18 14.125H15.5V16.625H18V14.125Z" fill="currentColor" />
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M5 5H2V21H22V5H19V2H17V5H7V2H5V5ZM4 7V19H20V7H4Z" fill="currentColor" />
+  </symbol>
+</svg>
