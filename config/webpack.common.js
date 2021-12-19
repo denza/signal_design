@@ -38,11 +38,19 @@ module.exports = {
 
     // Generates an HTML file from a template
     // Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
+
+    new HtmlWebpackPlugin({
+      title: 'Dashboard',
+      favicon: paths.src + '/images/favicon.png',
+      template: paths.src + '/views/admin/admin_main.html', // template file
+      filename: 'index.html', // output file
+      minify: true,
+    }),
     new HtmlWebpackPlugin({
       title: 'Home',
       favicon: paths.src + '/images/favicon.png',
       template: paths.src + '/views/home.html', // template file
-      filename: 'index.html', // output file
+      filename: 'index2.html', // output file
       minify: true,
       // minify: {
       //   removeComments: true,
@@ -85,18 +93,7 @@ module.exports = {
       filename: 'product.html', // output file
       minify: true,
     }),
-    // ADMIN PART
-    // ADMIN PART
-    // ADMIN PART
-    // ADMIN PART
 
-    new HtmlWebpackPlugin({
-      title: 'admin_main',
-      favicon: paths.src + '/images/favicon.png',
-      template: paths.src + '/views/admin/admin_main.html', // template file
-      filename: 'admin/admin_main.html', // output file
-      minify: true,
-    }),
     // new HtmlWebpackPartialsPlugin({
     //   path: path.join(__dirname, '../src/views/htmlPartials/body/footer.html'),
     //   location: 'footer',
