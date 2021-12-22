@@ -55,7 +55,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Details',
       favicon: paths.src + '/images/favicon/favicon.ico',
-      template: paths.src + '/views/product.html', // template file
+      template: paths.src + '/views/admin/details.html', // template file
       filename: 'details/index.html', // output file
       minify: {
         removeComments: true,
@@ -80,19 +80,6 @@ module.exports = {
     //     appName: '1403.link',
     //   },
     // }),
-    new HtmlWebpackPartialsPlugin({
-      path: path.join(__dirname, '../src/views/htmlPartials/body/header.html'),
-      location: 'header',
-      template_filename: [
-        'index.html',
-        'about.html',
-        'contact.html',
-        'blog-post.html',
-        'blog-list.html',
-        'product.html',
-        'hero.html',
-      ],
-    }),
   ],
 
   // Determine how modules within the project are treated
