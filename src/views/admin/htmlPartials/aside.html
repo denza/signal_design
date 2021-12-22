@@ -115,42 +115,62 @@
       <!-- END aside logo -->
 
       <!-- aside nav -->
-      <div class="flex flex-col px-4">
+      <div class="flex flex-col w-full">
         <nav class="flex-1 space-y-1">
           <ul>
             <li>
-              <a
-                class="
-                  flex-col flex
-                  items-center
-                  w-full
-                  px-4
-                  py-2
-                  transition
-                  duration-500
-                  ease-in-out
-                  transform
-                  text-primary-dark text-xs
-                  focus:shadow-outline
-                  bg-pink-500
-                "
-                href="#"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                  ></path>
-                </svg>
-                <span class="text-red">Dashboard</span>
+              <a class="nav_item nav_item--active" href="#">
+                <span class="icon">
+                  <svg>
+                    <use xlink:href="../../../images/sprite_admin.svg#grid" />
+                  </svg>
+                </span>
+                <span class="label">Dashboard</span>
+                <span class="line"></span>
+              </a>
+            </li>
+            <li>
+              <a class="nav_item" href="#">
+                <span class="icon">
+                  <svg>
+                    <use xlink:href="../../../images/sprite_admin.svg#search-circle" />
+                  </svg>
+                </span>
+                <span class="label">Search</span>
+                <span class="line"></span>
+              </a>
+            </li>
+            <li>
+              <a class="nav_item" href="#">
+                <span class="icon">
+                  <svg>
+                    <use xlink:href="../../../images/sprite_admin.svg#users" />
+                  </svg>
+                </span>
+                <span class="label">Accounts</span>
+                <span class="line"></span>
+              </a>
+            </li>
+            <li>
+              <a class="nav_item" href="#">
+                <span class="icon">
+                  <svg>
+                    <use xlink:href="../../../images/sprite_admin.svg#help" />
+                  </svg>
+                </span>
+                <span class="label">Help</span>
+                <span class="line"></span>
+              </a>
+            </li>
+            <li>
+              <a class="nav_item" href="#">
+                <span class="icon">
+                  <svg>
+                    <use xlink:href="../../../images/sprite_admin.svg#cog" />
+                  </svg>
+                </span>
+                <span class="label">Settings</span>
+                <span class="line"></span>
               </a>
             </li>
           </ul>
@@ -159,21 +179,23 @@
       <!-- END aside nav -->
 
       <!-- aside action -->
-      <div class="flex flex-shrink-0 p-4 px-4 bg-indigo-600">
-        <a href="#" class="flex-shrink-0 block w-full group">
-          <div class="flex items-center">
-            <div>
-              <img
-                class="inline-block h-9 w-9"
-                src="https://d33wubrfki0l68.cloudfront.net/c5b13c40dad2f6fe28f2f7f016c9d027f2a39306/afe15/images/wickedlabslogo.jpg"
-                alt=""
-              />
-            </div>
-            <div class="ml-3">
-              <p class="text-sm font-medium text-white">Wicked LAbs</p>
-            </div>
-          </div>
-        </a>
+      <div class="flex w-full">
+        <ul class="w-full">
+          <li>
+            <a class="nav_item nav_item--single" href="#">
+              <span class="icon">
+                <svg>
+                  <use xlink:href="../../../images/sprite_admin.svg#expand" />
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="nav_item nav_item--single" href="#">
+              <span class="user"> NO </span>
+            </a>
+          </li>
+        </ul>
       </div>
       <!-- END aside action -->
     </div>

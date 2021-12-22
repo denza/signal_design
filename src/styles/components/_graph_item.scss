@@ -1,0 +1,46 @@
+.graph_item {
+  @apply py-6 px-8 flex flex-col items-start justify-start bg-white border-b border-r border-primary-light transition-all duration-100 ease-in-out;
+
+  &:hover {
+    @apply drop-shadow-2xl;
+  }
+
+  &:focus {
+    @apply text-primary-dark;
+  }
+
+  .gi_header {
+    @apply w-full h-12 flex flex-row justify-between items-center;
+
+    & > div {
+      @apply w-2/3 h-full flex flex-row items-start justify-between text-gray-dark;
+    }
+
+    & > div:nth-child(2) {
+      @apply w-1/3 h-full flex flex-row items-start justify-end text-gray-dark bg-red;
+
+      .gi_value {
+        @apply w-full bg-pink-500;
+      }
+    }
+
+    .icon {
+      @apply text-primary-light  mr-2 pt-2;
+
+      svg {
+        @apply w-5 h-5;
+      }
+    }
+
+    .gi_name {
+      @apply w-full flex flex-col items-start justify-start;
+
+      span:first-child {
+        @apply w-full text-xl uppercase font-semibold text-primary-dark;
+      }
+      span:last-child {
+        @apply w-full text-xss uppercase font-semibold text-primary;
+      }
+    }
+  }
+}

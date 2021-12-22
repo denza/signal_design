@@ -1,23 +1,70 @@
-.nav_item {
-  @apply px-4 py-2 mr-2 text-xs text-white tracking-widest font-normal duration-150 ease-in-out self-stretch relative flex flex-col items-stretch;
+li {
+  @apply border-b border-primary-light-70;
 
-  span {
-    @apply mt-6 w-1/3 h-px flex bg-white self-end mr-auto transition-all duration-1000 ease-in-out;
-  }
+  .nav_item {
+    @apply relative flex flex-col items-center w-full  pb-2 transition duration-500 ease-in-out text-gray-light;
 
-  &:hover {
-    @apply text-secondary;
+    .icon {
+      @apply w-full pt-2 pb-1 mx-auto flex items-center justify-center;
 
-    span {
-      @apply bg-secondary w-full;
+      svg {
+        @apply w-6 h-6;
+      }
+    }
+
+    .label {
+      @apply w-full text-xss text-center;
+    }
+
+    .line {
+      @apply absolute top-0 right-0 w-1.5 h-full flex  flex-col py-4 items-center justify-center -mr-1;
+
+      &:after {
+        @apply w-full flex-1 bg-transparent transition-all duration-100 ease-in-out rounded-full;
+        content: '';
+      }
+    }
+
+    &--active {
+      @apply bg-white-10 text-primary-dark;
+
+      .line {
+        &:after {
+          @apply bg-primary;
+        }
+      }
+    }
+
+    &--single {
+      @apply py-4 w-full;
+
+      .user {
+        @apply w-12 h-12 rounded-full border-2 border-primary-light flex items-center justify-center font-semibold text-base;
+      }
+    }
+
+    &:hover {
+      @apply bg-white-10 text-primary-dark;
+
+      .line {
+        &:after {
+          @apply bg-primary-light;
+        }
+      }
+    }
+
+    &:focus {
+      @apply bg-white-10 text-primary-dark;
+
+      .line {
+        &:after {
+          @apply bg-primary;
+        }
+      }
     }
   }
 
-  &:focus {
-    @apply outline-none text-gray-light;
-
-    span {
-      @apply bg-gray-light;
-    }
+  &:last-child {
+    @apply border-b-0;
   }
 }
