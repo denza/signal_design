@@ -1,8 +1,8 @@
 .graph_item {
-  @apply py-6 px-8 flex flex-col items-start justify-start bg-white border-b border-r border-primary-light transition-all duration-100 ease-in-out;
-
+  @apply py-6 px-8 flex flex-col items-start justify-start bg-gray-1 border-b border-r border-primary-light transition-all duration-100 ease-in-out;
+  min-height: 45vh;
   &:hover {
-    @apply drop-shadow-2xl;
+    @apply drop-shadow-2xl bg-white;
   }
 
   &:focus {
@@ -17,10 +17,25 @@
     }
 
     & > div:nth-child(2) {
-      @apply w-1/3 h-full flex flex-row items-start justify-end text-gray-dark bg-red;
+      @apply w-1/3 h-full flex flex-row items-start justify-end text-gray-dark;
 
       .gi_value {
-        @apply w-full bg-pink-500;
+        @apply w-5/6 flex flex-col items-start justify-end text-right pr-4;
+
+        span:first-child {
+          @apply w-full text-xl uppercase font-semibold text-primary-dark;
+        }
+        span:last-child {
+          @apply w-full text-xss uppercase font-semibold text-primary;
+        }
+      }
+
+      .gi_icon {
+        @apply w-1/6 flex justify-center h-10 text-primary-light;
+
+        svg {
+          @apply w-5 h-10;
+        }
       }
     }
 
@@ -42,5 +57,9 @@
         @apply w-full text-xss uppercase font-semibold text-primary;
       }
     }
+  }
+
+  .gi_content {
+    @apply w-full flex flex-1 items-start;
   }
 }
