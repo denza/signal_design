@@ -57,10 +57,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:neehad/1403_landing.git"
+    "url": "git@github.com:neehad/1403_dashboard.git"
   },
   "dependencies": {
-    "aos": "^2.2.0",
     "alpinejs": "^3.4.2"
   }
 }

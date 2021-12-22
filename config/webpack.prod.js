@@ -12,6 +12,7 @@ module.exports = merge(common, {
     path: paths.build,
     publicPath: '/',
     filename: 'js/[name].[contenthash].bundle.js',
+    assetModuleFilename: 'images/[name][ext]',
   },
   module: {
     rules: [

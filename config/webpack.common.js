@@ -25,6 +25,7 @@ module.exports = {
     // Copies files from target to destination folder
     new CopyWebpackPlugin({
       patterns: [
+        // { from: 'src/images/favicon', to: 'images/favicon' },
         {
           from: paths.public,
           to: 'assets',
@@ -41,57 +42,26 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       title: 'Dashboard',
-      favicon: paths.src + '/images/favicon.png',
+      favicon: paths.src + '/images/favicon/favicon.ico',
       template: paths.src + '/views/admin/admin_main.html', // template file
       filename: 'index.html', // output file
-      minify: true,
+      base: '/',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
     }),
     new HtmlWebpackPlugin({
-      title: 'Home',
-      favicon: paths.src + '/images/favicon.png',
-      template: paths.src + '/views/home.html', // template file
-      filename: 'index2.html', // output file
-      minify: true,
-      // minify: {
-      //   removeComments: true,
-      //   collapseWhitespace: true,
-      //   removeAttributeQuotes: true,
-      // },
-    }),
-    new HtmlWebpackPlugin({
-      title: 'About',
-      favicon: paths.src + '/images/favicon.png',
-      template: paths.src + '/views/about.html', // template file
-      filename: 'about.html', // output file
-      minify: true,
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Blog Post',
-      favicon: paths.src + '/images/favicon.png',
-      template: paths.src + '/views/blog-post.html', // template file
-      filename: 'blog-post.html', // output file
-      minify: true,
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Blog List',
-      favicon: paths.src + '/images/favicon.png',
-      template: paths.src + '/views/blog-list.html', // template file
-      filename: 'blog-list.html', // output file
-      minify: true,
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Contact',
-      favicon: paths.src + '/images/favicon.png',
-      template: paths.src + '/views/contact.html', // template file
-      filename: 'contact.html', // output file
-      minify: true,
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Product',
-      favicon: paths.src + '/images/favicon.png',
+      title: 'Details',
+      favicon: paths.src + '/images/favicon/favicon.ico',
       template: paths.src + '/views/product.html', // template file
-      filename: 'product.html', // output file
-      minify: true,
+      filename: 'details/index.html', // output file
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
     }),
 
     // new HtmlWebpackPartialsPlugin({

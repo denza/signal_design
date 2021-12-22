@@ -3,13 +3,6 @@ import '@/styles/tailwind.scss'
 
 // Import Alpine.js
 import Alpine from 'alpinejs'
-import '@/js/parallax'
-// Import AOS animation library
-// import * as AOS from '@/js/aos'
-import AOS from 'aos'
-import '@/styles/aos.css'
-
-AOS.init()
 
 window.Alpine = Alpine
 
