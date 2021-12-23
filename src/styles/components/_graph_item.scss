@@ -31,10 +31,14 @@
       }
 
       .gi_icon {
-        @apply w-1/6 flex justify-center h-10 text-primary-light;
+        @apply w-1/6 flex justify-center h-10 text-primary;
 
         svg {
           @apply w-5 h-10;
+        }
+
+        &--extreme {
+          @apply text-red;
         }
       }
     }

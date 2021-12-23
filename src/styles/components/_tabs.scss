@@ -37,12 +37,58 @@
       @apply flex flex-col w-full h-full text-xs;
 
       .mt_graph {
-        @apply w-full bg-gray-2 flex-1;
+        @apply w-full  flex-1;
       }
 
       .mt_graph_desc {
-        @apply w-full bg-green-300;
+        @apply w-full flex flex-row items-start justify-between pt-2;
+
+        div {
+          @apply flex flex-row items-start;
+
+          &:nth-child(1) {
+            @apply justify-start;
+          }
+          &:nth-child(2) {
+            @apply justify-end;
+          }
+        }
+
+        .mt_footer_item {
+          @apply flex flex-1 flex-row items-start justify-start w-24 mx-2;
+
+          .icon {
+            @apply flex items-start pr-2 text-primary-light pt-1;
+
+            svg {
+              @apply w-4 h-4;
+            }
+          }
+
+          .value {
+            @apply w-10/12 flex flex-col items-start justify-end text-right;
+
+            span:nth-child(1) {
+              @apply w-full text-base uppercase font-semibold text-primary-dark;
+            }
+            span:nth-child(2) {
+              @apply w-full text-xss uppercase text-primary-light;
+            }
+          }
+
+          &--issue {
+            @apply w-9;
+          }
+        }
       }
     }
+  }
+}
+
+.gi_value_tooltip {
+  @apply px-4 py-2 bg-white border-none;
+
+  span {
+    @apply font-bold text-xs text-primary;
   }
 }

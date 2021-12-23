@@ -45,19 +45,44 @@
   <symbol id="tag" width="100%" height="100%" viewBox="0 0 20 20" fill="currentColor">
   <path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
  </symbol>
+ <symbol id="arrow-down" width="100%" height="100%" viewBox="0 0 20 20" fill="currentColor">
+  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clip-rule="evenodd" />
+</symbol>
+ <symbol id="arrow-up" width="100%" height="100%" viewBox="0 0 20 20" fill="currentColor">
+  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd" />
+</symbol>
+ <symbol id="issue-fix" width="100%" height="100%" viewBox="0 0 20 20" fill="currentColor">
+
+  <path id="Path_22697" data-name="Path 22697" d="M7.4,10.7h3.3V7.4L6.853,3.558a6.591,6.591,0,0,1,8.788,8.788l6.591,6.591a2.33,2.33,0,0,1-3.3,3.3l-6.591-6.591A6.591,6.591,0,0,1,3.558,6.853L7.4,10.7" transform="translate(-2.914 -2.914)"/>
+
+
+</symbol>
+ <symbol id="issue-door" width="100%" height="100%"  viewBox="0 0 11.902 20" fill="currentColor">
+
+  <path id="Path_22698" data-name="Path 22698" d="M103.153,0V.882H99.7v17.6h1.275V2.157h2.174V20l8.453-1.52V1.523Zm1.555,10.685a.608.608,0,0,1-.514-.669.532.532,0,1,1,1.029,0A.608.608,0,0,1,104.708,10.685Z" transform="translate(-99.704)"/>
+
+
+</symbol>
+ <symbol id="issue-attention" width="100%" height="100%"  viewBox="0 0 20 18.357" fill="currentColor">
+
+  <path id="Path_22699" data-name="Path 22699" d="M10.119,3.424a2.637,2.637,0,0,1,4.6,0l7.359,13.082a2.636,2.636,0,0,1-2.3,3.93H5.058a2.637,2.637,0,0,1-2.3-3.93L10.119,3.424Zm3.617,13.057a1.319,1.319,0,1,1-1.319-1.319A1.319,1.319,0,0,1,13.736,16.481ZM12.417,5.931A1.319,1.319,0,0,0,11.1,7.25v3.956a1.319,1.319,0,0,0,2.638,0V7.25A1.319,1.319,0,0,0,12.417,5.931Z" transform="translate(-2.417 -2.079)" fill-rule="evenodd"/>
+
+
+
+</symbol>
   <symbol id="temp_icon" width="18.769" height="40" viewBox="0 0 18.769 40">
 
   <g id="Group_7148" data-name="Group 7148" transform="translate(0 990.996)">
-    <path id="Path_8432" data-name="Path 8432" d="M9.384-952.473a7.793,7.793,0,0,1-7.873-7.692,7.68,7.68,0,0,1,4.023-6.709l.386-.212v-19.356a3.117,3.117,0,0,1,3.149-3.077,3.117,3.117,0,0,1,3.149,3.077v19.085l.441.2a7.708,7.708,0,0,1,4.6,6.995A7.793,7.793,0,0,1,9.384-952.473Zm4.346-15.818v-18.151A4.613,4.613,0,0,0,9.07-991a4.613,4.613,0,0,0-4.661,4.554v18.5A9.14,9.14,0,0,0,0-960.165,9.289,9.289,0,0,0,9.384-951a9.289,9.289,0,0,0,9.384-9.169A9.174,9.174,0,0,0,13.73-968.292Z" transform="translate(0 0)" fill="currentColor"/>
-    <path id="Path_8433" data-name="Path 8433" d="M109.033-712.3v-15.252s-.157-.7-1.24-.7-1.28.7-1.28.7v15.348a4.879,4.879,0,0,0-3.527,4.652,4.92,4.92,0,0,0,4.976,4.862,4.92,4.92,0,0,0,4.976-4.862A4.89,4.89,0,0,0,109.033-712.3Z" transform="translate(-98.83 -252.611)" fill="#1f6eae"/>
-    <path id="Path_8434" data-name="Path 8434" d="M361-881.651h4.2V-883H361Z" transform="translate(-346.429 -103.641)" fill="currentColor"/>
-    <path id="Path_8435" data-name="Path 8435" d="M361-821.651h4.2V-823H361Z" transform="translate(-346.429 -161.219)" fill="currentColor"/>
-    <path id="Path_8436" data-name="Path 8436" d="M361-762.762h4.2v-1.345H361Z" transform="translate(-346.429 -217.731)" fill="currentColor"/>
-    <path id="Path_8437" data-name="Path 8437" d="M361-702.762h4.2v-1.345H361Z" transform="translate(-346.429 -275.309)" fill="currentColor"/>
-    <path id="Path_8438" data-name="Path 8438" d="M361-643.873h4.2v-1.345H361Z" transform="translate(-346.429 -331.821)" fill="currentColor"/>
-    <path id="Path_8439" data-name="Path 8439" d="M361-583.873h4.2v-1.345H361Z" transform="translate(-346.429 -389.399)" fill="currentColor"/>
-    <path id="Path_8440" data-name="Path 8440" d="M361-524.985h4.2v-1.345H361Z" transform="translate(-346.429 -445.91)" fill="currentColor"/>
-    <path id="Path_8441" data-name="Path 8441" d="M361-464.985h4.2v-1.345H361Z" transform="translate(-346.429 -503.489)" fill="currentColor"/>
+    <path id="Path_8432" data-name="Path 8432" d="M9.384-952.473a7.793,7.793,0,0,1-7.873-7.692,7.68,7.68,0,0,1,4.023-6.709l.386-.212v-19.356a3.117,3.117,0,0,1,3.149-3.077,3.117,3.117,0,0,1,3.149,3.077v19.085l.441.2a7.708,7.708,0,0,1,4.6,6.995A7.793,7.793,0,0,1,9.384-952.473Zm4.346-15.818v-18.151A4.613,4.613,0,0,0,9.07-991a4.613,4.613,0,0,0-4.661,4.554v18.5A9.14,9.14,0,0,0,0-960.165,9.289,9.289,0,0,0,9.384-951a9.289,9.289,0,0,0,9.384-9.169A9.174,9.174,0,0,0,13.73-968.292Z" transform="translate(0 0)" fill="#CDCEE4"/>
+    <path id="Path_8433" data-name="Path 8433" d="M109.033-712.3v-15.252s-.157-.7-1.24-.7-1.28.7-1.28.7v15.348a4.879,4.879,0,0,0-3.527,4.652,4.92,4.92,0,0,0,4.976,4.862,4.92,4.92,0,0,0,4.976-4.862A4.89,4.89,0,0,0,109.033-712.3Z" transform="translate(-98.83 -252.611)" fill="currentColor"/>
+    <path id="Path_8434" data-name="Path 8434" d="M361-881.651h4.2V-883H361Z" transform="translate(-346.429 -103.641)" fill="#CDCEE4"/>
+    <path id="Path_8435" data-name="Path 8435" d="M361-821.651h4.2V-823H361Z" transform="translate(-346.429 -161.219)" fill="#CDCEE4"/>
+    <path id="Path_8436" data-name="Path 8436" d="M361-762.762h4.2v-1.345H361Z" transform="translate(-346.429 -217.731)" fill="#CDCEE4"/>
+    <path id="Path_8437" data-name="Path 8437" d="M361-702.762h4.2v-1.345H361Z" transform="translate(-346.429 -275.309)" fill="#CDCEE4"/>
+    <path id="Path_8438" data-name="Path 8438" d="M361-643.873h4.2v-1.345H361Z" transform="translate(-346.429 -331.821)" fill="#CDCEE4"/>
+    <path id="Path_8439" data-name="Path 8439" d="M361-583.873h4.2v-1.345H361Z" transform="translate(-346.429 -389.399)" fill="#CDCEE4"/>
+    <path id="Path_8440" data-name="Path 8440" d="M361-524.985h4.2v-1.345H361Z" transform="translate(-346.429 -445.91)" fill="#CDCEE4"/>
+    <path id="Path_8441" data-name="Path 8441" d="M361-464.985h4.2v-1.345H361Z" transform="translate(-346.429 -503.489)" fill="#CDCEE4"/>
   </g>
 
 
