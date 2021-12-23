@@ -60,6 +60,7 @@
     "url": "git@github.com:neehad/1403_dashboard.git"
   },
   "dependencies": {
-    "alpinejs": "^3.4.2"
+    "alpinejs": "^3.4.2",
+    "apexcharts": "^3.32.0"
   }
 }
