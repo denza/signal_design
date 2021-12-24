@@ -18,7 +18,10 @@
       overflow-x-hidden
     "
   >
-    <div class="flex h-screen overflow-hidden bg-white">
+    <div
+      class="flex h-screen overflow-hidden bg-white"
+      x-data="{ asideIsOpen: false, userMenuOpened: false }"
+    >
       <!-- aside -->
       <%= require('html-loader!./htmlPartials/aside.html').default %>
       <!-- END aside -->
