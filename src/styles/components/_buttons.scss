@@ -197,20 +197,17 @@
   }
 
   span.label {
-    @apply min-w-20 pr-6 uppercase font-normal text-xs tracking-widest flex-1 flex items-center text-left transition-all ease-out duration-1000 translate-x-0;
+    @apply min-w-20 pr-6 uppercase font-normal text-xs tracking-widest flex-1 flex items-center text-left transition-all ease-out duration-1000;
   }
 
   &:hover {
-    span.svg {
-      @apply translate-x-2;
-    }
     span.label {
-      @apply translate-x-2;
+      @apply text-secondary;
     }
   }
 
   &:focus {
-    @apply outline-none ring-2 ring-offset-2 ring-white-30;
+    @apply outline-none ring-0 ring-offset-2 ring-transparent;
   }
 
   &--active {
