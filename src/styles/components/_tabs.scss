@@ -31,7 +31,7 @@
   }
 
   .mt_tabs_content {
-    @apply w-full flex-1 px-4  pb-4;
+    @apply w-full flex-1 px-4 pb-px 2xl:pb-4;
 
     .mt_tab_content {
       @apply flex flex-col w-full h-full text-xs;
@@ -41,7 +41,7 @@
       }
 
       .mt_graph_desc {
-        @apply w-full flex flex-row items-start justify-between pt-2;
+        @apply w-full flex flex-row items-start justify-between pt-0 2xl:pt-2;
 
         div {
           @apply flex flex-row items-start;
@@ -55,10 +55,10 @@
         }
 
         .mt_footer_item {
-          @apply flex flex-1 flex-row items-start justify-start w-28 mx-2 px-2 py-1 border-b border-transparent;
+          @apply flex flex-1 flex-row items-start justify-start w-22 2xl:w-28 mx-2 px-2 py-1 border-b border-transparent;
 
           .icon {
-            @apply flex items-start pr-2 text-primary-light pt-1;
+            @apply flex items-start pr-2 text-primary-light pt-0 2xl:pt-1;
 
             svg {
               @apply w-4 h-4;
@@ -69,7 +69,7 @@
             @apply w-10/12 flex flex-col items-start justify-end text-right;
 
             span:nth-child(1) {
-              @apply w-full text-base uppercase font-semibold text-primary-dark;
+              @apply w-full text-xs 2xl:text-base uppercase font-semibold text-primary-dark;
             }
             span:nth-child(2) {
               @apply w-full text-xss uppercase text-primary-light;
