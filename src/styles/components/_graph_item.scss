@@ -12,8 +12,12 @@
   .gi_header {
     @apply pt-3 2xl:pt-4 px-8 pb-2 w-full flex flex-row justify-between items-center;
 
-    & > div {
-      @apply w-2/3 h-full flex flex-row items-start justify-between text-gray-dark;
+    & > a {
+      @apply w-2/3 h-full flex flex-row items-start justify-between text-gray-dark cursor-pointer;
+
+      &:hover {
+        @apply bg-gradient-to-r from-primary-light-30 to-transparent text-white;
+      }
     }
 
     & > div:nth-child(2) {
@@ -47,7 +51,7 @@
       @apply text-primary-light mr-2 pt-1 2xl:pt-2;
 
       svg {
-        @apply w-5 h-5;
+        @apply ml-1 w-5 h-5;
       }
     }
 

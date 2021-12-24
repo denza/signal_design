@@ -1,1 +1,41 @@
-details
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+
+  <body
+    class="
+      text-primary-dark
+      antialias
+      leading-normal
+      tracking-normal
+      font-sans
+      bg-gray-1
+      overflow-x-hidden
+    "
+  >
+    <div
+      class="flex h-screen overflow-hidden bg-white"
+      x-data="{ asideIsOpen: false, userMenuOpened: false }"
+    >
+      <!-- aside -->
+      <%= require('html-loader!./htmlPartials/aside.html').default %>
+      <!-- END aside -->
+
+      <!-- main -->
+      <div class="flex flex-col flex-1 overflow-hidden">
+        <!-- header -->
+        <%= require('html-loader!./htmlPartials/header.html').default %>
+        <!-- END header -->
+
+        <!-- content -->
+        <!-- END content -->
+      </div>
+      <!-- END main -->
+    </div>
+  </body>
+</html>
