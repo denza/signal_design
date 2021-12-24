@@ -22,6 +22,7 @@ module.exports = {
         'light-10': tinycolor('#cdcee4').setAlpha(0.1).toRgbString(),
         'light-15': tinycolor('#cdcee4').setAlpha(0.15).toRgbString(),
         'light-30': tinycolor('#cdcee4').setAlpha(0.3).toRgbString(),
+        'light-50': tinycolor('#cdcee4').setAlpha(0.5).toRgbString(),
         'light-70': tinycolor('#cdcee4').setAlpha(0.7).toRgbString(),
         DEFAULT: '#1f6eae',
         dark: '#1f3661',

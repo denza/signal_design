@@ -1,0 +1,71 @@
+<header
+  class="
+    w-full
+    flex flex-row
+    h-16
+    2xl:h-18
+    items-center
+    justify-between
+    bg-gray-1
+    border-b border-primary-light
+    px-6
+    2xl:py-4
+    sticky
+    top-0
+    z-50
+  "
+>
+  <!-- header title -->
+  <div class="w-1/2 h-full flex flex-row items-center justify-between">
+    <div class="graph_title graph_title--alt">
+      <span class="icon">
+        <svg>
+          <use xlink:href="../../../images/sprite_admin.svg#tag" />
+        </svg>
+      </span>
+      <div class="label">
+        <span>Fridge blue</span>
+        <span>id:1045</span>
+      </div>
+    </div>
+    <div class="temp_data temp_data--alt">
+      <!-- add 'extreme' classname to line above for extreme temp state -->
+      <div class="temp_value">
+        <span>-34,5°C</span>
+        <span>CURRENT</span>
+      </div>
+      <div class="temp_icon">
+        <svg>
+          <use xlink:href="../../../images/sprite_admin.svg#temp_icon" />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <!-- END header title -->
+
+  <!-- header action -->
+  <div class="w-1/2 h-full flex flex-row items-center justify-end py-3">
+    <div class="pl-2">
+      <a @click="history.back()" class="btn btn-gray">
+        <span class="svg">
+          <svg class="w-6 h-6">
+            <use xlink:href="../../../images/sprite_admin.svg#arrow-left-classic" />
+          </svg>
+        </span>
+        <span class="label">Back</span>
+      </a>
+    </div>
+    <div class="pl-2">
+      <a href="#" class="btn btn-gray">
+        <span class="svg">
+          <svg class="w-6 h-6">
+            <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+          </svg>
+        </span>
+        <span class="label">Update</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- END header action -->
+</header>
