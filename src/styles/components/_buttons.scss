@@ -6,7 +6,7 @@
   }
 
   span.label {
-    @apply min-w-20 font-normal text-xs tracking-widest flex-1 flex items-center text-left transition-all ease-out duration-1000 translate-x-0;
+    @apply min-w-20 pr-4 font-normal text-xs tracking-widest flex-1 flex items-center text-left transition-all ease-out duration-1000 translate-x-0;
   }
 
   &:hover {
@@ -20,6 +20,10 @@
 
   &:focus {
     @apply outline-none ring-2 ring-offset-2 ring-white-30;
+  }
+
+  &.btn-thin {
+    @apply h-8 max-h-8;
   }
 }
 
@@ -182,5 +186,34 @@
     span.label {
       @apply text-white;
     }
+  }
+}
+
+.btn-tab-detail {
+  @apply -mr-px cursor-pointer flex flex-row w-40 min-w-40 max-h-12 h-12 relative justify-start items-stretch overflow-hidden transition-all duration-150 ease-in-out border-l border-r border-primary-light;
+
+  span.svg {
+    @apply py-2 px-4 text-center items-center justify-center inline-flex ease-out duration-300 translate-x-0 text-primary;
+  }
+
+  span.label {
+    @apply min-w-20 pr-6 uppercase font-normal text-xs tracking-widest flex-1 flex items-center text-left transition-all ease-out duration-1000 translate-x-0;
+  }
+
+  &:hover {
+    span.svg {
+      @apply translate-x-2;
+    }
+    span.label {
+      @apply translate-x-2;
+    }
+  }
+
+  &:focus {
+    @apply outline-none ring-2 ring-offset-2 ring-white-30;
+  }
+
+  &--active {
+    @apply border-b border-b-gray-1;
   }
 }

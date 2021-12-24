@@ -20,4 +20,12 @@
   .gi_content {
     @apply w-full flex flex-1 items-start;
   }
+
+  &--details {
+    @apply border-none;
+
+    &:hover {
+      @apply drop-shadow-none bg-transparent;
+    }
+  }
 }

@@ -1,8 +1,299 @@
-<main class="relative flex-1 flex p-0 w-full overflow-hidden">
+<main class="relative flex-1 flex flex-col p-0 w-full overflow-hidden bg-gray-1">
+  <!-- details toolbar -->
+  <div class="w-full h-12 flex flex-row pl-8 pr-6 border-b border-primary-light">
+    <div class="w-1/2 h-full flex flex-row items-center justify-start">
+      <a href="#" class="btn-tab-detail btn-tab-detail--active">
+        <span class="svg">
+          <svg class="w-4 h-4">
+            <use xlink:href="../../../images/sprite_admin.svg#document-download" />
+          </svg>
+        </span>
+        <span class="label">Temperature</span>
+      </a>
+      <a href="#" class="btn-tab-detail">
+        <span class="svg">
+          <svg class="w-4 h-4">
+            <use xlink:href="../../../images/sprite_admin.svg#info" />
+          </svg>
+        </span>
+        <span class="label">Information</span>
+      </a>
+    </div>
+
+    <!-- toolbar action buttons -->
+    <div class="w-1/2 flex flex-row items-center justify-end">
+      <div class="pl-2">
+        <a @click="history.back()" class="btn btn-thin btn-gray">
+          <span class="svg">
+            <svg class="w-5 h-5">
+              <use xlink:href="../../../images/sprite_admin.svg#document-add" />
+            </svg>
+          </span>
+          <span class="label">Pin to dashboard</span>
+        </a>
+      </div>
+      <div class="pl-2">
+        <a href="#" class="btn btn-thin btn-gray">
+          <span class="svg">
+            <svg class="w-5 h-5">
+              <use xlink:href="../../../images/sprite_admin.svg#document-download" />
+            </svg>
+          </span>
+          <span class="label">Export</span>
+        </a>
+      </div>
+    </div>
+    <!-- END toolbar action buttons -->
+  </div>
+  <!-- END details toolbar -->
+
   <div
-    class="w-full h-auto grid grid-cols-2 gap-0 mx-auto overflow-y-scroll overflow-x-hidden"
+    class="
+      w-full
+      h-auto
+      flex flex-row
+      items-start
+      justify-center
+      mx-auto
+      overflow-y-scroll overflow-x-hidden
+    "
     style="overflow-y: overlay"
   >
-    content details
+    <div class="w-1/2 h-full px-0 py-6 items-start grid grid-cols-1 gap-0">
+      <!-- graph item -->
+      <div class="graph_item graph_item--details">
+        <!-- gi content -->
+        <div class="gi_content">
+          <div x-data="{ openTab: 1 }" class="mini_tabs">
+            <ul class="mt_btn_bar">
+              <li @click="openTab = 1" class="w-1/3" :class="openTab === 1 ? 'tab-active' : ''">
+                <a class="mt_tab" href="#">Today</a>
+              </li>
+              <li @click="openTab = 2" class="w-1/3" :class="openTab === 2 ? 'tab-active' : ''">
+                <a class="mt_tab" href="#">Last week</a>
+              </li>
+              <li @click="openTab = 3" class="w-1/3" :class="openTab === 3 ? 'tab-active' : ''">
+                <a class="mt_tab" href="#">Last month</a>
+              </li>
+            </ul>
+            <div class="mt_tabs_content">
+              <div x-show="openTab === 1" class="mt_tab_content">
+                <div class="mt_graph">
+                  <div id="s1_chart01"></div>
+                </div>
+                <div class="mt_graph_desc">
+                  <div>
+                    <!-- min value -->
+                    <div class="mt_footer_item has-tooltip cursor-help">
+                      <div class="icon">
+                        <svg>
+                          <use xlink:href="../../../images/sprite_admin.svg#arrow-down" />
+                        </svg>
+                      </div>
+                      <div class="value">
+                        <span>-25,25°C</span>
+                        <span>MIN</span>
+                      </div>
+                      <span class="tooltip">Lowest value</span>
+                    </div>
+                    <!-- END min value -->
+
+                    <!-- max value -->
+                    <div class="mt_footer_item has-tooltip cursor-help">
+                      <div class="icon">
+                        <svg>
+                          <use xlink:href="../../../images/sprite_admin.svg#arrow-up" />
+                        </svg>
+                      </div>
+                      <div class="value">
+                        <span>5,05°C</span>
+                        <span>MAX</span>
+                      </div>
+                      <span class="tooltip">Highest value</span>
+                    </div>
+                    <!-- END max value -->
+                  </div>
+                  <div>
+                    <!-- issue repair -->
+                    <div class="mt_footer_item mt_footer_item--issue has-tooltip cursor-help">
+                      <div class="icon">
+                        <svg>
+                          <use xlink:href="../../../images/sprite_admin.svg#issue-fix" />
+                        </svg>
+                      </div>
+                      <div class="value">
+                        <span>1</span>
+                      </div>
+                      <span class="tooltip">Repair</span>
+                    </div>
+                    <!-- END issue repair -->
+
+                    <!-- issue door opened -->
+                    <div class="mt_footer_item mt_footer_item--issue has-tooltip cursor-help">
+                      <div class="icon">
+                        <svg>
+                          <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
+                        </svg>
+                      </div>
+                      <div class="value">
+                        <span>5</span>
+                      </div>
+                      <span class="tooltip">Door</span>
+                    </div>
+                    <!-- END issue door opened -->
+
+                    <!-- issue warning -->
+                    <div class="mt_footer_item mt_footer_item--issue has-tooltip cursor-help">
+                      <div class="icon">
+                        <svg>
+                          <use xlink:href="../../../images/sprite_admin.svg#issue-attention" />
+                        </svg>
+                      </div>
+                      <div class="value">
+                        <span>1</span>
+                      </div>
+                      <span class="tooltip">Warning</span>
+                    </div>
+                    <!-- END issue warning -->
+                  </div>
+                </div>
+              </div>
+              <div x-show="openTab === 2" class="mt_tab_content">
+                <div class="mt_graph">
+                  <div id="s1_chart02"></div>
+                </div>
+                <div class="mt_graph_desc">
+                  <div>
+                    <!-- min value -->
+                    <div class="mt_footer_item has-tooltip cursor-help">
+                      <div class="icon">
+                        <svg>
+                          <use xlink:href="../../../images/sprite_admin.svg#arrow-down" />
+                        </svg>
+                      </div>
+                      <div class="value">
+                        <span>-20,25°C</span>
+                        <span>MIN</span>
+                      </div>
+                      <span class="tooltip">Lowest value</span>
+                    </div>
+                    <!-- END min value -->
+
+                    <!-- max value -->
+                    <div class="mt_footer_item has-tooltip cursor-help">
+                      <div class="icon">
+                        <svg>
+                          <use xlink:href="../../../images/sprite_admin.svg#arrow-up" />
+                        </svg>
+                      </div>
+                      <div class="value">
+                        <span>-17,15°C</span>
+                        <span>MAX</span>
+                      </div>
+                      <span class="tooltip">Highest value</span>
+                    </div>
+                    <!-- END max value -->
+                  </div>
+                </div>
+              </div>
+              <div x-show="openTab === 3" class="mt_tab_content">
+                <div class="mt_graph">
+                  <div id="s1_chart03"></div>
+                </div>
+                <div class="mt_graph_desc">
+                  <div>
+                    <!-- min value -->
+                    <div class="mt_footer_item has-tooltip cursor-help">
+                      <div class="icon">
+                        <svg>
+                          <use xlink:href="../../../images/sprite_admin.svg#arrow-down" />
+                        </svg>
+                      </div>
+                      <div class="value">
+                        <span>-20,25°C</span>
+                        <span>MIN</span>
+                      </div>
+                      <span class="tooltip">Lowest value</span>
+                    </div>
+                    <!-- END min value -->
+
+                    <!-- max value -->
+                    <div class="mt_footer_item has-tooltip cursor-help">
+                      <div class="icon">
+                        <svg>
+                          <use xlink:href="../../../images/sprite_admin.svg#arrow-up" />
+                        </svg>
+                      </div>
+                      <div class="value">
+                        <span>-17,15°C</span>
+                        <span>MAX</span>
+                      </div>
+                      <span class="tooltip">Highest value</span>
+                    </div>
+                    <!-- END max value -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END gi content -->
+      </div>
+      <!-- END graph item -->
+    </div>
+    <div class="w-1/2 h-full pl-4 pr-6 py-6">
+      <!-- accordion temperature details -->
+      <ul class="block w-full mx-auto" x-data="{selected:null}">
+        <li class="flex align-center flex-col">
+          <h4
+            @click="selected !== 0 ? selected = 0 : selected = null"
+            class="
+              cursor-pointer
+              px-5
+              py-3
+              bg-indigo-300
+              text-white text-center
+              inline-block
+              hover:opacity-75 hover:shadow hover:-mb-3
+              rounded-t
+            "
+          >
+            Accordion item 1
+          </h4>
+          <p x-show="selected == 0" class="border py-4 px-2">
+            This is made with Alpine JS and Tailwind CSS
+          </p>
+        </li>
+        <li class="flex align-center flex-col">
+          <h4
+            @click="selected !== 1 ? selected = 1 : selected = null"
+            class="
+              cursor-pointer
+              px-5
+              py-3
+              bg-indigo-400
+              text-white text-center
+              inline-block
+              hover:opacity-75 hover:shadow hover:-mb-3
+            "
+          >
+            Accordion item 2
+          </h4>
+          <p x-show="selected == 1" class="border py-4 px-2">There's no external CSS or JS</p>
+        </li>
+        <li class="flex align-center flex-col">
+          <h4
+            @click="selected !== 2 ? selected = 2 : selected = null"
+            :class="{'cursor-pointer px-5 py-3 bg-indigo-500 text-white text-center inline-block hover:opacity-75 hover:shadow hover:-mb-3': true, 'rounded-b': selected != 2}"
+          >
+            Accordion item 3
+          </h4>
+          <p x-show="selected == 2" :class="{'border py-4 px-2': true, 'rounded-b': selected == 2}">
+            Pretty cool huh?
+          </p>
+        </li>
+      </ul>
+      <!-- END accordion temperature details -->
+    </div>
   </div>
 </main>
