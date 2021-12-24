@@ -11,12 +11,12 @@ window.Alpine = Alpine
 
 Alpine.start()
 
-var options = {
+let chart_global_options = {
   chart: {
     type: 'line',
-    width: 500,
+    width: '100%',
     height: 180,
-    foreColor: '#CDCEE480',
+    foreColor: '#cdcee4',
     toolbar: {
       show: false,
     },
@@ -24,6 +24,19 @@ var options = {
       enabled: false,
     },
     stacked: false,
+    animations: {
+      enabled: true,
+      easing: 'easeinout',
+      speed: 800,
+      animateGradually: {
+        enabled: true,
+        delay: 150,
+      },
+      dynamicAnimation: {
+        enabled: true,
+        speed: 350,
+      },
+    },
   },
   colors: ['#1F6EAE'],
   stroke: {
@@ -50,25 +63,6 @@ var options = {
       },
     },
   },
-  series: [
-    {
-      name: 'Temperature',
-      data: [
-        { x: '00:01', y: '-15' },
-        { x: '01:00', y: '-15' },
-        { x: '02:00', y: '0', strokeColor: '#C8233380', fillColor: '#C82333' },
-        { x: '04:00', y: '-14' },
-        { x: '06:00', y: '-22' },
-        { x: '08:00', y: '-10' },
-        { x: '10:00', y: '-24' },
-        { x: '11:15', y: '5', strokeColor: '#C8233380', fillColor: '#C82333' },
-        { x: '11:32', y: '-20' },
-        { x: '12:00', y: '-5', strokeColor: '#C8233380', fillColor: '#C82333' },
-        { x: '14:00', y: '-25' },
-        { x: '16:00', y: '-19' },
-      ],
-    },
-  ],
   xaxis: {
     axisBorder: {
       show: false,
@@ -77,73 +71,8 @@ var options = {
       show: true,
     },
     tooltip: {
-      enabled: false,
+      enabled: true,
     },
-  },
-  annotations: {
-    points: [
-      {
-        x: '11:15',
-        y: 5,
-        marker: {
-          size: 16,
-          fillColor: '#C82333',
-          strokeColor: '#ffffff80',
-          strokeWidth: 8,
-          radius: 100,
-          cssClass: 'issue-img',
-        },
-        image: {
-          path: '/images/graph/fix.png',
-          width: 20,
-          height: 20,
-          offsetX: 0,
-          offsetY: 26,
-          appendTo: '.issue-img',
-        },
-      },
-      {
-        x: '02:00',
-        y: 0,
-        marker: {
-          size: 16,
-          fillColor: '#C82333',
-          strokeColor: '#ffffff80',
-          strokeWidth: 8,
-          radius: 100,
-          cssClass: 'issue-img',
-        },
-        image: {
-          path: '/images/graph/opened_door.png',
-          width: 20,
-          height: 20,
-          offsetX: 0,
-          offsetY: 26,
-          appendTo: '.issue-img',
-        },
-      },
-
-      {
-        x: '12:00',
-        y: -5,
-        marker: {
-          size: 16,
-          fillColor: '#C82333',
-          strokeColor: '#ffffff80',
-          strokeWidth: 8,
-          radius: 100,
-          cssClass: 'issue-img',
-        },
-        image: {
-          path: '/images/graph/attention.png',
-          width: 20,
-          height: 20,
-          offsetX: 0,
-          offsetY: 26,
-          appendTo: '.issue-img',
-        },
-      },
-    ],
   },
   yaxis: {
     min: -35,
@@ -184,7 +113,7 @@ var options = {
     },
   },
   grid: {
-    borderColor: '#CDCEE480',
+    borderColor: '#cdcee4',
     strokeDashArray: 5,
     clipMarkers: true,
     yaxis: {
@@ -218,39 +147,142 @@ var options = {
     },
   },
 }
+Object.assign(Apex, chart_global_options)
 
-var s1_chart = new ApexCharts(document.querySelector('#s1_chart01'), options)
+let s1_chart01_day = {
+  chart: {
+    id: 's1_chart01',
+    group: 's1',
+    type: 'line',
+  },
+  series: [
+    {
+      name: 'Temperature',
+      data: [
+        { x: '00:01', y: '-15' },
+        { x: '01:00', y: '-15' },
+        { x: '02:00', y: '0', strokeColor: '#C8233380', fillColor: '#C82333' },
+        { x: '04:00', y: '-14' },
+        { x: '06:00', y: '-22' },
+        { x: '08:00', y: '-10' },
+        { x: '10:00', y: '-24' },
+        { x: '11:15', y: '5', strokeColor: '#C8233380', fillColor: '#C82333' },
+        { x: '11:32', y: '-20' },
+        { x: '12:00', y: '-5', strokeColor: '#C8233380', fillColor: '#C82333' },
+        { x: '14:00', y: '-25' },
+        { x: '16:00', y: '-19' },
+      ],
+    },
+  ],
+  annotations: {
+    points: [
+      {
+        x: '11:15',
+        y: 5,
+        marker: {
+          size: 16,
+          fillColor: '#C82333',
+          strokeColor: '#ffffff80',
+          strokeWidth: 8,
+          radius: 100,
+          cssClass: 'issue-img animate-pulse',
+        },
+        image: {
+          path: '/images/graph/fix.png',
+          width: 20,
+          height: 20,
+          offsetX: 0,
+          offsetY: 26,
+          appendTo: '.issue-img',
+        },
+      },
+      {
+        x: '02:00',
+        y: 0,
+        marker: {
+          size: 16,
+          fillColor: '#C82333',
+          strokeColor: '#ffffff80',
+          strokeWidth: 8,
+          radius: 100,
+          cssClass: 'issue-img animate-pulse',
+        },
+        image: {
+          path: '/images/graph/opened_door.png',
+          width: 20,
+          height: 20,
+          offsetX: 0,
+          offsetY: 26,
+          appendTo: '.issue-img',
+        },
+      },
+      {
+        x: '12:00',
+        y: -5,
+        marker: {
+          size: 16,
+          fillColor: '#C82333',
+          strokeColor: '#ffffff80',
+          strokeWidth: 8,
+          radius: 100,
+          cssClass: 'issue-img animate-pulse',
+        },
+        image: {
+          path: '/images/graph/attention.png',
+          width: 20,
+          height: 20,
+          offsetX: 0,
+          offsetY: 26,
+          appendTo: '.issue-img',
+        },
+      },
+    ],
+  },
+}
+let s1_chart = new ApexCharts(document.querySelector('#s1_chart01'), s1_chart01_day)
 s1_chart.render()
 
-var s1_chart2 = new ApexCharts(document.querySelector('#s1_chart02'), options)
-s1_chart2.render()
-
-var s1_chart3 = new ApexCharts(document.querySelector('#s1_chart03'), options)
-s1_chart3.render()
-
-var s2_chart = new ApexCharts(document.querySelector('#s2_chart01'), options)
+let s1_chart02_week = {
+  chart: {
+    id: 's1_chart02',
+    group: 's2',
+    type: 'line',
+  },
+  series: [
+    {
+      name: 'Temperature',
+      data: [
+        { x: 'Monday', y: '-24' },
+        { x: 'Tuesday', y: '-29' },
+        { x: 'Wednesday', y: '-4' },
+        { x: 'Thursday', y: '-10' },
+        { x: 'Friday', y: '-5' },
+        { x: 'Saturday', y: '-1' },
+        { x: 'Sunday', y: '-7' },
+      ],
+    },
+  ],
+}
+let s2_chart = new ApexCharts(document.querySelector('#s1_chart02'), s1_chart02_week)
 s2_chart.render()
 
-var s2_chart2 = new ApexCharts(document.querySelector('#s2_chart02'), options)
-s2_chart2.render()
-
-var s2_chart3 = new ApexCharts(document.querySelector('#s2_chart03'), options)
-s2_chart3.render()
-
-var s3_chart = new ApexCharts(document.querySelector('#s3_chart01'), options)
+let s1_chart03_month = {
+  chart: {
+    id: 's1_chart02',
+    group: 's3',
+    type: 'line',
+  },
+  series: [
+    {
+      name: 'Temperature',
+      data: [
+        { x: 'Week 1', y: '0' },
+        { x: 'Week 2', y: '-16' },
+        { x: 'Week 3', y: '-7' },
+        { x: 'Week 4', y: '-9' },
+      ],
+    },
+  ],
+}
+let s3_chart = new ApexCharts(document.querySelector('#s1_chart03'), s1_chart03_month)
 s3_chart.render()
-
-var s3_chart2 = new ApexCharts(document.querySelector('#s3_chart02'), options)
-s3_chart2.render()
-
-var s3_chart3 = new ApexCharts(document.querySelector('#s3_chart03'), options)
-s3_chart3.render()
-
-var s4_chart = new ApexCharts(document.querySelector('#s4_chart01'), options)
-s4_chart.render()
-
-var s4_chart2 = new ApexCharts(document.querySelector('#s4_chart02'), options)
-s4_chart2.render()
-
-var s4_chart3 = new ApexCharts(document.querySelector('#s4_chart03'), options)
-s4_chart3.render()

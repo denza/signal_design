@@ -1,0 +1,34 @@
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  width: 1.1rem;
+  height: 1rem;
+  border: 0.1rem solid transparent;
+  // border-radius: 0.5rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 0 1rem #1f6eae;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  box-shadow: inset 0 0 0 1rem #1f3661;
+}
+
+::-webkit-resizer,
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.tooltip {
+  @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
+}
+
+.tooltip {
+  @apply px-4 py-2 border border-primary-light bg-white border-none rounded drop-shadow-xl p-1 font-bold text-xs text-primary -mt-8;
+}

@@ -2,7 +2,7 @@
   @apply w-full h-full flex flex-col;
 
   .mt_btn_bar {
-    @apply w-full h-7 flex flex-row items-end justify-between border-b border-primary-light;
+    @apply w-auto h-7 mx-8 flex flex-row items-end justify-between border-b border-primary-light;
   }
 
   ul {
@@ -31,13 +31,13 @@
   }
 
   .mt_tabs_content {
-    @apply w-full flex-1;
+    @apply w-full flex-1 px-4  pb-4;
 
     .mt_tab_content {
       @apply flex flex-col w-full h-full text-xs;
 
       .mt_graph {
-        @apply w-full  flex-1;
+        @apply w-full flex-1 inline-block;
       }
 
       .mt_graph_desc {
@@ -55,7 +55,7 @@
         }
 
         .mt_footer_item {
-          @apply flex flex-1 flex-row items-start justify-start w-24 mx-2;
+          @apply flex flex-1 flex-row items-start justify-start w-28 mx-2 px-2 py-1 border-b border-transparent;
 
           .icon {
             @apply flex items-start pr-2 text-primary-light pt-1;
@@ -77,7 +77,12 @@
           }
 
           &--issue {
-            @apply w-9;
+            @apply w-11;
+          }
+
+          &:hover,
+          &:focus {
+            @apply bg-primary-light-10 border-primary-light shadow-xl;
           }
         }
       }
