@@ -4,15 +4,15 @@
     <div class="w-1/2 h-full flex flex-row items-center justify-start">
       <a href="#" class="btn-tab-detail btn-tab-detail--active">
         <span class="svg">
-          <svg class="w-4 h-4">
-            <use xlink:href="../../../images/sprite_admin.svg#document-download" />
+          <svg class="w-6 h-6">
+            <use xlink:href="../../../images/sprite_admin.svg#temperature" />
           </svg>
         </span>
         <span class="label">Temperature</span>
       </a>
       <a href="#" class="btn-tab-detail">
         <span class="svg">
-          <svg class="w-4 h-4">
+          <svg class="w-6 h-6">
             <use xlink:href="../../../images/sprite_admin.svg#info" />
           </svg>
         </span>
@@ -23,7 +23,7 @@
     <!-- toolbar action buttons -->
     <div class="w-1/2 flex flex-row items-center justify-end">
       <div class="pl-2">
-        <a @click="history.back()" class="btn btn-thin btn-gray">
+        <a href="../" class="btn btn-thin btn-gray">
           <span class="svg">
             <svg class="w-5 h-5">
               <use xlink:href="../../../images/sprite_admin.svg#document-add" />
@@ -47,18 +47,7 @@
   </div>
   <!-- END details toolbar -->
 
-  <div
-    class="
-      w-full
-      h-full
-      flex flex-row
-      items-start
-      justify-center
-      mx-auto
-      overflow-y-scroll overflow-x-hidden
-    "
-    style="overflow-y: overlay"
-  >
+  <div class="w-full h-full flex flex-row items-start justify-center mx-auto overflow-hidden">
     <div class="w-1/2 h-full px-0 py-6 items-start grid grid-cols-1 gap-0">
       <!-- graph item -->
       <div class="graph_item graph_item--details">
@@ -241,56 +230,1561 @@
       </div>
       <!-- END graph item -->
     </div>
-    <div class="w-1/2 h-full pl-4 pr-6 py-6 border-l border-primary-light">
+    <div
+      class="
+        w-1/2
+        h-full
+        pl-4
+        pr-6
+        py-6
+        border-l border-primary-light
+        flex flex-1
+        overflow-y-scroll overflow-x-hidden
+      "
+      style="overflow-y: overlay"
+    >
       <!-- accordion temperature details -->
-      <ul class="block w-full mx-auto" x-data="{selected:null}">
+      <ul class="block w-full mx-auto pb-6" x-data="{selected:null}">
+        <!-- list item -->
         <li class="flex align-center flex-col">
-          <h4
-            @click="selected !== 0 ? selected = 0 : selected = null"
+          <div
             class="
               cursor-pointer
-              px-5
-              py-3
-              bg-indigo-300
-              text-white text-center
-              inline-block
-              hover:opacity-75 hover:shadow hover:-mb-3
+              border-b-2 border-dashed border-primary-light-70
+              px-4
+              py-4
+              text-sm
+              flex flex-row
+              justify-start
+              items-center
+              group
+              text-gray-dark
             "
+            :class="selected === 0 ? 'bg-primary-light-50' : 'bg-transparent  hover:bg-primary-light-10'"
           >
-            Accordion item 1
-          </h4>
-          <p x-show="selected == 0" class="border py-4 px-2">
-            This is made with Alpine JS and Tailwind CSS
-          </p>
+            <div class="w-3/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#calendar" />
+              </svg>
+              <span>25.09.2021.</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#clock" />
+              </svg>
+              <span>15:12</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-6 h-6 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#temperature" />
+              </svg>
+              <span>5°C</span>
+            </div>
+            <div class="w-4/12">
+              <span
+                class="
+                  w-6
+                  h-6
+                  mx-auto
+                  bg-red
+                  border-red-light border-2
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  text-white
+                "
+              >
+                <svg class="w-4 h-4">
+                  <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
+                </svg>
+              </span>
+            </div>
+            <div class="w-1/12 ml-auto">
+              <button
+                class="
+                  w-full
+                  h-6
+                  mx-auto
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  group-hover:shadow-lg group-hover:bg-white
+                  focus:outline-none
+                  text-gray-dark
+                "
+                @click="selected !== 0 ? selected = 0 : selected = null"
+              >
+                <svg class="w-4 h-4" x-show="selected !== 0">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-down" />
+                </svg>
+                <svg class="w-4 h-4" x-show="selected == 0">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-up" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div x-show="selected == 0" class="px-2 py-4 flex flex-col items-start justify-start">
+            <div class="w-full flex flex-row items-start justify-start">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Description</h4>
+                <p class="text-sm text-left text-primary-dark">
+                  Vestibulum scelerisque purus in nunc vulputate, in laoreet urna euismod. Vivamus
+                  consectetur nisl non ligula lobortis, eget ultricies est rutrum. Cras ultrices dui
+                  dolor, convallis blandit massa tincidunt sit amet.
+                </p>
+              </span>
+            </div>
+            <div class="w-full flex flex-row items-start justify-start mt-6">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Responsible person</h4>
+                <p class="text-sm text-left text-primary font-bold">Niles Peppertrout</p>
+              </span>
+            </div>
+          </div>
         </li>
+        <!-- END list item -->
+        <!-- list item -->
         <li class="flex align-center flex-col">
-          <h4
-            @click="selected !== 1 ? selected = 1 : selected = null"
+          <div
             class="
               cursor-pointer
-              px-5
-              py-3
-              bg-indigo-400
-              text-white text-center
-              inline-block
-              hover:opacity-75 hover:shadow hover:-mb-3
+              border-b-2 border-dashed border-primary-light-70
+              px-4
+              py-4
+              text-sm
+              flex flex-row
+              justify-start
+              items-center
+              group
+              text-gray-dark
             "
+            :class="selected === 1 ? 'bg-primary-light-50' : 'bg-transparent  hover:bg-primary-light-10'"
           >
-            Accordion item 2
-          </h4>
-          <p x-show="selected == 1" class="border py-4 px-2">There's no external CSS or JS</p>
+            <div class="w-3/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#calendar" />
+              </svg>
+              <span>25.09.2021.</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#clock" />
+              </svg>
+              <span>15:12</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-6 h-6 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#temperature" />
+              </svg>
+              <span>-25°C</span>
+            </div>
+            <!-- <div class="w-4/12">
+              <span
+                class="
+                  w-6
+                  h-6
+                  mx-auto
+                  bg-red
+                  border-red-light border-2
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  text-white
+                "
+              >
+                <svg class="w-4 h-4">
+                  <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
+                </svg>
+              </span>
+            </div> -->
+            <div class="w-1/12 ml-auto">
+              <button
+                class="
+                  w-full
+                  h-6
+                  mx-auto
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  group-hover:shadow-lg group-hover:bg-white
+                  focus:outline-none
+                  text-gray-dark
+                "
+                @click="selected !== 1 ? selected = 1 : selected = null"
+              >
+                <svg class="w-4 h-4" x-show="selected !== 1">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-down" />
+                </svg>
+                <svg class="w-4 h-4" x-show="selected == 1">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-up" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div x-show="selected == 1" class="px-2 py-4 flex flex-col items-start justify-start">
+            <div class="w-full flex flex-row items-start justify-start">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Description</h4>
+                <p class="text-sm text-left text-primary-dark">
+                  Vestibulum scelerisque purus in nunc vulputate, in laoreet urna euismod. Vivamus
+                  consectetur nisl non ligula lobortis, eget ultricies est rutrum. Cras ultrices dui
+                  dolor, convallis blandit massa tincidunt sit amet.
+                </p>
+              </span>
+            </div>
+            <div class="w-full flex flex-row items-start justify-start mt-6">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Responsible person</h4>
+                <p class="text-sm text-left text-primary font-bold">Niles Peppertrout</p>
+              </span>
+            </div>
+          </div>
         </li>
+        <!-- END list item -->
+        <!-- list item -->
         <li class="flex align-center flex-col">
-          <h4
-            @click="selected !== 2 ? selected = 2 : selected = null"
-            :class="{'cursor-pointer px-5 py-3 bg-indigo-500 text-white text-center inline-block hover:opacity-75 hover:shadow hover:-mb-3': true, 'rounded-b': selected != 2}"
+          <div
+            class="
+              cursor-pointer
+              border-b-2 border-dashed border-primary-light-70
+              px-4
+              py-4
+              text-sm
+              flex flex-row
+              justify-start
+              items-center
+              group
+              text-gray-dark
+            "
+            :class="selected === 2 ? 'bg-primary-light-50' : 'bg-transparent  hover:bg-primary-light-10'"
           >
-            Accordion item 3
-          </h4>
-          <p x-show="selected == 2" :class="{'border py-4 px-2': true, 'rounded-b': selected == 2}">
-            Pretty cool huh?
-          </p>
+            <div class="w-3/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#calendar" />
+              </svg>
+              <span>25.09.2021.</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#clock" />
+              </svg>
+              <span>15:12</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-6 h-6 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#temperature" />
+              </svg>
+              <span>-18°C</span>
+            </div>
+            <!-- <div class="w-4/12">
+              <span
+                class="
+                  w-6
+                  h-6
+                  mx-auto
+                  bg-red
+                  border-red-light border-2
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  text-white
+                "
+              >
+                <svg class="w-4 h-4">
+                  <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
+                </svg>
+              </span>
+            </div> -->
+            <div class="w-1/12 ml-auto">
+              <button
+                class="
+                  w-full
+                  h-6
+                  mx-auto
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  group-hover:shadow-lg group-hover:bg-white
+                  focus:outline-none
+                  text-gray-dark
+                "
+                @click="selected !== 2 ? selected = 2 : selected = null"
+              >
+                <svg class="w-4 h-4" x-show="selected !== 2">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-down" />
+                </svg>
+                <svg class="w-4 h-4" x-show="selected == 2">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-up" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div x-show="selected == 2" class="px-2 py-4 flex flex-col items-start justify-start">
+            <div class="w-full flex flex-row items-start justify-start">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Description</h4>
+                <p class="text-sm text-left text-primary-dark">
+                  Vestibulum scelerisque purus in nunc vulputate, in laoreet urna euismod. Vivamus
+                  consectetur nisl non ligula lobortis, eget ultricies est rutrum. Cras ultrices dui
+                  dolor, convallis blandit massa tincidunt sit amet.
+                </p>
+              </span>
+            </div>
+            <div class="w-full flex flex-row items-start justify-start mt-6">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Responsible person</h4>
+                <p class="text-sm text-left text-primary font-bold">Niles Peppertrout</p>
+              </span>
+            </div>
+          </div>
         </li>
+        <!-- END list item -->
+        <!-- list item -->
+        <li class="flex align-center flex-col">
+          <div
+            class="
+              cursor-pointer
+              border-b-2 border-dashed border-primary-light-70
+              px-4
+              py-4
+              text-sm
+              flex flex-row
+              justify-start
+              items-center
+              group
+              text-gray-dark
+            "
+            :class="selected === 3 ? 'bg-primary-light-50' : 'bg-transparent  hover:bg-primary-light-10'"
+          >
+            <div class="w-3/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#calendar" />
+              </svg>
+              <span>25.09.2021.</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#clock" />
+              </svg>
+              <span>15:12</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-6 h-6 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#temperature" />
+              </svg>
+              <span>5°C</span>
+            </div>
+            <div class="w-4/12">
+              <span
+                class="
+                  w-6
+                  h-6
+                  mx-auto
+                  bg-red
+                  border-red-light border-2
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  text-white
+                "
+              >
+                <svg class="w-4 h-4">
+                  <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
+                </svg>
+              </span>
+            </div>
+            <div class="w-1/12 ml-auto">
+              <button
+                class="
+                  w-full
+                  h-6
+                  mx-auto
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  group-hover:shadow-lg group-hover:bg-white
+                  focus:outline-none
+                  text-gray-dark
+                "
+                @click="selected !== 3 ? selected = 3 : selected = null"
+              >
+                <svg class="w-4 h-4" x-show="selected !== 3">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-down" />
+                </svg>
+                <svg class="w-4 h-4" x-show="selected == 3">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-up" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div x-show="selected == 3" class="px-2 py-4 flex flex-col items-start justify-start">
+            <div class="w-full flex flex-row items-start justify-start">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Description</h4>
+                <p class="text-sm text-left text-primary-dark">
+                  Vestibulum scelerisque purus in nunc vulputate, in laoreet urna euismod. Vivamus
+                  consectetur nisl non ligula lobortis, eget ultricies est rutrum. Cras ultrices dui
+                  dolor, convallis blandit massa tincidunt sit amet.
+                </p>
+              </span>
+            </div>
+            <div class="w-full flex flex-row items-start justify-start mt-6">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Responsible person</h4>
+                <p class="text-sm text-left text-primary font-bold">Niles Peppertrout</p>
+              </span>
+            </div>
+          </div>
+        </li>
+        <!-- END list item -->
+        <!-- list item -->
+        <li class="flex align-center flex-col">
+          <div
+            class="
+              cursor-pointer
+              border-b-2 border-dashed border-primary-light-70
+              px-4
+              py-4
+              text-sm
+              flex flex-row
+              justify-start
+              items-center
+              group
+              text-gray-dark
+            "
+            :class="selected === 4 ? 'bg-primary-light-50' : 'bg-transparent  hover:bg-primary-light-10'"
+          >
+            <div class="w-3/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#calendar" />
+              </svg>
+              <span>25.09.2021.</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#clock" />
+              </svg>
+              <span>15:12</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-6 h-6 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#temperature" />
+              </svg>
+              <span>5°C</span>
+            </div>
+            <div class="w-4/12">
+              <span
+                class="
+                  w-6
+                  h-6
+                  mx-auto
+                  bg-red
+                  border-red-light border-2
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  text-white
+                "
+              >
+                <svg class="w-4 h-4">
+                  <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
+                </svg>
+              </span>
+            </div>
+            <div class="w-1/12 ml-auto">
+              <button
+                class="
+                  w-full
+                  h-6
+                  mx-auto
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  group-hover:shadow-lg group-hover:bg-white
+                  focus:outline-none
+                  text-gray-dark
+                "
+                @click="selected !== 4 ? selected = 4 : selected = null"
+              >
+                <svg class="w-4 h-4" x-show="selected !== 4">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-down" />
+                </svg>
+                <svg class="w-4 h-4" x-show="selected == 4">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-up" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div x-show="selected == 4" class="px-2 py-4 flex flex-col items-start justify-start">
+            <div class="w-full flex flex-row items-start justify-start">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Description</h4>
+                <p class="text-sm text-left text-primary-dark">
+                  Vestibulum scelerisque purus in nunc vulputate, in laoreet urna euismod. Vivamus
+                  consectetur nisl non ligula lobortis, eget ultricies est rutrum. Cras ultrices dui
+                  dolor, convallis blandit massa tincidunt sit amet.
+                </p>
+              </span>
+            </div>
+            <div class="w-full flex flex-row items-start justify-start mt-6">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Responsible person</h4>
+                <p class="text-sm text-left text-primary font-bold">Niles Peppertrout</p>
+              </span>
+            </div>
+          </div>
+        </li>
+        <!-- END list item -->
+        <!-- list item -->
+        <li class="flex align-center flex-col">
+          <div
+            class="
+              cursor-pointer
+              border-b-2 border-dashed border-primary-light-70
+              px-4
+              py-4
+              text-sm
+              flex flex-row
+              justify-start
+              items-center
+              group
+              text-gray-dark
+            "
+            :class="selected === 5 ? 'bg-primary-light-50' : 'bg-transparent  hover:bg-primary-light-10'"
+          >
+            <div class="w-3/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#calendar" />
+              </svg>
+              <span>25.09.2021.</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#clock" />
+              </svg>
+              <span>15:12</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-6 h-6 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#temperature" />
+              </svg>
+              <span>-25°C</span>
+            </div>
+            <!-- <div class="w-4/12">
+              <span
+                class="
+                  w-6
+                  h-6
+                  mx-auto
+                  bg-red
+                  border-red-light border-2
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  text-white
+                "
+              >
+                <svg class="w-4 h-4">
+                  <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
+                </svg>
+              </span>
+            </div> -->
+            <div class="w-1/12 ml-auto">
+              <button
+                class="
+                  w-full
+                  h-6
+                  mx-auto
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  group-hover:shadow-lg group-hover:bg-white
+                  focus:outline-none
+                  text-gray-dark
+                "
+                @click="selected !== 5 ? selected = 5 : selected = null"
+              >
+                <svg class="w-4 h-4" x-show="selected !== 5">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-down" />
+                </svg>
+                <svg class="w-4 h-4" x-show="selected == 5">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-up" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div x-show="selected == 5" class="px-2 py-4 flex flex-col items-start justify-start">
+            <div class="w-full flex flex-row items-start justify-start">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Description</h4>
+                <p class="text-sm text-left text-primary-dark">
+                  Vestibulum scelerisque purus in nunc vulputate, in laoreet urna euismod. Vivamus
+                  consectetur nisl non ligula lobortis, eget ultricies est rutrum. Cras ultrices dui
+                  dolor, convallis blandit massa tincidunt sit amet.
+                </p>
+              </span>
+            </div>
+            <div class="w-full flex flex-row items-start justify-start mt-6">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Responsible person</h4>
+                <p class="text-sm text-left text-primary font-bold">Niles Peppertrout</p>
+              </span>
+            </div>
+          </div>
+        </li>
+        <!-- END list item -->
+        <!-- list item -->
+        <li class="flex align-center flex-col">
+          <div
+            class="
+              cursor-pointer
+              border-b-2 border-dashed border-primary-light-70
+              px-4
+              py-4
+              text-sm
+              flex flex-row
+              justify-start
+              items-center
+              group
+              text-gray-dark
+            "
+            :class="selected === 6 ? 'bg-primary-light-50' : 'bg-transparent  hover:bg-primary-light-10'"
+          >
+            <div class="w-3/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#calendar" />
+              </svg>
+              <span>25.09.2021.</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#clock" />
+              </svg>
+              <span>15:12</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-6 h-6 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#temperature" />
+              </svg>
+              <span>-25°C</span>
+            </div>
+            <!-- <div class="w-4/12">
+              <span
+                class="
+                  w-6
+                  h-6
+                  mx-auto
+                  bg-red
+                  border-red-light border-2
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  text-white
+                "
+              >
+                <svg class="w-4 h-4">
+                  <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
+                </svg>
+              </span>
+            </div> -->
+            <div class="w-1/12 ml-auto">
+              <button
+                class="
+                  w-full
+                  h-6
+                  mx-auto
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  group-hover:shadow-lg group-hover:bg-white
+                  focus:outline-none
+                  text-gray-dark
+                "
+                @click="selected !== 6 ? selected = 6 : selected = null"
+              >
+                <svg class="w-4 h-4" x-show="selected !== 6">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-down" />
+                </svg>
+                <svg class="w-4 h-4" x-show="selected == 6">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-up" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div x-show="selected == 6" class="px-2 py-4 flex flex-col items-start justify-start">
+            <div class="w-full flex flex-row items-start justify-start">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Description</h4>
+                <p class="text-sm text-left text-primary-dark">
+                  Vestibulum scelerisque purus in nunc vulputate, in laoreet urna euismod. Vivamus
+                  consectetur nisl non ligula lobortis, eget ultricies est rutrum. Cras ultrices dui
+                  dolor, convallis blandit massa tincidunt sit amet.
+                </p>
+              </span>
+            </div>
+            <div class="w-full flex flex-row items-start justify-start mt-6">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Responsible person</h4>
+                <p class="text-sm text-left text-primary font-bold">Niles Peppertrout</p>
+              </span>
+            </div>
+          </div>
+        </li>
+        <!-- END list item -->
+        <!-- list item -->
+        <li class="flex align-center flex-col">
+          <div
+            class="
+              cursor-pointer
+              border-b-2 border-dashed border-primary-light-70
+              px-4
+              py-4
+              text-sm
+              flex flex-row
+              justify-start
+              items-center
+              group
+              text-gray-dark
+            "
+            :class="selected === 7 ? 'bg-primary-light-50' : 'bg-transparent  hover:bg-primary-light-10'"
+          >
+            <div class="w-3/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#calendar" />
+              </svg>
+              <span>25.09.2021.</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#clock" />
+              </svg>
+              <span>15:12</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-6 h-6 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#temperature" />
+              </svg>
+              <span>-25°C</span>
+            </div>
+            <!-- <div class="w-4/12">
+              <span
+                class="
+                  w-6
+                  h-6
+                  mx-auto
+                  bg-red
+                  border-red-light border-2
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  text-white
+                "
+              >
+                <svg class="w-4 h-4">
+                  <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
+                </svg>
+              </span>
+            </div> -->
+            <div class="w-1/12 ml-auto">
+              <button
+                class="
+                  w-full
+                  h-6
+                  mx-auto
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  group-hover:shadow-lg group-hover:bg-white
+                  focus:outline-none
+                  text-gray-dark
+                "
+                @click="selected !== 7 ? selected = 7 : selected = null"
+              >
+                <svg class="w-4 h-4" x-show="selected !== 7">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-down" />
+                </svg>
+                <svg class="w-4 h-4" x-show="selected == 7">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-up" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div x-show="selected == 7" class="px-2 py-4 flex flex-col items-start justify-start">
+            <div class="w-full flex flex-row items-start justify-start">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Description</h4>
+                <p class="text-sm text-left text-primary-dark">
+                  Vestibulum scelerisque purus in nunc vulputate, in laoreet urna euismod. Vivamus
+                  consectetur nisl non ligula lobortis, eget ultricies est rutrum. Cras ultrices dui
+                  dolor, convallis blandit massa tincidunt sit amet.
+                </p>
+              </span>
+            </div>
+            <div class="w-full flex flex-row items-start justify-start mt-6">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Responsible person</h4>
+                <p class="text-sm text-left text-primary font-bold">Niles Peppertrout</p>
+              </span>
+            </div>
+          </div>
+        </li>
+        <!-- END list item -->
+        <!-- list item -->
+        <li class="flex align-center flex-col">
+          <div
+            class="
+              cursor-pointer
+              border-b-2 border-dashed border-primary-light-70
+              px-4
+              py-4
+              text-sm
+              flex flex-row
+              justify-start
+              items-center
+              group
+              text-gray-dark
+            "
+            :class="selected === 8 ? 'bg-primary-light-50' : 'bg-transparent  hover:bg-primary-light-10'"
+          >
+            <div class="w-3/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#calendar" />
+              </svg>
+              <span>25.09.2021.</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#clock" />
+              </svg>
+              <span>15:12</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-6 h-6 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#temperature" />
+              </svg>
+              <span>-25°C</span>
+            </div>
+            <!-- <div class="w-4/12">
+              <span
+                class="
+                  w-6
+                  h-6
+                  mx-auto
+                  bg-red
+                  border-red-light border-2
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  text-white
+                "
+              >
+                <svg class="w-4 h-4">
+                  <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
+                </svg>
+              </span>
+            </div> -->
+            <div class="w-1/12 ml-auto">
+              <button
+                class="
+                  w-full
+                  h-6
+                  mx-auto
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  group-hover:shadow-lg group-hover:bg-white
+                  focus:outline-none
+                  text-gray-dark
+                "
+                @click="selected !== 8 ? selected = 8 : selected = null"
+              >
+                <svg class="w-4 h-4" x-show="selected !== 8">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-down" />
+                </svg>
+                <svg class="w-4 h-4" x-show="selected == 8">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-up" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div x-show="selected == 8" class="px-2 py-4 flex flex-col items-start justify-start">
+            <div class="w-full flex flex-row items-start justify-start">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Description</h4>
+                <p class="text-sm text-left text-primary-dark">
+                  Vestibulum scelerisque purus in nunc vulputate, in laoreet urna euismod. Vivamus
+                  consectetur nisl non ligula lobortis, eget ultricies est rutrum. Cras ultrices dui
+                  dolor, convallis blandit massa tincidunt sit amet.
+                </p>
+              </span>
+            </div>
+            <div class="w-full flex flex-row items-start justify-start mt-6">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Responsible person</h4>
+                <p class="text-sm text-left text-primary font-bold">Niles Peppertrout</p>
+              </span>
+            </div>
+          </div>
+        </li>
+        <!-- END list item -->
+        <!-- list item -->
+        <li class="flex align-center flex-col">
+          <div
+            class="
+              cursor-pointer
+              border-b-2 border-dashed border-primary-light-70
+              px-4
+              py-4
+              text-sm
+              flex flex-row
+              justify-start
+              items-center
+              group
+              text-gray-dark
+            "
+            :class="selected === 9 ? 'bg-primary-light-50' : 'bg-transparent  hover:bg-primary-light-10'"
+          >
+            <div class="w-3/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#calendar" />
+              </svg>
+              <span>25.09.2021.</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#clock" />
+              </svg>
+              <span>15:12</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-6 h-6 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#temperature" />
+              </svg>
+              <span>-25°C</span>
+            </div>
+            <!-- <div class="w-4/12">
+              <span
+                class="
+                  w-6
+                  h-6
+                  mx-auto
+                  bg-red
+                  border-red-light border-2
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  text-white
+                "
+              >
+                <svg class="w-4 h-4">
+                  <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
+                </svg>
+              </span>
+            </div> -->
+            <div class="w-1/12 ml-auto">
+              <button
+                class="
+                  w-full
+                  h-6
+                  mx-auto
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  group-hover:shadow-lg group-hover:bg-white
+                  focus:outline-none
+                  text-gray-dark
+                "
+                @click="selected !== 9 ? selected = 9 : selected = null"
+              >
+                <svg class="w-4 h-4" x-show="selected !== 9">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-down" />
+                </svg>
+                <svg class="w-4 h-4" x-show="selected == 9">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-up" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div x-show="selected == 9" class="px-2 py-4 flex flex-col items-start justify-start">
+            <div class="w-full flex flex-row items-start justify-start">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Description</h4>
+                <p class="text-sm text-left text-primary-dark">
+                  Vestibulum scelerisque purus in nunc vulputate, in laoreet urna euismod. Vivamus
+                  consectetur nisl non ligula lobortis, eget ultricies est rutrum. Cras ultrices dui
+                  dolor, convallis blandit massa tincidunt sit amet.
+                </p>
+              </span>
+            </div>
+            <div class="w-full flex flex-row items-start justify-start mt-6">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Responsible person</h4>
+                <p class="text-sm text-left text-primary font-bold">Niles Peppertrout</p>
+              </span>
+            </div>
+          </div>
+        </li>
+        <!-- END list item -->
+        <!-- list item -->
+        <li class="flex align-center flex-col">
+          <div
+            class="
+              cursor-pointer
+              border-b-2 border-dashed border-primary-light-70
+              px-4
+              py-4
+              text-sm
+              flex flex-row
+              justify-start
+              items-center
+              group
+              text-gray-dark
+            "
+            :class="selected === 10 ? 'bg-primary-light-50' : 'bg-transparent  hover:bg-primary-light-10'"
+          >
+            <div class="w-3/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#calendar" />
+              </svg>
+              <span>25.09.2021.</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#clock" />
+              </svg>
+              <span>15:12</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-6 h-6 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#temperature" />
+              </svg>
+              <span>-25°C</span>
+            </div>
+            <!-- <div class="w-4/12">
+              <span
+                class="
+                  w-6
+                  h-6
+                  mx-auto
+                  bg-red
+                  border-red-light border-2
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  text-white
+                "
+              >
+                <svg class="w-4 h-4">
+                  <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
+                </svg>
+              </span>
+            </div> -->
+            <div class="w-1/12 ml-auto">
+              <button
+                class="
+                  w-full
+                  h-6
+                  mx-auto
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  group-hover:shadow-lg group-hover:bg-white
+                  focus:outline-none
+                  text-gray-dark
+                "
+                @click="selected !== 10 ? selected = 10 : selected = null"
+              >
+                <svg class="w-4 h-4" x-show="selected !== 10">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-down" />
+                </svg>
+                <svg class="w-4 h-4" x-show="selected == 10">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-up" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div x-show="selected == 10" class="px-2 py-4 flex flex-col items-start justify-start">
+            <div class="w-full flex flex-row items-start justify-start">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Description</h4>
+                <p class="text-sm text-left text-primary-dark">
+                  Vestibulum scelerisque purus in nunc vulputate, in laoreet urna euismod. Vivamus
+                  consectetur nisl non ligula lobortis, eget ultricies est rutrum. Cras ultrices dui
+                  dolor, convallis blandit massa tincidunt sit amet.
+                </p>
+              </span>
+            </div>
+            <div class="w-full flex flex-row items-start justify-start mt-6">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Responsible person</h4>
+                <p class="text-sm text-left text-primary font-bold">Niles Peppertrout</p>
+              </span>
+            </div>
+          </div>
+        </li>
+        <!-- END list item -->
+        <!-- list item -->
+        <li class="flex align-center flex-col">
+          <div
+            class="
+              cursor-pointer
+              border-b-2 border-dashed border-primary-light-70
+              px-4
+              py-4
+              text-sm
+              flex flex-row
+              justify-start
+              items-center
+              group
+              text-gray-dark
+            "
+            :class="selected === 11 ? 'bg-primary-light-50' : 'bg-transparent  hover:bg-primary-light-10'"
+          >
+            <div class="w-3/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#calendar" />
+              </svg>
+              <span>25.09.2021.</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#clock" />
+              </svg>
+              <span>15:12</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-6 h-6 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#temperature" />
+              </svg>
+              <span>-25°C</span>
+            </div>
+            <!-- <div class="w-4/12">
+              <span
+                class="
+                  w-6
+                  h-6
+                  mx-auto
+                  bg-red
+                  border-red-light border-2
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  text-white
+                "
+              >
+                <svg class="w-4 h-4">
+                  <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
+                </svg>
+              </span>
+            </div> -->
+            <div class="w-1/12 ml-auto">
+              <button
+                class="
+                  w-full
+                  h-6
+                  mx-auto
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  group-hover:shadow-lg group-hover:bg-white
+                  focus:outline-none
+                  text-gray-dark
+                "
+                @click="selected !== 11 ? selected = 11 : selected = null"
+              >
+                <svg class="w-4 h-4" x-show="selected !== 11">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-down" />
+                </svg>
+                <svg class="w-4 h-4" x-show="selected == 11">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-up" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div x-show="selected == 11" class="px-2 py-4 flex flex-col items-start justify-start">
+            <div class="w-full flex flex-row items-start justify-start">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Description</h4>
+                <p class="text-sm text-left text-primary-dark">
+                  Vestibulum scelerisque purus in nunc vulputate, in laoreet urna euismod. Vivamus
+                  consectetur nisl non ligula lobortis, eget ultricies est rutrum. Cras ultrices dui
+                  dolor, convallis blandit massa tincidunt sit amet.
+                </p>
+              </span>
+            </div>
+            <div class="w-full flex flex-row items-start justify-start mt-6">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Responsible person</h4>
+                <p class="text-sm text-left text-primary font-bold">Niles Peppertrout</p>
+              </span>
+            </div>
+          </div>
+        </li>
+        <!-- END list item -->
+        <!-- list item -->
+        <li class="flex align-center flex-col">
+          <div
+            class="
+              cursor-pointer
+              border-b-2 border-dashed border-primary-light-70
+              px-4
+              py-4
+              text-sm
+              flex flex-row
+              justify-start
+              items-center
+              group
+              text-gray-dark
+            "
+            :class="selected === 12 ? 'bg-primary-light-50' : 'bg-transparent  hover:bg-primary-light-10'"
+          >
+            <div class="w-3/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#calendar" />
+              </svg>
+              <span>25.09.2021.</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#clock" />
+              </svg>
+              <span>15:12</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-6 h-6 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#temperature" />
+              </svg>
+              <span>-25°C</span>
+            </div>
+            <!-- <div class="w-4/12">
+              <span
+                class="
+                  w-6
+                  h-6
+                  mx-auto
+                  bg-red
+                  border-red-light border-2
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  text-white
+                "
+              >
+                <svg class="w-4 h-4">
+                  <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
+                </svg>
+              </span>
+            </div> -->
+            <div class="w-1/12 ml-auto">
+              <button
+                class="
+                  w-full
+                  h-6
+                  mx-auto
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  group-hover:shadow-lg group-hover:bg-white
+                  focus:outline-none
+                  text-gray-dark
+                "
+                @click="selected !== 12 ? selected = 12 : selected = null"
+              >
+                <svg class="w-4 h-4" x-show="selected !== 12">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-down" />
+                </svg>
+                <svg class="w-4 h-4" x-show="selected == 12">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-up" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div x-show="selected == 12" class="px-2 py-4 flex flex-col items-start justify-start">
+            <div class="w-full flex flex-row items-start justify-start">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Description</h4>
+                <p class="text-sm text-left text-primary-dark">
+                  Vestibulum scelerisque purus in nunc vulputate, in laoreet urna euismod. Vivamus
+                  consectetur nisl non ligula lobortis, eget ultricies est rutrum. Cras ultrices dui
+                  dolor, convallis blandit massa tincidunt sit amet.
+                </p>
+              </span>
+            </div>
+            <div class="w-full flex flex-row items-start justify-start mt-6">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Responsible person</h4>
+                <p class="text-sm text-left text-primary font-bold">Niles Peppertrout</p>
+              </span>
+            </div>
+          </div>
+        </li>
+        <!-- END list item -->
+        <!-- list item -->
+        <li class="flex align-center flex-col">
+          <div
+            class="
+              cursor-pointer
+              border-b-2 border-dashed border-primary-light-70
+              px-4
+              py-4
+              text-sm
+              flex flex-row
+              justify-start
+              items-center
+              group
+              text-gray-dark
+            "
+            :class="selected === 13 ? 'bg-primary-light-50' : 'bg-transparent  hover:bg-primary-light-10'"
+          >
+            <div class="w-3/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#calendar" />
+              </svg>
+              <span>25.09.2021.</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-4 h-4 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#clock" />
+              </svg>
+              <span>15:12</span>
+            </div>
+            <div class="w-2/12 flex flex-row items-center justify-start">
+              <svg class="w-6 h-6 mr-2 opacity-30">
+                <use xlink:href="../../../images/sprite_admin.svg#temperature" />
+              </svg>
+              <span>-25°C</span>
+            </div>
+            <!-- <div class="w-4/12">
+              <span
+                class="
+                  w-6
+                  h-6
+                  mx-auto
+                  bg-red
+                  border-red-light border-2
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  text-white
+                "
+              >
+                <svg class="w-4 h-4">
+                  <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
+                </svg>
+              </span>
+            </div> -->
+            <div class="w-1/12 ml-auto">
+              <button
+                class="
+                  w-full
+                  h-6
+                  mx-auto
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  group-hover:shadow-lg group-hover:bg-white
+                  focus:outline-none
+                  text-gray-dark
+                "
+                @click="selected !== 13 ? selected = 13 : selected = null"
+              >
+                <svg class="w-4 h-4" x-show="selected !== 13">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-down" />
+                </svg>
+                <svg class="w-4 h-4" x-show="selected == 13">
+                  <use xlink:href="../../../images/sprite_admin.svg#chevron-up" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div x-show="selected == 13" class="px-2 py-4 flex flex-col items-start justify-start">
+            <div class="w-full flex flex-row items-start justify-start">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Description</h4>
+                <p class="text-sm text-left text-primary-dark">
+                  Vestibulum scelerisque purus in nunc vulputate, in laoreet urna euismod. Vivamus
+                  consectetur nisl non ligula lobortis, eget ultricies est rutrum. Cras ultrices dui
+                  dolor, convallis blandit massa tincidunt sit amet.
+                </p>
+              </span>
+            </div>
+            <div class="w-full flex flex-row items-start justify-start mt-6">
+              <span class="w-1/12">
+                <svg class="w-8 h-8 text-primary-light">
+                  <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
+                </svg>
+              </span>
+              <span class="w-11/12">
+                <h4 class="text-base text-gray-dark py-1 font-semibold">Responsible person</h4>
+                <p class="text-sm text-left text-primary font-bold">Niles Peppertrout</p>
+              </span>
+            </div>
+          </div>
+        </li>
+        <!-- END list item -->
       </ul>
       <!-- END accordion temperature details -->
     </div>

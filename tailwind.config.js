@@ -53,6 +53,7 @@ module.exports = {
       pink: colors.pink,
       red: {
         light: '#e97b86',
+        50: tinycolor('#dc3545').setAlpha(0.5).toRgbString(),
         DEFAULT: '#dc3545',
         dark: '#c82333',
       },
