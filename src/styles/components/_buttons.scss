@@ -1,5 +1,5 @@
 .btn {
-  @apply cursor-pointer flex flex-row min-w-32 max-h-10 h-10 relative justify-start items-stretch overflow-hidden transition-all duration-150 ease-in-out border;
+  @apply cursor-pointer flex flex-row min-w-32 max-h-10 h-10 relative justify-start items-stretch transition-all duration-150 ease-in-out border;
 
   span.svg {
     @apply py-2 px-4 text-center items-center justify-center inline-flex ease-out duration-300 translate-x-0;
@@ -24,6 +24,22 @@
 
   &.btn-thin {
     @apply h-8 max-h-8;
+  }
+  &.btn-box {
+    @apply w-8 min-w-8 h-8 max-h-8 flex justify-center;
+
+    span.svg {
+      @apply py-2;
+    }
+    span.label {
+      @apply hidden;
+    }
+
+    &:hover {
+      span.svg {
+        @apply translate-x-0  -translate-y-1;
+      }
+    }
   }
 }
 

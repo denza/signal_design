@@ -64,7 +64,149 @@ module.exports = {
         removeAttributeQuotes: true,
       },
     }),
-
+    new HtmlWebpackPlugin({
+      title: 'List',
+      favicon: paths.src + '/images/favicon/favicon.ico',
+      template: paths.src + '/views/admin/list.html', // template file
+      filename: 'list/index.html', // output file
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Create new',
+      favicon: paths.src + '/images/favicon/favicon.ico',
+      template: paths.src + '/views/admin/new.html', // template file
+      filename: 'new/index.html', // output file
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Update',
+      favicon: paths.src + '/images/favicon/favicon.ico',
+      template: paths.src + '/views/admin/update.html', // template file
+      filename: 'update/index.html', // output file
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Login',
+      favicon: paths.src + '/images/favicon/favicon.ico',
+      template: paths.src + '/views/admin/login.html', // template file
+      filename: 'login/index.html', // output file
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Forgot password',
+      favicon: paths.src + '/images/favicon/favicon.ico',
+      template: paths.src + '/views/admin/forgot-password.html', // template file
+      filename: 'forgot-password/index.html', // output file
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Dashboard empty',
+      favicon: paths.src + '/images/favicon/favicon.ico',
+      template: paths.src + '/views/admin/dashboard-empty.html', // template file
+      filename: 'states/dashboard-empty/index.html', // output file
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      title: 'List empty',
+      favicon: paths.src + '/images/favicon/favicon.ico',
+      template: paths.src + '/views/admin/list-empty.html', // template file
+      filename: 'states/list-empty/index.html', // output file
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      title: 'User create',
+      favicon: paths.src + '/images/favicon/favicon.ico',
+      template: paths.src + '/views/admin/user-add.html', // template file
+      filename: 'user-add/index.html', // output file
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      title: 'User update',
+      favicon: paths.src + '/images/favicon/favicon.ico',
+      template: paths.src + '/views/admin/user-update.html', // template file
+      filename: 'user-update/index.html', // output file
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      title: 'User password update',
+      favicon: paths.src + '/images/favicon/favicon.ico',
+      template: paths.src + '/views/admin/user-password-update.html', // template file
+      filename: 'user-password-update/index.html', // output file
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Form elements',
+      favicon: paths.src + '/images/favicon/favicon.ico',
+      template: paths.src + '/views/admin/forms.html', // template file
+      filename: 'ui/forms/index.html', // output file
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Other elements',
+      favicon: paths.src + '/images/favicon/favicon.ico',
+      template: paths.src + '/views/admin/elements.html', // template file
+      filename: 'ui/elements/index.html', // output file
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Modals and notify',
+      favicon: paths.src + '/images/favicon/favicon.ico',
+      template: paths.src + '/views/admin/modals.html', // template file
+      filename: 'ui/modals/index.html', // output file
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
     // new HtmlWebpackPartialsPlugin({
     //   path: path.join(__dirname, '../src/views/htmlPartials/body/footer.html'),
     //   location: 'footer',

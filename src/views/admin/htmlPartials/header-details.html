@@ -44,27 +44,24 @@
   <!-- END header title -->
 
   <!-- header action -->
-  <div class="w-1/2 h-full flex flex-row items-center justify-end py-3">
-    <div class="pl-2">
-      <a @click="history.back()" class="btn btn-gray">
-        <span class="svg">
-          <svg class="w-6 h-6">
-            <use xlink:href="../../../images/sprite_admin.svg#arrow-left-classic" />
-          </svg>
-        </span>
-        <span class="label">Back</span>
-      </a>
-    </div>
-    <div class="pl-2">
-      <a href="#" class="btn btn-gray">
-        <span class="svg">
-          <svg class="w-6 h-6">
-            <use xlink:href="../../../images/sprite_admin.svg#pencil" />
-          </svg>
-        </span>
-        <span class="label">Update</span>
-      </a>
-    </div>
+  <div class="w-1/2 h-full flex flex-row items-center justify-end py-3 space-x-2">
+    <a @click="history.back()" class="btn btn-gray">
+      <span class="svg">
+        <svg class="w-6 h-6">
+          <use xlink:href="../../../images/sprite_admin.svg#arrow-left-classic" />
+        </svg>
+      </span>
+      <span class="label">Back</span>
+    </a>
+
+    <a href="#" class="btn btn-gray">
+      <span class="svg">
+        <svg class="w-6 h-6">
+          <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+        </svg>
+      </span>
+      <span class="label">Update</span>
+    </a>
   </div>
 
   <!-- END header action -->

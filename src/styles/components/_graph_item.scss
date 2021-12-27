@@ -1,6 +1,6 @@
 .graph_item {
-  @apply flex flex-col items-start justify-start bg-gray-1 border-b border-r border-primary-light transition-all duration-100 ease-in-out;
-  min-height: 45vh;
+  @apply flex h-auto flex-col items-start justify-start bg-gray-1 border-b border-r border-primary-light transition-all duration-100 ease-in-out;
+  // min-height: 45vh;
   &:hover {
     @apply drop-shadow-2xl bg-white;
   }

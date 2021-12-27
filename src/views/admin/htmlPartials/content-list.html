@@ -1,0 +1,646 @@
+<main
+  class="
+    relative
+    flex-1 flex
+    h-full
+    flex-col
+    p-0
+    w-full
+    overflow-x-hidden overflow-y-scroll
+    bg-gray-1
+  "
+>
+  <!-- list search toolbar -->
+  <div
+    class="
+      w-full
+      min-h-12
+      flex-col flex
+      px-6
+      py-3
+      border-b border-primary-light
+      bg-primary-light-15
+    "
+    x-show="filterListOpened"
+  >
+    <span class="text-sm uppercase font-semibold mb-3">Search</span>
+
+    <div class="w-full flex flex-row items-start justify-between">
+      <div class="flex flex-col">
+        <label class="font-semibold leading-none text-gray-dark text-xs">Name</label>
+        <input
+          type="text"
+          placeholder="Enter Name"
+          class="
+            leading-none
+            text-gray-dark text-xs
+            px-2
+            py-1
+            focus:outline-none focus:border-blue-700
+            mt-1
+            bg-gray-2
+            border border-primary-light
+          "
+        />
+      </div>
+      <div class="flex flex-col">
+        <label class="font-semibold leading-none text-gray-dark text-xs">Name</label>
+        <input
+          type="text"
+          placeholder="Enter Name"
+          class="
+            leading-none
+            text-gray-dark text-xs
+            px-2
+            py-1
+            focus:outline-none focus:border-blue-700
+            mt-1
+            bg-gray-2
+            border border-primary-light
+          "
+        />
+      </div>
+      <div class="flex flex-col">
+        <label class="font-semibold leading-none text-gray-dark text-xs">Name</label>
+        <input
+          type="text"
+          placeholder="Enter Name"
+          class="
+            leading-none
+            text-gray-dark text-xs
+            px-2
+            py-1
+            focus:outline-none focus:border-blue-700
+            mt-1
+            bg-gray-2
+            border border-primary-light
+          "
+        />
+      </div>
+      <div class="flex flex-col">
+        <label class="font-semibold leading-none text-gray-dark text-xs">Name</label>
+        <input
+          type="text"
+          placeholder="Enter Name"
+          class="
+            leading-none
+            text-gray-dark text-xs
+            px-2
+            py-1
+            focus:outline-none focus:border-blue-700
+            mt-1
+            bg-gray-2
+            border border-primary-light
+          "
+        />
+      </div>
+      <div class="flex flex-col">
+        <label class="font-semibold leading-none text-gray-dark text-xs">Name</label>
+        <input
+          type="text"
+          placeholder="Enter Name"
+          class="
+            leading-none
+            text-gray-dark text-xs
+            px-2
+            py-1
+            focus:outline-none focus:border-blue-700
+            mt-1
+            bg-gray-2
+            border border-primary-light
+          "
+        />
+      </div>
+      <div class="flex flex-col">
+        <label class="font-semibold leading-none text-gray-dark text-xs">Name</label>
+        <input
+          type="text"
+          placeholder="Enter Name"
+          class="
+            leading-none
+            text-gray-dark text-xs
+            px-2
+            py-1
+            focus:outline-none focus:border-blue-700
+            mt-1
+            bg-gray-2
+            border border-primary-light
+          "
+        />
+      </div>
+    </div>
+
+    <div class="mt-3 flex flex-row space-x-2 mr-auto">
+      <button class="btn btn-primary">
+        <span class="svg">
+          <svg class="w-6 h-6">
+            <use xlink:href="../../../images/sprite_admin.svg#search-circle" />
+          </svg>
+        </span>
+        <span class="label">Search</span>
+      </button>
+      <button class="btn btn-outline">
+        <span class="svg">
+          <svg class="w-6 h-6">
+            <use xlink:href="../../../images/sprite_admin.svg#reset" />
+          </svg>
+        </span>
+        <span class="label">Reset</span>
+      </button>
+    </div>
+  </div>
+  <!-- END list search toolbar -->
+  <div class="flex flex-col h-fulls pl-2 pr-0 py-4">
+    <table class="table-fixed min-w-full divide-y divide-primary-light">
+      <thead class="opacity-30">
+        <tr>
+          <th scope="col" class="p-4 text-left text-xs font-medium text-primary-dark uppercase">
+            Object name
+          </th>
+          <th scope="col" class="p-4 text-left text-xs font-medium text-primary-dark uppercase">
+            Object location
+          </th>
+          <th scope="col" class="p-4 text-left text-xs font-medium text-primary-dark uppercase">
+            Current
+          </th>
+          <th scope="col" class="p-4 text-left text-xs font-medium text-primary-dark uppercase">
+            Status
+          </th>
+          <th scope="col" class="p-4"></th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-primary-light">
+        <tr class="hover:bg-primary-light-10 whitespace-nowrap text-xs text-primary-dark">
+          <td class="p-4 font-semibold">Fridge blue</td>
+          <td class="p-4">Building C</td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-primary mr-2"></div>
+              -34,5°C
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
+              Active
+            </div>
+          </td>
+          <td class="p-4 flex flex-row justify-end space-x-2">
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+                </svg>
+              </span>
+              <span class="tooltip">Update</span>
+            </button>
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#trash" />
+                </svg>
+              </span>
+              <span class="tooltip">Remove</span>
+            </button>
+          </td>
+        </tr>
+        <tr class="hover:bg-primary-light-10 whitespace-nowrap text-xs text-primary-dark">
+          <td class="p-4 font-semibold">Pharrell</td>
+          <td class="p-4">Building C</td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-red mr-2"></div>
+              4,5°C
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
+              Active
+            </div>
+          </td>
+          <td class="p-4 flex flex-row justify-end space-x-2">
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+                </svg>
+              </span>
+              <span class="tooltip">Update</span>
+            </button>
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#trash" />
+                </svg>
+              </span>
+              <span class="tooltip">Remove</span>
+            </button>
+          </td>
+        </tr>
+        <tr class="hover:bg-primary-light-10 whitespace-nowrap text-xs text-primary-dark">
+          <td class="p-4 font-semibold">Brett</td>
+          <td class="p-4">Building C</td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-gray-dark mr-2"></div>
+              -
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-gray-dark mr-2"></div>
+              Inactive
+            </div>
+          </td>
+          <td class="p-4 flex flex-row justify-end space-x-2">
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+                </svg>
+              </span>
+              <span class="tooltip">Update</span>
+            </button>
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#trash" />
+                </svg>
+              </span>
+              <span class="tooltip">Remove</span>
+            </button>
+          </td>
+        </tr>
+        <tr class="hover:bg-primary-light-10 whitespace-nowrap text-xs text-primary-dark">
+          <td class="p-4 font-semibold">Flowers</td>
+          <td class="p-4">Building C</td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-primary mr-2"></div>
+              -34,5°C
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
+              Active
+            </div>
+          </td>
+          <td class="p-4 flex flex-row justify-end space-x-2">
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+                </svg>
+              </span>
+              <span class="tooltip">Update</span>
+            </button>
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#trash" />
+                </svg>
+              </span>
+              <span class="tooltip">Remove</span>
+            </button>
+          </td>
+        </tr>
+        <tr class="hover:bg-primary-light-10 whitespace-nowrap text-xs text-primary-dark">
+          <td class="p-4 font-semibold">Cantrell</td>
+          <td class="p-4">Building C</td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-red mr-2"></div>
+              2,5°C
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
+              Active
+            </div>
+          </td>
+          <td class="p-4 flex flex-row justify-end space-x-2">
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+                </svg>
+              </span>
+              <span class="tooltip">Update</span>
+            </button>
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#trash" />
+                </svg>
+              </span>
+              <span class="tooltip">Remove</span>
+            </button>
+          </td>
+        </tr>
+        <tr class="hover:bg-primary-light-10 whitespace-nowrap text-xs text-primary-dark">
+          <td class="p-4 font-semibold">Morrison</td>
+          <td class="p-4">Building A</td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-primary mr-2"></div>
+              -34,5°C
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
+              Active
+            </div>
+          </td>
+          <td class="p-4 flex flex-row justify-end space-x-2">
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+                </svg>
+              </span>
+              <span class="tooltip">Update</span>
+            </button>
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#trash" />
+                </svg>
+              </span>
+              <span class="tooltip">Remove</span>
+            </button>
+          </td>
+        </tr>
+        <tr class="hover:bg-primary-light-10 whitespace-nowrap text-xs text-primary-dark">
+          <td class="p-4 font-semibold">Hooper</td>
+          <td class="p-4">Building C</td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-primary mr-2"></div>
+              -34,5°C
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
+              Active
+            </div>
+          </td>
+          <td class="p-4 flex flex-row justify-end space-x-2">
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+                </svg>
+              </span>
+              <span class="tooltip">Update</span>
+            </button>
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#trash" />
+                </svg>
+              </span>
+              <span class="tooltip">Remove</span>
+            </button>
+          </td>
+        </tr>
+        <tr class="hover:bg-primary-light-10 whitespace-nowrap text-xs text-primary-dark">
+          <td class="p-4 font-semibold">Gibbons</td>
+          <td class="p-4">Building B</td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-primary mr-2"></div>
+              -34,5°C
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
+              Active
+            </div>
+          </td>
+          <td class="p-4 flex flex-row justify-end space-x-2">
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+                </svg>
+              </span>
+              <span class="tooltip">Update</span>
+            </button>
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#trash" />
+                </svg>
+              </span>
+              <span class="tooltip">Remove</span>
+            </button>
+          </td>
+        </tr>
+        <tr class="hover:bg-primary-light-10 whitespace-nowrap text-xs text-primary-dark">
+          <td class="p-4 font-semibold">Holmes</td>
+          <td class="p-4">Building A</td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-primary mr-2"></div>
+              -34,5°C
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
+              Active
+            </div>
+          </td>
+          <td class="p-4 flex flex-row justify-end space-x-2">
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+                </svg>
+              </span>
+              <span class="tooltip">Update</span>
+            </button>
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#trash" />
+                </svg>
+              </span>
+              <span class="tooltip">Remove</span>
+            </button>
+          </td>
+        </tr>
+        <tr class="hover:bg-primary-light-10 whitespace-nowrap text-xs text-primary-dark">
+          <td class="p-4 font-semibold">River</td>
+          <td class="p-4">Building C</td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-primary mr-2"></div>
+              -34,5°C
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
+              Active
+            </div>
+          </td>
+          <td class="p-4 flex flex-row justify-end space-x-2">
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+                </svg>
+              </span>
+              <span class="tooltip">Update</span>
+            </button>
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#trash" />
+                </svg>
+              </span>
+              <span class="tooltip">Remove</span>
+            </button>
+          </td>
+        </tr>
+        <tr class="hover:bg-primary-light-10 whitespace-nowrap text-xs text-primary-dark">
+          <td class="p-4 font-semibold">Dafydd</td>
+          <td class="p-4">Building A</td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-primary mr-2"></div>
+              -34,5°C
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
+              Active
+            </div>
+          </td>
+          <td class="p-4 flex flex-row justify-end space-x-2">
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+                </svg>
+              </span>
+              <span class="tooltip">Update</span>
+            </button>
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#trash" />
+                </svg>
+              </span>
+              <span class="tooltip">Remove</span>
+            </button>
+          </td>
+        </tr>
+        <tr class="hover:bg-primary-light-10 whitespace-nowrap text-xs text-primary-dark">
+          <td class="p-4 font-semibold">Buckner</td>
+          <td class="p-4">Building B</td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-primary mr-2"></div>
+              -34,5°C
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
+              Active
+            </div>
+          </td>
+          <td class="p-4 flex flex-row justify-end space-x-2">
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+                </svg>
+              </span>
+              <span class="tooltip">Update</span>
+            </button>
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#trash" />
+                </svg>
+              </span>
+              <span class="tooltip">Remove</span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- list footer -->
+  <div
+    class="
+      bg-gray-1
+      sticky
+      sm:flex
+      items-center
+      w-full
+      sm:justify-between
+      bottom-0
+      right-0
+      border-t border-primary-light
+      px-4
+      py-3
+    "
+  >
+    <div class="flex items-center mb-4 sm:mb-0">
+      <span class="text-xs font-normal text-gray-light"
+        >Showing <span class="text-gray-900 font-semibold">1-10</span> of
+        <span class="text-gray-900 font-semibold">56</span></span
+      >
+    </div>
+    <div class="flex items-center space-x-3">
+      <a
+        href="#"
+        class="
+          text-gray-500
+          hover:text-gray-900
+          cursor-pointer
+          p-1
+          hover:bg-gray-100
+          rounded
+          inline-flex
+          justify-center
+        "
+      >
+        <svg class="w-6 h-6">
+          <use xlink:href="../../../images/sprite_admin.svg#chevron-left" />
+        </svg>
+      </a>
+      <a
+        href="#"
+        class="
+          text-gray-500
+          hover:text-gray-900
+          cursor-pointer
+          p-1
+          hover:bg-gray-100
+          rounded
+          inline-flex
+          justify-center
+          mr-2
+        "
+      >
+        <svg class="w-6 h-6">
+          <use xlink:href="../../../images/sprite_admin.svg#chevron-right" />
+        </svg>
+      </a>
+    </div>
+  </div>
+  <!-- END list footer -->
+</main>

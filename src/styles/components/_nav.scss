@@ -1,5 +1,5 @@
 li {
-  @apply border-b border-primary-light-70;
+  // @apply border-b border-primary-light-70;
 
   .nav_item {
     @apply relative cursor-pointer flex flex-col items-center w-full  pb-2 transition duration-500 ease-in-out text-gray-light;
@@ -13,14 +13,14 @@ li {
     }
 
     .label {
-      @apply w-full text-xss text-center;
+      @apply w-full text-xss text-center uppercase;
     }
 
     .line {
-      @apply absolute top-0 right-0 w-1.5 h-full flex  flex-col py-4 items-center justify-center -mr-1;
+      @apply absolute top-0 ml-px left-0 w-1.5 h-full flex  flex-col py-4 items-center justify-center;
 
       &:after {
-        @apply w-full flex-1 bg-transparent transition-all duration-100 ease-in-out rounded-full;
+        @apply w-full flex-1 bg-transparent transition-all duration-100 ease-in-out rounded-r-full;
         content: '';
       }
     }
@@ -41,7 +41,7 @@ li {
 
       .line {
         &:after {
-          @apply bg-primary;
+          @apply bg-primary-light;
         }
       }
     }
