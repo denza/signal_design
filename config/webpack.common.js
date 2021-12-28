@@ -39,7 +39,6 @@ module.exports = {
     }),
 
     // Generates an HTML file from a template
-    // Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
 
     new HtmlWebpackPlugin({
       title: 'Dashboard',
@@ -135,39 +134,6 @@ module.exports = {
       favicon: paths.src + '/images/favicon/favicon.ico',
       template: paths.src + '/views/admin/list-empty.html', // template file
       filename: 'states/list-empty/index.html', // output file
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: true,
-      },
-    }),
-    new HtmlWebpackPlugin({
-      title: 'User create',
-      favicon: paths.src + '/images/favicon/favicon.ico',
-      template: paths.src + '/views/admin/user-add.html', // template file
-      filename: 'user-add/index.html', // output file
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: true,
-      },
-    }),
-    new HtmlWebpackPlugin({
-      title: 'User update',
-      favicon: paths.src + '/images/favicon/favicon.ico',
-      template: paths.src + '/views/admin/user-update.html', // template file
-      filename: 'user-update/index.html', // output file
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: true,
-      },
-    }),
-    new HtmlWebpackPlugin({
-      title: 'User password update',
-      favicon: paths.src + '/images/favicon/favicon.ico',
-      template: paths.src + '/views/admin/user-password-update.html', // template file
-      filename: 'user-password-update/index.html', // output file
       minify: {
         removeComments: true,
         collapseWhitespace: true,
