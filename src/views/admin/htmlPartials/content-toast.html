@@ -10,38 +10,44 @@
     bg-gray-1
   "
 >
+  <!-- tosteri -->
+  <!-- <span class="" x-toast> This is the first alert </span>
+  <div x-toast="{ duration : 1000 }">This is the alert</div>
+  <div x-toast>This is a toast with no args</div> -->
+  <!-- END tosteri -->
+
   <div class="grid grid-cols-2 gap-6 px-6 py-6">
-    <a @click="history.back()" class="btn btn-primary">
+    <button class="btn btn-primary" id="new_post" data-toast="OVA PORUKA RADI">
       <span class="svg">
         <svg class="w-6 h-6">
           <use xlink:href="../../../images/sprite_admin.svg#info" />
         </svg>
       </span>
       <span class="label">Info Toast</span>
-    </a>
-    <a @click="history.back()" class="btn btn-success">
+    </button>
+    <button class="btn btn-success">
       <span class="svg">
         <svg class="w-6 h-6">
           <use xlink:href="../../../images/sprite_admin.svg#checkbox-solid" />
         </svg>
       </span>
       <span class="label">Success Toast</span>
-    </a>
-    <a @click="history.back()" class="btn btn-warning">
+    </button>
+    <button class="btn btn-warning">
       <span class="svg">
         <svg class="w-6 h-6">
           <use xlink:href="../../../images/sprite_admin.svg#issue-attention" />
         </svg>
       </span>
       <span class="label">Warning Toast</span>
-    </a>
-    <a @click="history.back()" class="btn btn-error">
+    </button>
+    <button class="btn btn-error">
       <span class="svg">
         <svg class="w-6 h-6">
           <use xlink:href="../../../images/sprite_admin.svg#exclamation-circle" />
         </svg>
       </span>
       <span class="label">Error Toast</span>
-    </a>
+    </button>
   </div>
 </main>
