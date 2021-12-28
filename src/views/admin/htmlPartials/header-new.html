@@ -31,7 +31,7 @@
                 <svg class="w-2 h-2 text-gray-light">
                   <use xlink:href="../../../images/sprite_admin.svg#chevron-right" />
                 </svg>
-                <a href="#" class="text-gray-light hover:text-primary ml-1 md:ml-2">Parent</a>
+                <a href="#" class="text-gray-light hover:text-primary ml-1 md:ml-2">List</a>
               </div>
             </li>
             <li>
@@ -39,12 +39,12 @@
                 <svg class="w-2 h-2 text-gray-light">
                   <use xlink:href="../../../images/sprite_admin.svg#chevron-right" />
                 </svg>
-                <span class="text-gray-light ml-1 md:ml-2" aria-current="page">List</span>
+                <span class="text-gray-light ml-1 md:ml-2" aria-current="page">New</span>
               </div>
             </li>
           </ol>
         </nav>
-        <span class="text-sm uppercase font-semibold">List example</span>
+        <span class="text-sm uppercase font-semibold">Create new</span>
       </div>
     </div>
   </div>
@@ -52,31 +52,24 @@
 
   <!-- header action -->
   <div class="w-1/2 h-full flex flex-row items-center justify-end py-3 space-x-2">
-    <a class="btn btn-gray" @click="filterListOpened = !filterListOpened">
-      <span class="svg">
-        <svg class="w-6 h-6">
-          <use xlink:href="../../../images/sprite_admin.svg#search-circle" />
-        </svg>
-      </span>
-      <span class="label">Search</span>
-    </a>
-
     <a href="#" class="btn btn-primary">
       <span class="svg">
         <svg class="w-6 h-6">
-          <use xlink:href="../../../images/sprite_admin.svg#add" />
+          <use xlink:href="../../../images/sprite_admin.svg#checkbox-solid" />
         </svg>
       </span>
-      <span class="label">Add item</span>
+      <span class="label">Save</span>
     </a>
 
-    <a class="btn btn-box-2xl btn-gray">
+    <a class="btn btn-gray" @click="filterListOpened = !filterListOpened">
       <span class="svg">
-        <svg class="w-5 h-5">
-          <use xlink:href="../../../images/sprite_admin.svg#document-download" />
+        <svg class="w-6 h-6">
+          <use xlink:href="../../../images/sprite_admin.svg#close" />
         </svg>
       </span>
+      <span class="label">Close</span>
     </a>
+
     <a class="btn btn-box-2xl btn-gray has-tooltip">
       <span class="svg">
         <svg class="w-5 h-5">

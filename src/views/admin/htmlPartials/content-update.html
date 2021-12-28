@@ -1,0 +1,217 @@
+<main
+  class="
+    relative
+    flex-1 flex
+    h-full
+    flex-col
+    p-0
+    w-full
+    overflow-x-hidden overflow-y-scroll
+    bg-gray-1
+  "
+>
+  <!-- info toolbar -->
+  <div
+    class="
+      w-full
+      min-h-12
+      flex-col flex
+      px-6
+      py-6
+      border-b border-primary-light
+      bg-primary-light-15
+      space-y-4
+    "
+  >
+    <span class="text-sm uppercase font-semibold">Information</span>
+
+    <div class="w-full flex flex-col space-y-4 text-sm font-normal text-gray-dark text-left">
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+        galley of type and scrambled it to make a type specimen book. It has survived not only five
+        centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+      </p>
+    </div>
+  </div>
+  <!-- END info toolbar -->
+  <div class="flex flex-col px-6 py-6">
+    <div class="space-y-6">
+      <form action="#">
+        <div class="grid grid-cols-6 gap-6">
+          <div class="col-span-6 sm:col-span-3">
+            <label for="first-name" class="text-sm font-medium text-primary-dark block mb-2"
+              >First Name</label
+            >
+            <input
+              type="text"
+              name="first-name"
+              id="first-name"
+              class="
+                shadow-sm
+                border border-primary-light
+                text-gray-dark
+                sm:text-sm
+                focus:ring-primary focus:border-primary focus:outline-none
+                block
+                w-full
+                p-2.5
+              "
+              placeholder="First Name"
+              value="John"
+              required=""
+            />
+          </div>
+          <div class="col-span-6 sm:col-span-3">
+            <label for="last-name" class="text-sm font-medium text-primary-dark block mb-2"
+              >Last Name</label
+            >
+            <input
+              type="text"
+              name="last-name"
+              id="last-name"
+              class="
+                shadow-sm
+                border border-primary-light
+                text-gray-dark
+                sm:text-sm
+                focus:ring-primary focus:border-primary focus:outline-none
+                block
+                w-full
+                p-2.5
+              "
+              placeholder="Last name"
+              value="Doe"
+              required=""
+            />
+          </div>
+          <div class="col-span-6 sm:col-span-3">
+            <label for="email" class="text-sm font-medium text-primary-dark block mb-2"
+              >Email</label
+            >
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="
+                shadow-sm
+                border border-primary-light
+                text-gray-dark
+                sm:text-sm
+                focus:ring-primary focus:border-primary focus:outline-none
+                block
+                w-full
+                p-2.5
+              "
+              placeholder="example@company.com"
+              value="john.doe@example.com"
+              required=""
+            />
+          </div>
+          <div class="col-span-6 sm:col-span-3">
+            <label for="phone-number" class="text-sm font-medium text-primary-dark block mb-2"
+              >Phone Number</label
+            >
+            <input
+              type="number"
+              name="phone-number"
+              id="phone-number"
+              class="
+                shadow-sm
+                border border-primary-light
+                text-gray-dark
+                sm:text-sm
+                focus:ring-primary focus:border-primary focus:outline-none
+                block
+                w-full
+                p-2.5
+              "
+              placeholder="e.g. +(12)3456 789"
+              value="0013456 789"
+              required=""
+            />
+          </div>
+          <div class="col-span-6 sm:col-span-3">
+            <label for="department" class="text-sm font-medium text-primary-dark block mb-2"
+              >Department</label
+            >
+            <input
+              type="text"
+              name="department"
+              id="department"
+              class="
+                shadow-sm
+                border border-primary-light
+                text-gray-dark
+                sm:text-sm
+                focus:ring-primary focus:border-primary focus:outline-none
+                block
+                w-full
+                p-2.5
+              "
+              placeholder="Development"
+              value="Marketing"
+              required=""
+            />
+          </div>
+          <div class="col-span-6 sm:col-span-3">
+            <label for="company" class="text-sm font-medium text-primary-dark block mb-2"
+              >Company</label
+            >
+            <input
+              type="text"
+              name="company"
+              id="company"
+              class="
+                shadow-sm
+                border border-primary-light
+                text-gray-dark
+                sm:text-sm
+                focus:ring-primary focus:border-primary focus:outline-none
+                block
+                w-full
+                p-2.5
+              "
+              placeholder="Company"
+              value="Super bowl"
+              required=""
+            />
+          </div>
+        </div>
+      </form>
+
+      <!-- remove attention message -->
+      <div
+        class="
+          w-full
+          min-h-12
+          flex-col flex
+          px-6
+          py-6
+          border border-primary-light
+          bg-primary-light-15
+          space-y-4
+        "
+      >
+        <span class="text-sm uppercase font-semibold">Delete</span>
+
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+          been the industry's standard dummy text ever since the 1500s.
+        </p>
+
+        <div class="w-1/6 mr-auto">
+          <a href="#" class="btn btn-primary">
+            <span class="svg">
+              <svg class="w-6 h-6">
+                <use xlink:href="../../../images/sprite_admin.svg#trash" />
+              </svg>
+            </span>
+            <span class="label">Remove item</span>
+          </a>
+        </div>
+      </div>
+      <!-- END remove attention message -->
+    </div>
+  </div>
+</main>

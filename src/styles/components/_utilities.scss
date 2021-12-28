@@ -31,6 +31,10 @@
 
 .tooltip {
   @apply px-4 py-2 border border-primary-light bg-white border-none rounded drop-shadow-xl p-1 font-bold text-xs text-primary -mt-8;
+
+  &--bottom {
+    @apply bottom-0  -mb-8;
+  }
 }
 
 .temp_data {

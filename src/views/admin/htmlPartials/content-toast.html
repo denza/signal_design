@@ -1,0 +1,47 @@
+<main
+  class="
+    relative
+    flex-1 flex
+    h-full
+    flex-col
+    p-0
+    w-full
+    overflow-x-hidden overflow-y-scroll
+    bg-gray-1
+  "
+>
+  <div class="grid grid-cols-2 gap-6 px-6 py-6">
+    <a @click="history.back()" class="btn btn-primary">
+      <span class="svg">
+        <svg class="w-6 h-6">
+          <use xlink:href="../../../images/sprite_admin.svg#info" />
+        </svg>
+      </span>
+      <span class="label">Info Toast</span>
+    </a>
+    <a @click="history.back()" class="btn btn-success">
+      <span class="svg">
+        <svg class="w-6 h-6">
+          <use xlink:href="../../../images/sprite_admin.svg#checkbox-solid" />
+        </svg>
+      </span>
+      <span class="label">Success Toast</span>
+    </a>
+    <a @click="history.back()" class="btn btn-warning">
+      <span class="svg">
+        <svg class="w-6 h-6">
+          <use xlink:href="../../../images/sprite_admin.svg#issue-attention" />
+        </svg>
+      </span>
+      <span class="label">Warning Toast</span>
+    </a>
+    <a @click="history.back()" class="btn btn-error">
+      <span class="svg">
+        <svg class="w-6 h-6">
+          <use xlink:href="../../../images/sprite_admin.svg#exclamation-circle" />
+        </svg>
+      </span>
+      <span class="label">Error Toast</span>
+    </a>
+  </div>
+</main>

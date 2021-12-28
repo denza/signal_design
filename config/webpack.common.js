@@ -207,6 +207,28 @@ module.exports = {
         removeAttributeQuotes: true,
       },
     }),
+    new HtmlWebpackPlugin({
+      title: 'Notifications toast',
+      favicon: paths.src + '/images/favicon/favicon.ico',
+      template: paths.src + '/views/admin/toast.html', // template file
+      filename: 'ui/toast/index.html', // output file
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Simple text',
+      favicon: paths.src + '/images/favicon/favicon.ico',
+      template: paths.src + '/views/admin/simple-text.html', // template file
+      filename: 'simple-text/index.html', // output file
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
     // new HtmlWebpackPartialsPlugin({
     //   path: path.join(__dirname, '../src/views/htmlPartials/body/footer.html'),
     //   location: 'footer',
