@@ -197,7 +197,7 @@ module.exports = {
       },
     }),
     new HtmlWebpackPlugin({
-      title: 'Modals and notify',
+      title: 'Modals',
       favicon: paths.src + '/images/favicon/favicon.ico',
       template: paths.src + '/views/admin/modals.html', // template file
       filename: 'ui/modals/index.html', // output file
