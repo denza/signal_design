@@ -152,6 +152,17 @@ module.exports = {
       },
     }),
     new HtmlWebpackPlugin({
+      title: 'Icons',
+      favicon: paths.src + '/images/favicon/favicon.ico',
+      template: paths.src + '/views/admin/icons.html', // template file
+      filename: 'ui/icons/index.html', // output file
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
       title: 'Other elements',
       favicon: paths.src + '/images/favicon/favicon.ico',
       template: paths.src + '/views/admin/elements.html', // template file
