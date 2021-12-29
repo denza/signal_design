@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+
+  <body
+    class="
+      text-primary-dark
+      antialias
+      leading-normal
+      tracking-normal
+      font-sans
+      bg-gray-1
+      overflow-x-hidden
+    "
+  >
+    <div
+      class="flex h-screen overflow-hidden bg-white"
+      x-data="{ asideIsOpen: false, userMenuOpened: false, filterListOpened: false }"
+    >
+      <!-- aside -->
+      <%= require('html-loader!./htmlPartials/aside.html').default %>
+      <!-- END aside -->
+
+      <!-- main -->
+      <div class="flex flex-col flex-1 overflow-hidden">
+        <!-- header -->
+        <%= require('html-loader!./htmlPartials/header.html').default %>
+        <!-- END header -->
+
+        <!-- content -->
+        <main class="relative flex-1 flex p-0 w-full overflow-hidden uppercase px-6 py-6">
+          <ul>
+            <li><a href="/login" target="_blank">login</a></li>
+            <li><a href="/forgot-password" target="_blank">Forgot password</a></li>
+            <li><a href="/" target="_blank">Dashboard</a></li>
+            <li><a href="/states/dashboard-empty" target="_blank">Dashboard empty</a></li>
+            <li><a href="/details" target="_blank">Item details</a></li>
+            <li><a href="/details-info" target="_blank">Item details information tab</a></li>
+            <li><a href="/list" target="_blank">list</a></li>
+            <li><a href="/states/list-empty" target="_blank">list empty</a></li>
+            <li><a href="/new" target="_blank">new</a></li>
+            <li><a href="/update" target="_blank">update</a></li>
+            <li><a href="/ui/forms/" target="_blank">Form elements</a></li>
+            <li><a href="/ui/icons" target="_blank">Svg icons</a></li>
+            <li><a href="/ui/elements" target="_blank">Other elements</a></li>
+            <li><a href="/ui/modals" target="_blank">Modal</a></li>
+            <li><a href="/ui/toast" target="_blank">Toast</a></li>
+            <li><a href="/simple-text" target="_blank">Simple text page</a></li>
+          </ul>
+        </main>
+        <!-- END content -->
+      </div>
+      <!-- END main -->
+    </div>
+  </body>
+</html>

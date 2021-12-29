@@ -53,10 +53,33 @@ module.exports = {
       },
     }),
     new HtmlWebpackPlugin({
+      title: 'Demo links',
+      favicon: paths.src + '/images/favicon/favicon.ico',
+      template: paths.src + '/views/admin/demo.html', // template file
+      filename: 'demo/index.html', // output file
+      base: '/',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
       title: 'Details',
       favicon: paths.src + '/images/favicon/favicon.ico',
       template: paths.src + '/views/admin/details.html', // template file
       filename: 'details/index.html', // output file
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Details',
+      favicon: paths.src + '/images/favicon/favicon.ico',
+      template: paths.src + '/views/admin/details-info.html', // template file
+      filename: 'details-info/index.html', // output file
       minify: {
         removeComments: true,
         collapseWhitespace: true,
