@@ -50,7 +50,21 @@
       @apply w-full text-xss uppercase font-normal text-primary tracking-wider;
     }
   }
+  .expand {
+    @apply cursor-pointer text-primary-light ml-auto mr-2 pt-1 2xl:pt-2;
 
+    svg {
+      @apply w-6 h-6;
+
+      close {
+        @apply w-8 h-8;
+      }
+    }
+
+    &:hover {
+      @apply text-primary scale-105;
+    }
+  }
   .temp_icon {
     @apply w-1/6 flex justify-center h-10 text-primary;
 

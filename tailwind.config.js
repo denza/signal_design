@@ -466,6 +466,7 @@ module.exports = {
       '5/6': '83.333333%',
       full: '100%',
       screen: '100vh',
+      halfscreen: '50vh',
     }),
     inset: (theme, { negative }) => ({
       auto: 'auto',

@@ -1,5 +1,5 @@
 .graph_item {
-  @apply flex h-auto flex-col items-start justify-start bg-gray-1 border-b border-r border-primary-light transition-all duration-100 ease-in-out;
+  @apply flex h-auto flex-col items-center justify-center bg-gray-1 border-b border-r border-primary-light transition-all duration-100 ease-in-out;
   // min-height: 45vh;
   &:hover {
     @apply drop-shadow-2xl bg-white;
@@ -27,5 +27,9 @@
     &:hover {
       @apply drop-shadow-none bg-transparent;
     }
+  }
+
+  &--expanded {
+    @apply fixed border-none drop-shadow-xl h-auto z-99 mx-auto w-[90%] left-[5%] top-[10%];
   }
 }
