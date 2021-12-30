@@ -22,16 +22,8 @@
       class="flex h-screen overflow-hidden bg-white"
       x-data="{ asideIsOpen: false, userMenuOpened: false, filterListOpened: false }"
     >
-      <!-- aside -->
-      <%= require('html-loader!./htmlPartials/aside.html').default %>
-      <!-- END aside -->
-
       <!-- main -->
       <div class="flex flex-col flex-1 overflow-hidden">
-        <!-- header -->
-        <%= require('html-loader!./htmlPartials/header.html').default %>
-        <!-- END header -->
-
         <!-- content -->
         <main class="relative flex-1 flex p-0 w-full overflow-hidden uppercase px-6 py-6">
           <ul>
