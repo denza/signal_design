@@ -79,3 +79,86 @@ li {
     @apply border-b-0;
   }
 }
+
+.side-nav > ul li:first-child > a {
+  opacity: 0;
+  transform: translateX(50px);
+  -webkit-animation: intro-submenu-animation 0.2s ease-in-out 0.33333s;
+  animation: intro-submenu-animation 0.2s ease-in-out 0.33333s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+
+.side-nav > ul li:nth-child(2) > a {
+  opacity: 0;
+  transform: translateX(50px);
+  -webkit-animation: intro-submenu-animation 0.2s ease-in-out 0.33333s;
+  animation: intro-submenu-animation 0.2s ease-in-out 0.33333s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.side-nav > ul li:nth-child(3) > a {
+  opacity: 0;
+  transform: translateX(50px);
+  -webkit-animation: intro-submenu-animation 0.2s ease-in-out 0.33333s;
+  animation: intro-submenu-animation 0.2s ease-in-out 0.33333s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+.side-nav > ul li:nth-child(4) > a {
+  opacity: 0;
+  transform: translateX(50px);
+  -webkit-animation: intro-submenu-animation 0.2s ease-in-out 0.33333s;
+  animation: intro-submenu-animation 0.2s ease-in-out 0.33333s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.side-nav > ul li:nth-child(5) > a {
+  opacity: 0;
+  transform: translateX(50px);
+  -webkit-animation: intro-submenu-animation 0.2s ease-in-out 0.33333s;
+  animation: intro-submenu-animation 0.2s ease-in-out 0.33333s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+@-webkit-keyframes intro-menu-animation {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes intro-menu-animation {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes intro-submenu-animation {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes intro-submenu-animation {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
