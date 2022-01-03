@@ -1,0 +1,56 @@
+// aside menu animation
+
+@for $i from 1 through 5 {
+  .side-nav > ul li:nth-child(#{$i}) > a {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: intro-submenu-animation 0.2s ease-in-out 0.33333s;
+    animation-fill-mode: forwards;
+    animation-delay: $i/10 + 0s;
+  }
+}
+
+@keyframes intro-menu-animation {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes intro-submenu-animation {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// INTRO Y ANIMATION
+
+@for $i from 1 through 3 {
+  * > .intro-y-#{$i} {
+    opacity: 0;
+    position: relative;
+    transform: translateY(50px);
+    animation: intro-y-animation 0.4s ease-in-out 0.33333s;
+    animation-fill-mode: forwards;
+    animation-delay: $i/5 + 0s;
+  }
+}
+@for $i from 1 through 50 {
+  * > .intro-y:nth-child(#{$i}) {
+    //   z-index: 48;
+    opacity: 0;
+    position: relative;
+    transform: translateY(50px);
+    animation: intro-y-animation 0.4s ease-in-out 0.33333s;
+    animation-fill-mode: forwards;
+    animation-delay: $i/5 + 0s;
+  }
+}
+
+@keyframes intro-y-animation {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
