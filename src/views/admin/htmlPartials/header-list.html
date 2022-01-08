@@ -87,6 +87,62 @@
       </span>
       <span class="tooltip tooltip--bottom">Help</span>
     </a>
+    <!-- context button / dropdown -->
+    <div class="relative" x-data="{ isOpen: false}">
+      <button
+        @click="isOpen = !isOpen"
+        @keydown.escape="isOpen = false"
+        class="btn btn-box-2xl btn-gray"
+      >
+        <span class="svg">
+          <svg class="w-5 h-5">
+            <use xlink:href="../../../images/sprite_admin.svg#dots-vertical" />
+          </svg>
+        </span>
+      </button>
+      <ul
+        x-show="isOpen"
+        @click.away="isOpen = false"
+        class="
+          absolute
+          font-normal
+          bg-gray-1
+          drop-shadow-2xl
+          overflow-hidden
+          min-w-48
+          border border-primary-light
+          mt-2
+          right-0
+          z-20
+        "
+      >
+        <li>
+          <a href="#" class="flex items-center px-3 py-3 group hover:bg-gray-2 transition-all">
+            <svg class="w-5 h-5 text-primary-light group-hover:text-primary">
+              <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+            </svg>
+            <span class="ml-2 text-sm text-gray-dark group-hover:text-primary">Menu item</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center px-3 py-3 group hover:bg-gray-2 transition-all">
+            <svg class="w-5 h-5 text-primary-light group-hover:text-primary">
+              <use xlink:href="../../../images/sprite_admin.svg#trash" />
+            </svg>
+            <span class="ml-2 text-sm text-gray-dark group-hover:text-primary">Menu item</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center px-3 py-3 group hover:bg-gray-2 transition-all">
+            <svg class="w-5 h-5 text-primary-light group-hover:text-primary">
+              <use xlink:href="../../../images/sprite_admin.svg#add" />
+            </svg>
+            <span class="ml-2 text-sm text-gray-dark group-hover:text-primary">Menu item</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- END context button  / dropdown-->
   </div>
 
   <!-- END header action -->
