@@ -160,3 +160,9 @@
 [x-cloak] {
   display: none;
 }
+
+.calendar {
+  * {
+    @apply border-primary-light;
+  }
+}

@@ -175,6 +175,17 @@ module.exports = {
       },
     }),
     new HtmlWebpackPlugin({
+      title: 'Calendar',
+      favicon: paths.src + '/images/favicon/favicon.ico',
+      template: paths.src + '/views/admin/calendar.html', // template file
+      filename: 'ui/calendar/index.html', // output file
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
       title: 'Icons',
       favicon: paths.src + '/images/favicon/favicon.ico',
       template: paths.src + '/views/admin/icons.html', // template file
