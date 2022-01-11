@@ -1,5 +1,10 @@
-<aside class="hidden md:flex md:flex-shrink-0 relative z-50 intro-y-1">
-  <div class="flex flex-col" :class="asideIsOpen === true ? 'w-48' : 'w-25'">
+<aside class="flex flex-shrink-0 relative z-50 intro-y-1" :class="mobileMenuIsOpen === true ? 'w-full md:w-auto':''"">
+  <div
+    class=" md:flex md:flex-col"
+    :class="[mobileMenuIsOpen === true ? 'flex flex-col fixed md:relative md:h-auto top-0 left-0 h-full' : 'hidden', asideIsOpen === true ? 'w-full md:w-48' : 'w-full md:w-25']"
+
+  >
+    
     <div
       class="
         flex flex-col
@@ -11,7 +16,7 @@
       "
     >
       <!-- aside logo -->
-      <div class="flex flex-col justify-center items-center flex-shrink-0 h-18">
+      <div class="w-full flex flex-row justify-between px-6 md:px-0 md:justify-center items-center flex-shrink-0 h-18">
         <a href="/" class="w-14 focus:outline-none">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -97,20 +102,17 @@
             />
           </svg>
         </a>
-        <button class="hidden focus:outline-none focus:shadow-outline">
-          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-            <path
-              fill-rule="evenodd"
-              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-              clip-rule="evenodd"
-            ></path>
-            <path
-              fill-rule="evenodd"
-              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-              clip-rule="evenodd"
-            ></path>
+        <template x-if="mobileMenuIsOpen == true">
+        <button class="focus:outline-none focus:shadow-outline">
+         
+          <svg
+            class="block md:hidden w-6 h-6 cursor-pointer hover:text-primary"
+            @click="mobileMenuIsOpen = !mobileMenuIsOpen"
+          >
+            <use xlink:href="../../../images/sprite_admin.svg#close-simple" />
           </svg>
         </button>
+        </template>
       </div>
       <!-- END aside logo -->
 
@@ -190,7 +192,7 @@
       <!-- aside action -->
       <div class="flex w-full">
         <ul class="w-full">
-          <li>
+          <li class="hidden md:block">
             <a class="nav_item nav_item--single" @click="asideIsOpen = !asideIsOpen">
               <span class="icon">
                 <svg :class="asideIsOpen === true ? 'block' : 'hidden'">
@@ -203,8 +205,11 @@
             </a>
           </li>
           <li>
+            <!-- , mobileMenuIsOpen ? 'inline-flex' : 'hidden' -->
             <a class="nav_item nav_item--single" @click="userMenuOpened = !userMenuOpened">
-              <span class="user"> NO </span>
+              <span class="user"> NP </span>
+              <span class="user-full" 
+              :class="[mobileMenuIsOpen === true ? 'inline-flex md:hidden' : asideIsOpen === true ? 'inline-flex' : 'hidden']"> Niles Peppertrout </span>
             </a>
 
             <div

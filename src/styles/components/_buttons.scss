@@ -1,17 +1,17 @@
 .btn {
-  @apply cursor-pointer flex flex-row min-w-32 max-h-10 h-10 relative justify-start items-stretch transition-all duration-150 ease-in-out border;
+  @apply cursor-pointer flex flex-row lg:min-w-32 max-h-10 h-10 relative justify-start items-stretch transition-all duration-150 ease-in-out border;
 
   span.svg {
     @apply py-2 px-4 text-center items-center justify-center inline-flex ease-out duration-300 translate-x-0;
   }
 
   span.label {
-    @apply min-w-20 pr-4 font-normal text-xs tracking-widest flex-1 flex items-center text-left transition-all ease-out duration-1000 translate-x-0;
+    @apply hidden lg:flex min-w-20 pr-4 font-normal text-xs tracking-widest flex-1 items-center text-left transition-all ease-out duration-1000 translate-x-0;
   }
 
   &:hover {
     span.svg {
-      @apply translate-x-2;
+      @apply lg:translate-x-2;
     }
     span.label {
       @apply translate-x-2;
