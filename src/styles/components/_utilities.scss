@@ -87,7 +87,7 @@
   }
 
   &--alt {
-    @apply bg-primary items-center px-6;
+    @apply bg-primary items-center px-6 py-2 md:py-0;
 
     .temp_value {
       span:first-child {
