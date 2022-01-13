@@ -7,6 +7,10 @@
 
   span.label {
     @apply hidden lg:flex min-w-20 pr-4 font-normal text-xs tracking-widest flex-1 items-center text-left transition-all ease-out duration-1000 translate-x-0;
+
+    &--show {
+      @apply flex;
+    }
   }
 
   &:hover {
