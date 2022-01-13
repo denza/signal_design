@@ -1,15 +1,15 @@
 <header
   class="
     w-full
-    flex flex-row
-    h-16y
-    2xl:h-18
+    flex flex-wrap
+    md:flex-row
+    h-auto
+    lg:h-16
     items-center
     justify-between
     bg-gray-1
     border-b border-primary-light
     px-6
-    2xl:py-4
     sticky
     top-0
     z-50
@@ -17,9 +17,19 @@
   "
 >
   <!-- header title -->
-  <div class="w-1/2 h-full flex flex-col items-start justify-start">
-    <div class="page_title flex flex-1 flex-row items-end justify-start text-gray-dark py-3">
-      <div class="flex flex-col">
+  <div class="w-full md:w-1/2 h-auto md:h-full flex flex-row items-center justify-between">
+    <div
+      class="
+        page_title
+        flex flex-1 flex-row
+        items-end
+        justify-center
+        md:justify-start
+        text-gray-dark
+        py-3
+      "
+    >
+      <div class="flex flex-col text-center md:text-left">
         <nav class="flex text-xss uppercase" aria-label="Breadcrumb">
           <ol class="inline-flex items-center space-x-1 md:space-x-2">
             <li class="inline-flex items-center">
@@ -52,7 +62,23 @@
   <!-- END header title -->
 
   <!-- header action -->
-  <div class="w-1/2 h-full flex flex-row items-center justify-end py-3 space-x-2">
+  <div
+    class="
+      w-full
+      md:w-1/2
+      h-auto
+      md:h-full
+      flex flex-row
+      items-center
+      justify-center
+      md:justify-end
+      py-3
+      space-x-2
+      border-t
+      md:border-t-0
+      border-t-primary-light
+    "
+  >
     <a class="btn btn-gray" @click="filterListOpened = !filterListOpened">
       <span class="svg">
         <svg class="w-6 h-6">
