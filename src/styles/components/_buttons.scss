@@ -307,6 +307,6 @@
   }
 
   &--active {
-    @apply border-b border-b-gray-1;
+    @apply relative border-b border-b-gray-1;
   }
 }

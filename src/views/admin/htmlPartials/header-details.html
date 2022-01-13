@@ -4,7 +4,7 @@
     flex flex-wrap
     md:flex-row
     h-auto
-    md:h-16
+    lg:h-16
     items-center
     justify-between
     bg-gray-1
@@ -62,7 +62,21 @@
 
   <!-- header action -->
   <div
-    class="w-full md:w-1/2 h-auto md:h-full flex flex-row items-center justify-end py-3 space-x-2"
+    class="
+      w-full
+      md:w-1/2
+      h-auto
+      md:h-full
+      flex flex-row
+      items-center
+      justify-center
+      md:justify-end
+      py-3
+      space-x-2
+      border-t
+      md:border-t-0
+      border-t-primary-light
+    "
   >
     <a @click="history.back()" class="btn btn-gray">
       <span class="svg">
