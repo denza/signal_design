@@ -63,6 +63,7 @@
     "@tailwindcss/forms": "^0.4.0",
     "alpine-toast": "^0.0.2",
     "alpinejs": "^3.4.2",
-    "apexcharts": "^3.32.0"
+    "apexcharts": "^3.32.0",
+    "jquery": "^3.6.0"
   }
 }
