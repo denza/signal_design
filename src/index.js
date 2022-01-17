@@ -6,7 +6,6 @@ import '@/js/multiselect.js'
 
 import "@/js/activetab.js"
 import "@/js/auth.js"
-import "@/js/deletemodal.js"
 import "@/js/formvalidation.js"
 import "@/js/pagination.js"
 import "@/js/sort.js"
