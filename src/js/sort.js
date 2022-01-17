@@ -25,6 +25,7 @@ $(document).ready(function(){
             return $(this).attr("data-sort") != "";
         }).each(function(index){
             let type = $(this).attr("data-sort")
+            let column
             if (type=="asc"){
                 if (index == length-1){
                     column = $(this).attr("id")
@@ -57,7 +58,6 @@ $(document).ready(function(){
             data.Models.forEach(function(model) {
                 AppendListItem(model)
             })
-            DeleteModalMount()
 
         })
 
@@ -81,7 +81,6 @@ $(document).ready(function(){
                 AppendListItem(model)
             })
             PaginatorUpdate(data.Paginator)
-            DeleteModalMount()
         })
     })
 
@@ -106,7 +105,6 @@ $(document).ready(function(){
                 AppendListItem(model)
             })
             PaginatorUpdate(data.Paginator)
-            DeleteModalMount()
             
         })
     })
@@ -144,7 +142,6 @@ $(document).ready(function(){
                     AppendListItem(model)
                 })
                 PaginatorUpdate(data.Paginator)
-                DeleteModalMount()
             } else {
                 NoResult()
                 PaginatorUpdate(data.Paginator)
@@ -157,7 +154,7 @@ $(document).ready(function(){
 })
 
 function AppendListItem(model){
-    list_item = $("#hidden_list_item").clone().removeClass("hidden")
+    let list_item = $("#hidden_list_item").clone().removeClass("hidden")
     console.log(model)
     Object.keys(model).forEach(function (key){
         /* check if the field is an object and than loop trough it's fields  */
@@ -180,8 +177,8 @@ function AppendListItem(model){
                 list_item.find("#" + key).attr("src", model[key])
             } else if (key == "Id"){
                 list_item.find("#" + key).text(model[key])
-                list_item.find(".modal").attr("id", "delete-confirmation-modal-" + model[key])
-                list_item.find(".delete_modal").attr("data-modal", "delete-confirmation-modal-" + model[key])
+                //list_item.find(".modal").attr("x-on:click", "showModal_" + model[key] + "=true")
+                //list_item.find(".delete_modal").attr("x-on:click", "showModal_" + model[key] + "= true")
             } else {
                 list_item.find("#" + key).text(model[key])
             }
@@ -211,13 +208,6 @@ function PaginatorUpdate(paginator){
     } else {
         $(".next_pagination").addClass("hidden")
     }
-}
-
-function DeleteModalMount() {
-    $(".delete_modal").on("click", function () { 
-        let deleteModalID = $(this).attr("data-modal")
-        cash("#"+deleteModalID).modal("show");
-    });
 }
 
 function NoResult(){
