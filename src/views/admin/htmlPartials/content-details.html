@@ -1,9 +1,32 @@
-<main class="relative flex-1 flex flex-col p-0 w-full overflow-hidden bg-gray-1 intro-y-3">
+<main class="relative flex-1 flex flex-col p-0 w-screen lg:w-full bg-gray-1 intro-y-3">
   <!-- details toolbar -->
   <div
-    class="w-full h-12 flex flex-col md:flex-row pl-2 md:pl-8 md:pr-6 border-b border-primary-light"
+    class="
+      w-full
+      h-auto
+      lg:h-12
+      flex flex-col
+      lg:flex-row
+      md:pl-2 md:pr-2
+      lg:pl-8 lg:pr-6
+      border-b border-primary-light
+    "
   >
-    <div class="w-full md:w-1/2 h-auto md:h-full flex flex-row items-center justify-start">
+    <div
+      class="
+        w-screen
+        lg:w-1/2
+        h-auto
+        lg:h-full
+        flex flex-row
+        items-center
+        justify-start
+        overflow-x-scroll overflow-y-hidden
+        lg:overflow-x-visible
+      "
+      style="overflow-x: overlay"
+    >
+      <!-- css class overflow-x-scroll if there is more than 2 tab buttons -->
       <a href="#" class="btn-tab-detail btn-tab-detail--active">
         <span class="svg">
           <svg class="w-6 h-6">
@@ -23,7 +46,24 @@
     </div>
 
     <!-- toolbar action buttons -->
-    <div class="w-full md:w-1/2 flex flex-row items-center justify-end space-x-2">
+    <div
+      class="
+        w-full
+        lg:w-1/2
+        flex flex-row
+        items-center
+        justify-center
+        lg:justify-end
+        py-2
+        lg:py-0
+        space-x-2
+        md:mt-0
+        border-t
+        lg:border-t-0
+        border-t-primary-light
+        lg:border-t-transparent
+      "
+    >
       <a href="../" class="btn btn-thin btn-gray">
         <span class="svg">
           <svg class="w-5 h-5">
@@ -51,14 +91,29 @@
       w-full
       h-full
       flex flex-col
-      md:flex-row
+      lg:flex-row
       items-start
       justify-center
       mx-auto
-      md:overflow-hidden
+      lg:overflow-hidden
     "
   >
-    <div class="w-full md:w-1/2 h-auto md:h-full px-0 py-6 items-start grid grid-cols-1 gap-0">
+    <div
+      class="
+        w-full
+        md:w-[90%]
+        lg:w-1/2
+        h-auto
+        lg:h-full
+        px-0
+        md:pr-16
+        lg:px-0
+        py-6
+        items-start
+        grid grid-cols-1
+        gap-0
+      "
+    >
       <!-- graph item -->
       <div class="graph_item graph_item--details">
         <!-- gi content -->
@@ -243,9 +298,10 @@
     <div
       class="
         w-full
-        md:w-1/2
+        md:w-[85%]
+        lg:w-1/2
         h-auto
-        md:h-full
+        lg:h-full
         pl-4
         pr-6
         py-6
@@ -265,7 +321,9 @@
               border-b-2 border-dashed border-primary-light-70
               px-4
               py-4
-              text-sm
+              text-xss
+              sm:text-sm
+              space-x-2
               flex flex-row
               justify-start
               items-center
@@ -340,7 +398,7 @@
           <div x-show="selected == 0" class="px-2 py-4 flex flex-col items-start justify-start">
             <div class="w-full flex flex-row items-start justify-start">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#info" />
                 </svg>
               </span>
@@ -355,7 +413,7 @@
             </div>
             <div class="w-full flex flex-row items-start justify-start mt-6">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
                 </svg>
               </span>
@@ -375,7 +433,9 @@
               border-b-2 border-dashed border-primary-light-70
               px-4
               py-4
-              text-sm
+              text-xss
+              sm:text-sm
+              space-x-2
               flex flex-row
               justify-start
               items-center
@@ -402,7 +462,7 @@
               </svg>
               <span>-25°C</span>
             </div>
-            <!-- <div class="w-4/12">
+            <div class="w-4/12">
               <span
                 class="
                   w-6
@@ -421,7 +481,7 @@
                   <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
                 </svg>
               </span>
-            </div> -->
+            </div>
             <div class="w-1/12 ml-auto">
               <button
                 class="
@@ -450,7 +510,7 @@
           <div x-show="selected == 1" class="px-2 py-4 flex flex-col items-start justify-start">
             <div class="w-full flex flex-row items-start justify-start">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
                 </svg>
               </span>
@@ -465,7 +525,7 @@
             </div>
             <div class="w-full flex flex-row items-start justify-start mt-6">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
                 </svg>
               </span>
@@ -485,7 +545,9 @@
               border-b-2 border-dashed border-primary-light-70
               px-4
               py-4
-              text-sm
+              text-xss
+              sm:text-sm
+              space-x-2
               flex flex-row
               justify-start
               items-center
@@ -512,7 +574,7 @@
               </svg>
               <span>-18°C</span>
             </div>
-            <!-- <div class="w-4/12">
+            <div class="w-4/12">
               <span
                 class="
                   w-6
@@ -531,7 +593,7 @@
                   <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
                 </svg>
               </span>
-            </div> -->
+            </div>
             <div class="w-1/12 ml-auto">
               <button
                 class="
@@ -560,7 +622,7 @@
           <div x-show="selected == 2" class="px-2 py-4 flex flex-col items-start justify-start">
             <div class="w-full flex flex-row items-start justify-start">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
                 </svg>
               </span>
@@ -575,7 +637,7 @@
             </div>
             <div class="w-full flex flex-row items-start justify-start mt-6">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
                 </svg>
               </span>
@@ -595,7 +657,9 @@
               border-b-2 border-dashed border-primary-light-70
               px-4
               py-4
-              text-sm
+              text-xss
+              sm:text-sm
+              space-x-2
               flex flex-row
               justify-start
               items-center
@@ -670,7 +734,7 @@
           <div x-show="selected == 3" class="px-2 py-4 flex flex-col items-start justify-start">
             <div class="w-full flex flex-row items-start justify-start">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
                 </svg>
               </span>
@@ -685,7 +749,7 @@
             </div>
             <div class="w-full flex flex-row items-start justify-start mt-6">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
                 </svg>
               </span>
@@ -705,7 +769,9 @@
               border-b-2 border-dashed border-primary-light-70
               px-4
               py-4
-              text-sm
+              text-xss
+              sm:text-sm
+              space-x-2
               flex flex-row
               justify-start
               items-center
@@ -780,7 +846,7 @@
           <div x-show="selected == 4" class="px-2 py-4 flex flex-col items-start justify-start">
             <div class="w-full flex flex-row items-start justify-start">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
                 </svg>
               </span>
@@ -795,7 +861,7 @@
             </div>
             <div class="w-full flex flex-row items-start justify-start mt-6">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
                 </svg>
               </span>
@@ -815,7 +881,9 @@
               border-b-2 border-dashed border-primary-light-70
               px-4
               py-4
-              text-sm
+              text-xss
+              sm:text-sm
+              space-x-2
               flex flex-row
               justify-start
               items-center
@@ -842,7 +910,7 @@
               </svg>
               <span>-25°C</span>
             </div>
-            <!-- <div class="w-4/12">
+            <div class="w-4/12">
               <span
                 class="
                   w-6
@@ -861,7 +929,7 @@
                   <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
                 </svg>
               </span>
-            </div> -->
+            </div>
             <div class="w-1/12 ml-auto">
               <button
                 class="
@@ -890,7 +958,7 @@
           <div x-show="selected == 5" class="px-2 py-4 flex flex-col items-start justify-start">
             <div class="w-full flex flex-row items-start justify-start">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
                 </svg>
               </span>
@@ -905,7 +973,7 @@
             </div>
             <div class="w-full flex flex-row items-start justify-start mt-6">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
                 </svg>
               </span>
@@ -925,7 +993,9 @@
               border-b-2 border-dashed border-primary-light-70
               px-4
               py-4
-              text-sm
+              text-xss
+              sm:text-sm
+              space-x-2
               flex flex-row
               justify-start
               items-center
@@ -952,7 +1022,7 @@
               </svg>
               <span>-25°C</span>
             </div>
-            <!-- <div class="w-4/12">
+            <div class="w-4/12">
               <span
                 class="
                   w-6
@@ -971,7 +1041,7 @@
                   <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
                 </svg>
               </span>
-            </div> -->
+            </div>
             <div class="w-1/12 ml-auto">
               <button
                 class="
@@ -1000,7 +1070,7 @@
           <div x-show="selected == 6" class="px-2 py-4 flex flex-col items-start justify-start">
             <div class="w-full flex flex-row items-start justify-start">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
                 </svg>
               </span>
@@ -1015,7 +1085,7 @@
             </div>
             <div class="w-full flex flex-row items-start justify-start mt-6">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
                 </svg>
               </span>
@@ -1035,7 +1105,9 @@
               border-b-2 border-dashed border-primary-light-70
               px-4
               py-4
-              text-sm
+              text-xss
+              sm:text-sm
+              space-x-2
               flex flex-row
               justify-start
               items-center
@@ -1062,7 +1134,7 @@
               </svg>
               <span>-25°C</span>
             </div>
-            <!-- <div class="w-4/12">
+            <div class="w-4/12">
               <span
                 class="
                   w-6
@@ -1081,7 +1153,7 @@
                   <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
                 </svg>
               </span>
-            </div> -->
+            </div>
             <div class="w-1/12 ml-auto">
               <button
                 class="
@@ -1110,7 +1182,7 @@
           <div x-show="selected == 7" class="px-2 py-4 flex flex-col items-start justify-start">
             <div class="w-full flex flex-row items-start justify-start">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
                 </svg>
               </span>
@@ -1125,7 +1197,7 @@
             </div>
             <div class="w-full flex flex-row items-start justify-start mt-6">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
                 </svg>
               </span>
@@ -1145,7 +1217,9 @@
               border-b-2 border-dashed border-primary-light-70
               px-4
               py-4
-              text-sm
+              text-xss
+              sm:text-sm
+              space-x-2
               flex flex-row
               justify-start
               items-center
@@ -1172,7 +1246,7 @@
               </svg>
               <span>-25°C</span>
             </div>
-            <!-- <div class="w-4/12">
+            <div class="w-4/12">
               <span
                 class="
                   w-6
@@ -1191,7 +1265,7 @@
                   <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
                 </svg>
               </span>
-            </div> -->
+            </div>
             <div class="w-1/12 ml-auto">
               <button
                 class="
@@ -1220,7 +1294,7 @@
           <div x-show="selected == 8" class="px-2 py-4 flex flex-col items-start justify-start">
             <div class="w-full flex flex-row items-start justify-start">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
                 </svg>
               </span>
@@ -1235,7 +1309,7 @@
             </div>
             <div class="w-full flex flex-row items-start justify-start mt-6">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
                 </svg>
               </span>
@@ -1255,7 +1329,9 @@
               border-b-2 border-dashed border-primary-light-70
               px-4
               py-4
-              text-sm
+              text-xss
+              sm:text-sm
+              space-x-2
               flex flex-row
               justify-start
               items-center
@@ -1282,7 +1358,7 @@
               </svg>
               <span>-25°C</span>
             </div>
-            <!-- <div class="w-4/12">
+            <div class="w-4/12">
               <span
                 class="
                   w-6
@@ -1301,7 +1377,7 @@
                   <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
                 </svg>
               </span>
-            </div> -->
+            </div>
             <div class="w-1/12 ml-auto">
               <button
                 class="
@@ -1330,7 +1406,7 @@
           <div x-show="selected == 9" class="px-2 py-4 flex flex-col items-start justify-start">
             <div class="w-full flex flex-row items-start justify-start">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
                 </svg>
               </span>
@@ -1345,7 +1421,7 @@
             </div>
             <div class="w-full flex flex-row items-start justify-start mt-6">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
                 </svg>
               </span>
@@ -1365,7 +1441,9 @@
               border-b-2 border-dashed border-primary-light-70
               px-4
               py-4
-              text-sm
+              text-xss
+              sm:text-sm
+              space-x-2
               flex flex-row
               justify-start
               items-center
@@ -1392,7 +1470,7 @@
               </svg>
               <span>-25°C</span>
             </div>
-            <!-- <div class="w-4/12">
+            <div class="w-4/12">
               <span
                 class="
                   w-6
@@ -1411,7 +1489,7 @@
                   <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
                 </svg>
               </span>
-            </div> -->
+            </div>
             <div class="w-1/12 ml-auto">
               <button
                 class="
@@ -1440,7 +1518,7 @@
           <div x-show="selected == 10" class="px-2 py-4 flex flex-col items-start justify-start">
             <div class="w-full flex flex-row items-start justify-start">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
                 </svg>
               </span>
@@ -1455,7 +1533,7 @@
             </div>
             <div class="w-full flex flex-row items-start justify-start mt-6">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
                 </svg>
               </span>
@@ -1475,7 +1553,9 @@
               border-b-2 border-dashed border-primary-light-70
               px-4
               py-4
-              text-sm
+              text-xss
+              sm:text-sm
+              space-x-2
               flex flex-row
               justify-start
               items-center
@@ -1502,7 +1582,7 @@
               </svg>
               <span>-25°C</span>
             </div>
-            <!-- <div class="w-4/12">
+            <div class="w-4/12">
               <span
                 class="
                   w-6
@@ -1521,7 +1601,7 @@
                   <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
                 </svg>
               </span>
-            </div> -->
+            </div>
             <div class="w-1/12 ml-auto">
               <button
                 class="
@@ -1550,7 +1630,7 @@
           <div x-show="selected == 11" class="px-2 py-4 flex flex-col items-start justify-start">
             <div class="w-full flex flex-row items-start justify-start">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
                 </svg>
               </span>
@@ -1565,7 +1645,7 @@
             </div>
             <div class="w-full flex flex-row items-start justify-start mt-6">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
                 </svg>
               </span>
@@ -1585,7 +1665,9 @@
               border-b-2 border-dashed border-primary-light-70
               px-4
               py-4
-              text-sm
+              text-xss
+              sm:text-sm
+              space-x-2
               flex flex-row
               justify-start
               items-center
@@ -1612,7 +1694,7 @@
               </svg>
               <span>-25°C</span>
             </div>
-            <!-- <div class="w-4/12">
+            <div class="w-4/12">
               <span
                 class="
                   w-6
@@ -1631,7 +1713,7 @@
                   <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
                 </svg>
               </span>
-            </div> -->
+            </div>
             <div class="w-1/12 ml-auto">
               <button
                 class="
@@ -1660,7 +1742,7 @@
           <div x-show="selected == 12" class="px-2 py-4 flex flex-col items-start justify-start">
             <div class="w-full flex flex-row items-start justify-start">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
                 </svg>
               </span>
@@ -1675,7 +1757,7 @@
             </div>
             <div class="w-full flex flex-row items-start justify-start mt-6">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
                 </svg>
               </span>
@@ -1695,7 +1777,9 @@
               border-b-2 border-dashed border-primary-light-70
               px-4
               py-4
-              text-sm
+              text-xss
+              sm:text-sm
+              space-x-2
               flex flex-row
               justify-start
               items-center
@@ -1722,7 +1806,7 @@
               </svg>
               <span>-25°C</span>
             </div>
-            <!-- <div class="w-4/12">
+            <div class="w-4/12">
               <span
                 class="
                   w-6
@@ -1741,7 +1825,7 @@
                   <use xlink:href="../../../images/sprite_admin.svg#issue-door" />
                 </svg>
               </span>
-            </div> -->
+            </div>
             <div class="w-1/12 ml-auto">
               <button
                 class="
@@ -1770,7 +1854,7 @@
           <div x-show="selected == 13" class="px-2 py-4 flex flex-col items-start justify-start">
             <div class="w-full flex flex-row items-start justify-start">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#info-solid" />
                 </svg>
               </span>
@@ -1785,7 +1869,7 @@
             </div>
             <div class="w-full flex flex-row items-start justify-start mt-6">
               <span class="w-1/12">
-                <svg class="w-8 h-8 text-primary-light">
+                <svg class="w-6 h-6 mt-1 sm:w-8 sm:h-8 text-primary-light">
                   <use xlink:href="../../../images/sprite_admin.svg#user-solid" />
                 </svg>
               </span>
