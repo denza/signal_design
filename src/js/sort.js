@@ -110,51 +110,19 @@ $(document).ready(function(){
     })
 
     $("#table_filter_form").on("submit", function(e){
-        e.preventDefault()
+        e.preventDefault();
+        FilterSearch(false);
+    });
 
-        column = $("#table_filter_column").val()
-        filterType = $("#table_filter_type").val()
-        filterValue = $("#table_filter_value").val()
-        
-        let url
-        if (filterValue != ""){
-            filterParam = column + "__" + filterType + "::" + filterValue
-            
-            let searchParams = new URLSearchParams(window.location.search)
-            searchParams.set("filter",filterParam)
-            url = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + searchParams.toString()
-            
-        } else {          
-            let searchParams = new URLSearchParams(window.location.search)
-            searchParams.delete("filter")
-            url = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + searchParams.toString()
-        }
-        $.ajax({
-            type: "GET",
-            dataType: "json",
-            url: url,
-        }).done(function(data){
-            window.history.pushState('page2', 'Title', url);
-            $("#list_body").empty()
-            
-            if (data.Models){
-                data.Models.forEach(function(model) {
-                    AppendListItem(model)
-                })
-                PaginatorUpdate(data.Paginator)
-            } else {
-                NoResult()
-                PaginatorUpdate(data.Paginator)
-            }
-            
-        })
-
-    })
+    $("#table_filter_form").on("reset", function(e){
+        $("#table_filter_value").text("")
+        FilterSearch(true);
+    });
     
 })
 
 function AppendListItem(model){
-    let list_item = $("#hidden_list_item").clone().removeClass("hidden")
+    let list_item = $("#hidden_list_item").clone().removeClass("hidden").removeAttr("id").hide()
     console.log(model)
     Object.keys(model).forEach(function (key){
         /* check if the field is an object and than loop trough it's fields  */
@@ -177,18 +145,18 @@ function AppendListItem(model){
                 list_item.find("#" + key).attr("src", model[key])
             } else if (key == "Id"){
                 list_item.find("#" + key).text(model[key])
-                //list_item.find(".modal").attr("x-on:click", "showModal_" + model[key] + "=true")
-                //list_item.find(".delete_modal").attr("x-on:click", "showModal_" + model[key] + "= true")
             } else {
                 list_item.find("#" + key).text(model[key])
             }
         }
     })
-    $("#list_body").append(list_item)
+    $("#list_body").append(list_item);
+    $(list_item).fadeIn("slow");
 }
 
 function PaginatorUpdate(paginator){
     $(".pagination__link--active").text(paginator.CurrentPage)
+    $(".paginator").hide();
     if (paginator.HasPrev) {
         
         $("#previous_page").attr("data-page", paginator.PreviousPage)
@@ -208,9 +176,55 @@ function PaginatorUpdate(paginator){
     } else {
         $(".next_pagination").addClass("hidden")
     }
+
+    $(".paginator").fadeIn(300);
 }
 
 function NoResult(){
     noResult = '<div class="pristine-error text-primary-3 mt-2 intro-y"> No results for given filter </div>'
     $("#list_body").append(noResult)
+}
+
+function FilterSearch(isReset){
+    let column = $("#table_filter_column").val()
+    let filterType = $("#table_filter_type").val()
+    let filterValue
+    if (!isReset){
+        filterValue = $("#table_filter_value").val()
+    } else {
+        filterValue = ""
+    }
+    
+    let url
+    if (filterValue != ""){
+        filterParam = column + "__" + filterType + "::" + filterValue
+        
+        let searchParams = new URLSearchParams(window.location.search)
+        searchParams.set("filter",filterParam)
+        url = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + searchParams.toString()
+        
+    } else {          
+        let searchParams = new URLSearchParams(window.location.search)
+        searchParams.delete("filter")
+        url = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + searchParams.toString()
+    }
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: url,
+    }).done(function(data){
+        window.history.pushState('page2', 'Title', url);
+        $("#list_body").empty()
+        
+        if (data.Models){
+            data.Models.forEach(function(model) {
+                AppendListItem(model)
+            })
+            PaginatorUpdate(data.Paginator)
+        } else {
+            NoResult()
+            PaginatorUpdate(data.Paginator)
+        }
+        
+    })
 }
