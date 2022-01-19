@@ -15,11 +15,11 @@ $(document).ready(function(){
                 window.location.pathname = formErrors.redirectUrl
             }
 
-            $("div").removeClass("has-error")
-            $("div.pristine-error").remove()
+            $(".error").remove()
             Object.keys(formErrors).forEach(function (input){
-                formError = '<div class="pristine-error text-primary-3 mt-2 intro-y">'+ formErrors[input] +'</div>'
-                $("#"+input).closest("div").addClass("has-error").append(formError)
+                formError = '<span class="error inline-flex text-sm text-red" style="display: none;">'+ formErrors[input] +'</span>'
+                $("#"+input).closest("div").append(formError)
+                $(".error").fadeIn("slow")
             })
         })
     });
