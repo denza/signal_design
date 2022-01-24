@@ -184,6 +184,323 @@
             Actions
           </th>
         </tr>
+      </thead>
+      <tbody class="divide-y divide-primary-light">
+        <tr class="hover:bg-primary-light-10 whitespace-nowrap text-xs text-primary-dark">
+          <td class="p-4 font-semibold">Fridge blue</td>
+          <td class="p-4">Building C</td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-primary mr-2"></div>
+              -34,5°C
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
+              Active
+            </div>
+          </td>
+          <td class="p-4 flex flex-row justify-end space-x-2">
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+                </svg>
+              </span>
+              <span class="tooltip">Update</span>
+            </button>
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#trash" />
+                </svg>
+              </span>
+              <span class="tooltip">Remove</span>
+            </button>
+            <!-- context button / dropdown -->
+            <div class="relative" x-data="{ isOpen: false}">
+              <button
+                @click="isOpen = !isOpen"
+                @keydown.escape="isOpen = false"
+                class="btn btn-box btn-gray"
+              >
+                <span class="svg">
+                  <svg class="w-5 h-5">
+                    <use xlink:href="../../../images/sprite_admin.svg#dots-vertical" />
+                  </svg>
+                </span>
+              </button>
+              <ul
+                x-show="isOpen"
+                @click.away="isOpen = false"
+                class="
+                  absolute
+                  font-normal
+                  bg-gray-1
+                  drop-shadow-2xl
+                  overflow-hidden
+                  min-w-48
+                  border border-primary-light
+                  mt-2
+                  right-0
+                  z-20
+                "
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center px-3 py-3 group hover:bg-gray-2 transition-all"
+                  >
+                    <svg class="w-5 h-5 text-primary-light group-hover:text-primary">
+                      <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+                    </svg>
+                    <span class="ml-2 text-sm text-gray-dark group-hover:text-primary"
+                      >Menu item</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center px-3 py-3 group hover:bg-gray-2 transition-all"
+                  >
+                    <svg class="w-5 h-5 text-primary-light group-hover:text-primary">
+                      <use xlink:href="../../../images/sprite_admin.svg#trash" />
+                    </svg>
+                    <span class="ml-2 text-sm text-gray-dark group-hover:text-primary"
+                      >Menu item</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center px-3 py-3 group hover:bg-gray-2 transition-all"
+                  >
+                    <svg class="w-5 h-5 text-primary-light group-hover:text-primary">
+                      <use xlink:href="../../../images/sprite_admin.svg#add" />
+                    </svg>
+                    <span class="ml-2 text-sm text-gray-dark group-hover:text-primary"
+                      >Menu item</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- END context button  / dropdown-->
+          </td>
+        </tr>
+        <tr class="hover:bg-primary-light-10 whitespace-nowrap text-xs text-primary-dark">
+          <td class="p-4 font-semibold">Pharrell</td>
+          <td class="p-4">Building C</td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-red mr-2"></div>
+              4,5°C
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
+              Active
+            </div>
+          </td>
+          <td class="p-4 flex flex-row justify-end space-x-2">
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+                </svg>
+              </span>
+              <span class="tooltip">Update</span>
+            </button>
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#trash" />
+                </svg>
+              </span>
+              <span class="tooltip">Remove</span>
+            </button>
+            <!-- context button / dropdown -->
+            <div class="relative" x-data="{ isOpen: false}">
+              <button
+                @click="isOpen = !isOpen"
+                @keydown.escape="isOpen = false"
+                class="btn btn-box btn-gray"
+              >
+                <span class="svg">
+                  <svg class="w-5 h-5">
+                    <use xlink:href="../../../images/sprite_admin.svg#dots-vertical" />
+                  </svg>
+                </span>
+              </button>
+              <ul
+                x-show="isOpen"
+                @click.away="isOpen = false"
+                class="
+                  absolute
+                  font-normal
+                  bg-gray-1
+                  drop-shadow-2xl
+                  overflow-hidden
+                  min-w-48
+                  border border-primary-light
+                  mt-2
+                  right-0
+                  z-20
+                "
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center px-3 py-3 group hover:bg-gray-2 transition-all"
+                  >
+                    <svg class="w-5 h-5 text-primary-light group-hover:text-primary">
+                      <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+                    </svg>
+                    <span class="ml-2 text-sm text-gray-dark group-hover:text-primary"
+                      >Menu item</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center px-3 py-3 group hover:bg-gray-2 transition-all"
+                  >
+                    <svg class="w-5 h-5 text-primary-light group-hover:text-primary">
+                      <use xlink:href="../../../images/sprite_admin.svg#trash" />
+                    </svg>
+                    <span class="ml-2 text-sm text-gray-dark group-hover:text-primary"
+                      >Menu item</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center px-3 py-3 group hover:bg-gray-2 transition-all"
+                  >
+                    <svg class="w-5 h-5 text-primary-light group-hover:text-primary">
+                      <use xlink:href="../../../images/sprite_admin.svg#add" />
+                    </svg>
+                    <span class="ml-2 text-sm text-gray-dark group-hover:text-primary"
+                      >Menu item</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- END context button  / dropdown-->
+          </td>
+        </tr>
+        <tr class="hover:bg-primary-light-10 whitespace-nowrap text-xs text-primary-dark">
+          <td class="p-4 font-semibold">Brett</td>
+          <td class="p-4">Building C</td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-gray-dark mr-2"></div>
+              -
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="flex items-center">
+              <div class="h-2.5 w-2.5 rounded-full bg-gray-dark mr-2"></div>
+              Inactive
+            </div>
+          </td>
+          <td class="p-4 flex flex-row justify-end space-x-2">
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+                </svg>
+              </span>
+              <span class="tooltip">Update</span>
+            </button>
+            <button class="btn btn-box btn-gray has-tooltip">
+              <span class="svg">
+                <svg class="w-5 h-5">
+                  <use xlink:href="../../../images/sprite_admin.svg#trash" />
+                </svg>
+              </span>
+              <span class="tooltip">Remove</span>
+            </button>
+            <!-- context button / dropdown -->
+            <div class="relative" x-data="{ isOpen: false}">
+              <button
+                @click="isOpen = !isOpen"
+                @keydown.escape="isOpen = false"
+                class="btn btn-box btn-gray"
+              >
+                <span class="svg">
+                  <svg class="w-5 h-5">
+                    <use xlink:href="../../../images/sprite_admin.svg#dots-vertical" />
+                  </svg>
+                </span>
+              </button>
+              <ul
+                x-show="isOpen"
+                @click.away="isOpen = false"
+                class="
+                  absolute
+                  font-normal
+                  bg-gray-1
+                  drop-shadow-2xl
+                  overflow-hidden
+                  min-w-48
+                  border border-primary-light
+                  mt-2
+                  right-0
+                  z-20
+                "
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center px-3 py-3 group hover:bg-gray-2 transition-all"
+                  >
+                    <svg class="w-5 h-5 text-primary-light group-hover:text-primary">
+                      <use xlink:href="../../../images/sprite_admin.svg#pencil" />
+                    </svg>
+                    <span class="ml-2 text-sm text-gray-dark group-hover:text-primary"
+                      >Menu item</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center px-3 py-3 group hover:bg-gray-2 transition-all"
+                  >
+                    <svg class="w-5 h-5 text-primary-light group-hover:text-primary">
+                      <use xlink:href="../../../images/sprite_admin.svg#trash" />
+                    </svg>
+                    <span class="ml-2 text-sm text-gray-dark group-hover:text-primary"
+                      >Menu item</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center px-3 py-3 group hover:bg-gray-2 transition-all"
+                  >
+                    <svg class="w-5 h-5 text-primary-light group-hover:text-primary">
+                      <use xlink:href="../../../images/sprite_admin.svg#add" />
+                    </svg>
+                    <span class="ml-2 text-sm text-gray-dark group-hover:text-primary"
+                      >Menu item</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- END context button  / dropdown-->
+          </td>
+        </tr>
         <tr class="bg-primary-light md:bg-transparent flex flex-col flex-no md:table-row">
           <th scope="col" class="p-4 text-left text-xs font-medium text-primary-dark uppercase">
             Object name

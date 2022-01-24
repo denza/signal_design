@@ -6,7 +6,7 @@
   "author": "neehad",
   "license": "MIT",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
+    "start": "cross-env NODE_ENV=development webpack --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
     "lint": "eslint . src config || true",
     "prettify": "prettier --write 'src/**/*.js'"
@@ -63,6 +63,7 @@
     "@tailwindcss/forms": "^0.4.0",
     "alpine-toast": "^0.0.2",
     "alpinejs": "^3.4.2",
-    "apexcharts": "^3.32.0"
+    "apexcharts": "^3.32.0",
+    "jquery": "^3.6.0"
   }
 }

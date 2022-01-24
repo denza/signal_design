@@ -1,5 +1,12 @@
 // Import ApexCharts
-import ApexCharts from 'apexcharts'
+import ApexCharts from 'apexcharts';
+import $ from 'jquery';
+import 'regenerator-runtime/runtime';
+
+const realTime = 0;
+const dayAvg = 1;
+const weekAvgPerDay = 2;
+const weekAvgPerHour = 3;
 
 let chart_global_options = {
   chart: {
@@ -65,8 +72,6 @@ let chart_global_options = {
     },
   },
   yaxis: {
-    min: -35,
-    max: 10,
     tickAmount: 5,
   },
   fill: {
@@ -132,7 +137,7 @@ let chart_global_options = {
         '<div class="gi_value_tooltip">' +
         '<span>' +
         series[seriesIndex][dataPointIndex] +
-        '°C </span></div>'
+        ' </span></div>'
       )
     },
   },
@@ -151,436 +156,307 @@ let chart_global_options = {
 }
 Object.assign(Apex, chart_global_options)
 
-// s1 chart
-let s1_chart01_day = {
-  chart: {
-    id: 's1_chart01',
-    group: 'n1',
-    type: 'line',
-  },
-  series: [
-    {
-      name: 'Temperature',
-      data: [
-        { x: '00:01', y: '-15' },
-        { x: '01:00', y: '-15' },
-        { x: '02:00', y: '0', strokeColor: '#C8233380', fillColor: '#C82333' },
-        { x: '04:00', y: '-14' },
-        { x: '06:00', y: '-22' },
-        { x: '08:00', y: '-10' },
-        { x: '10:00', y: '-24' },
-        { x: '11:15', y: '5,05', strokeColor: '#C8233380', fillColor: '#C82333' },
-        { x: '11:32', y: '-20' },
-        { x: '12:00', y: '-5', strokeColor: '#C8233380', fillColor: '#C82333' },
-        { x: '14:00', y: '-25,25' },
-        { x: '16:00', y: '-19' },
-      ],
-    },
-  ],
-  annotations: {
-    points: [
-      {
-        x: '11:15',
-        y: 5,
-        marker: {
-          size: 16,
-          fillColor: '#C82333',
-          strokeColor: '#ffffff80',
-          strokeWidth: 8,
-          radius: 100,
-          cssClass: 'issue-img animate-pulse',
+function newGraph(chartConfig, dataValues) {
+  let graph
+  if (chartConfig.type === realTime) { 
+    graph = {
+      chart: {
+        id: 'device' +chartConfig.device,
+        group: '',
+        type: 'line',
+      },
+      series: [
+        {
+          name: 'Temperature',
+          data: dataValues,
         },
-        image: {
-          path: '/images/graph/fix.png',
-          width: 20,
-          height: 20,
-          offsetX: 0,
-          offsetY: 26,
-          appendTo: '.issue-img',
+      ],
+      annotations: {
+        points: [],
+      },
+      xaxis: {
+        labels: {
+          show: chartConfig.showLabels,
         },
       },
-      {
-        x: '02:00',
-        y: 0,
-        marker: {
-          size: 16,
-          fillColor: '#C82333',
-          strokeColor: '#ffffff80',
-          strokeWidth: 8,
-          radius: 100,
-          cssClass: 'issue-img animate-pulse',
+      markers: {
+        size: 0,
+      },
+      tooltip: {
+        enabled: false,
+      },
+    }
+  } else if (chartConfig.type === dayAvg) {
+    graph = {
+      chart: {
+        id: 'device-day-avg-' +chartConfig.device,
+        type: 'line',
+      },
+      series: [
+        {
+          name: 'Temperature',
+          data: [...dataValues],
         },
-        image: {
-          path: '/images/graph/opened_door.png',
-          width: 20,
-          height: 20,
-          offsetX: 0,
-          offsetY: 26,
-          appendTo: '.issue-img',
+      ],
+      annotations: {
+        points: [],
+      },
+      xaxis: {
+        labels: {
+          show: chartConfig.showLabels,
         },
       },
-      {
-        x: '12:00',
-        y: -5,
-        marker: {
-          size: 16,
-          fillColor: '#C82333',
-          strokeColor: '#ffffff80',
-          strokeWidth: 8,
-          radius: 100,
-          cssClass: 'issue-img animate-pulse',
+    }
+  } else if (chartConfig.type === weekAvgPerDay) {
+    graph = {
+      chart: {
+        id: 'device-week-avg-' +chartConfig.device,
+        type: 'line',
+      },
+      series: [
+        {
+          name: 'Temperature',
+          data: [...dataValues],
         },
-        image: {
-          path: '/images/graph/attention.png',
-          width: 20,
-          height: 20,
-          offsetX: 0,
-          offsetY: 26,
-          appendTo: '.issue-img',
+      ],
+      annotations: {
+        points: [],
+      },
+      xaxis: {
+        labels: {
+          show: chartConfig.showLabels,
         },
       },
-    ],
-  },
-}
-
-let s1_1_chart = new ApexCharts(document.querySelector('#s1_chart01'), s1_chart01_day)
-
-if (document.querySelector('#s1_chart01') != null) {
-  s1_1_chart.render()
-}
-
-let s1_chart02_week = {
-  chart: {
-    id: 's1_chart02',
-    group: 'n2-4',
-    type: 'line',
-  },
-  series: [
-    {
-      name: 'Temperature',
-      data: [
-        { x: 'Monday', y: '-24' },
-        { x: 'Tuesday', y: '-29' },
-        { x: 'Wednesday', y: '-4' },
-        { x: 'Thursday', y: '-10' },
-        { x: 'Friday', y: '-5' },
-        { x: 'Saturday', y: '-1' },
-        { x: 'Sunday', y: '-7' },
-      ],
-    },
-  ],
-}
-let s1_2_chart = new ApexCharts(document.querySelector('#s1_chart02'), s1_chart02_week)
-if (document.querySelector('#s1_chart02') != null) {
-  s1_2_chart.render()
-}
-let s1_chart03_month = {
-  chart: {
-    id: 's1_chart02',
-    group: 'n3-1',
-    type: 'line',
-  },
-  series: [
-    {
-      name: 'Temperature',
-      data: [
-        { x: 'Week 1', y: '0' },
-        { x: 'Week 2', y: '-16' },
-        { x: 'Week 3', y: '-7' },
-        { x: 'Week 4', y: '-9' },
-      ],
-    },
-  ],
-}
-let s1_3_chart = new ApexCharts(document.querySelector('#s1_chart03'), s1_chart03_month)
-
-if (document.querySelector('#s1_chart03') != null) {
-  s1_3_chart.render()
-}
-// s2chart
-let s2_chart01_day = {
-  chart: {
-    id: 's2_chart01',
-    group: 'n1-1',
-    type: 'line',
-  },
-  series: [
-    {
-      name: 'Temperature',
-      data: [
-        { x: '00:01', y: '-20' },
-        { x: '01:00', y: '-20' },
-        { x: '02:00', y: '-22' },
-        { x: '04:00', y: '-25' },
-        { x: '06:00', y: '-22' },
-        { x: '08:00', y: '-26' },
-        { x: '10:00', y: '-20' },
-        { x: '11:15', y: '-15' },
-        { x: '11:32', y: '-19' },
-        { x: '12:00', y: '-28' },
-        { x: '14:00', y: '-22.8' },
-        { x: '16:00', y: '-25' },
-      ],
-    },
-  ],
-  annotations: {
-    points: [],
-  },
-}
-let s2_1_chart = new ApexCharts(document.querySelector('#s2_chart01'), s2_chart01_day)
-if (document.querySelector('#s2_chart01') != null) {
-  s2_1_chart.render()
-}
-let s2_chart02_week = {
-  chart: {
-    id: 's2_chart02',
-    group: 'n2-1',
-    type: 'line',
-  },
-  series: [
-    {
-      name: 'Temperature',
-      data: [
-        { x: 'Monday', y: '-24' },
-        { x: 'Tuesday', y: '-29' },
-        { x: 'Wednesday', y: '-4' },
-        { x: 'Thursday', y: '-10' },
-        { x: 'Friday', y: '-5' },
-        { x: 'Saturday', y: '-1' },
-        { x: 'Sunday', y: '-7' },
-      ],
-    },
-  ],
-}
-let s2_2_chart = new ApexCharts(document.querySelector('#s2_chart02'), s2_chart02_week)
-
-if (document.querySelector('#s2_chart02') != null) {
-  s2_2_chart.render()
-}
-let s2_chart03_month = {
-  chart: {
-    id: 's2_chart02',
-    group: 'n3-2',
-    type: 'line',
-  },
-  series: [
-    {
-      name: 'Temperature',
-      data: [
-        { x: 'Week 1', y: '0' },
-        { x: 'Week 2', y: '-16' },
-        { x: 'Week 3', y: '-7' },
-        { x: 'Week 4', y: '-9' },
-      ],
-    },
-  ],
-}
-let s2_3_chart = new ApexCharts(document.querySelector('#s2_chart03'), s2_chart03_month)
-
-if (document.querySelector('#s2_chart03') != null) {
-  s2_3_chart.render()
-}
-// s3 chart
-let s3_chart01_day = {
-  chart: {
-    id: 's3_chart01',
-    group: 'n1-2',
-    type: 'line',
-  },
-  series: [
-    {
-      name: 'Temperature',
-      data: [
-        { x: '00:00', y: '-33' },
-        { x: '02:00', y: '-32' },
-        { x: '04:00', y: '-33' },
-        { x: '06:00', y: '-32' },
-        { x: '08:00', y: '-33' },
-        { x: '10:00', y: '-34' },
-        { x: '12:00', y: '-33' },
-        { x: '14:00', y: '5', strokeColor: '#C8233380', fillColor: '#C82333' },
-        { x: '16:00', y: '-5' },
-      ],
-    },
-  ],
-  annotations: {
-    points: [
-      {
-        x: '14:00',
-        y: 5,
-        marker: {
-          size: 16,
-          fillColor: '#C82333',
-          strokeColor: '#ffffff80',
-          strokeWidth: 8,
-          radius: 100,
-          cssClass: 'issue-img animate-pulse',
+    }
+  } else if (chartConfig.type === weekAvgPerHour) {
+    graph = {
+      chart: {
+        id: 'device-week-avg-per-hour' +chartConfig.device,
+        type: 'line',
+      },
+      series: [
+        {
+          name: 'Temperature',
+          data: [...dataValues],
         },
-        image: {
-          path: '/images/graph/fix.png',
-          width: 20,
-          height: 20,
-          offsetX: 0,
-          offsetY: 26,
-          appendTo: '.issue-img',
+      ],
+      annotations: {
+        points: [],
+      },
+      xaxis: {
+        labels: {
+          show: chartConfig.showLabels,
         },
       },
-    ],
-  },
-}
-let s3_1_chart = new ApexCharts(document.querySelector('#s3_chart01'), s3_chart01_day)
+    }
+  }
 
-if (document.querySelector('#s3_chart01') != null) {
-  s3_1_chart.render()
+  return graph
 }
-let s3_chart02_week = {
-  chart: {
-    id: 's3_chart02',
-    group: 'n2-2',
-    type: 'line',
-  },
-  series: [
-    {
-      name: 'Temperature',
-      data: [
-        { x: 'Monday', y: '-24' },
-        { x: 'Tuesday', y: '-29' },
-        { x: 'Wednesday', y: '-4' },
-        { x: 'Thursday', y: '-10' },
-        { x: 'Friday', y: '-5' },
-        { x: 'Saturday', y: '-1' },
-        { x: 'Sunday', y: '-7' },
-      ],
-    },
-  ],
-}
-let s3_2_chart = new ApexCharts(document.querySelector('#s3_chart02'), s3_chart02_week)
 
-if (document.querySelector('#s3_chart02') != null) {
-  s3_2_chart.render()
+async function delay(ms) {
+  return await new Promise(resolve => setTimeout(resolve, ms));
 }
-let s3_chart03_month = {
-  chart: {
-    id: 's3_chart02',
-    group: 'n3-3',
-    type: 'line',
-  },
-  series: [
-    {
-      name: 'Temperature',
-      data: [
-        { x: 'Week 1', y: '0' },
-        { x: 'Week 2', y: '-16' },
-        { x: 'Week 3', y: '-7' },
-        { x: 'Week 4', y: '-9' },
-      ],
-    },
-  ],
-}
-let s3_3_chart = new ApexCharts(document.querySelector('#s3_chart03'), s3_chart03_month)
 
-if (document.querySelector('#s3_chart03') != null) {
-  s3_3_chart.render()
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
 }
-// s4 chart
-let s4_chart01_day = {
-  chart: {
-    id: 's4_chart01',
-    group: 'n1-3',
-    type: 'line',
-  },
-  series: [
-    {
-      name: 'Temperature',
-      data: [
-        { x: '00:00', y: '-15' },
-        { x: '02:00', y: '-14' },
-        { x: '04:00', y: '-22' },
-        { x: '06:00', y: '-10' },
-        { x: '08:00', y: '-24' },
-        { x: '10:00', y: '-12' },
-        { x: '12:00', y: '-20' },
-        { x: '14:00', y: '5', strokeColor: '#C8233380', fillColor: '#C82333' },
-        { x: '16:00', y: '-25' },
-      ],
-    },
-  ],
-  annotations: {
-    points: [
-      {
-        x: '14:00',
-        y: 5,
-        marker: {
-          size: 16,
-          fillColor: '#C82333',
-          strokeColor: '#ffffff80',
-          strokeWidth: 8,
-          radius: 100,
-          cssClass: 'issue-img animate-pulse',
-        },
-        image: {
-          path: '/images/graph/opened_door.png',
-          width: 20,
-          height: 20,
-          offsetX: 0,
-          offsetY: 26,
-          appendTo: '.issue-img',
-        },
+
+async function chartListener(chartConfig){
+  let chartSettings = await chartInit(chartConfig);
+  await delay(1000);
+  
+  while (true) {
+      chartSettings = await getDataFeed(chartConfig, chartSettings);
+      await delay(1000);
+  }
+}
+
+async function chartInit(chartConfig) {
+  let settingsData = {
+      "url": chartConfig.url,
+      "method": "GET",
+      "timeout": 0,
+      "headers": {
+        "Authorization": "Bearer " + chartConfig.token,
       },
-    ],
-  },
-}
-let s4_1_chart = new ApexCharts(document.querySelector('#s4_chart01'), s4_chart01_day)
+  };
+  let myChart;
+  let lastTimeStamp;
+  let dataValues = [];
+  let min, max;
+  
+  await $.ajax(settingsData).done(function (response) {
+        response.forEach( element => {
+            lastTimeStamp = element["TimeStamp"];
+            if (chartConfig.type != realTime){
+              dataValues.push({x : lastTimeStamp ,y: element["Value"] });
+            } else {
+              dataValues.push(element["Value"] );
+            }
+            
+            let current_number = Number.parseFloat(element["Value"]);
+            if (current_number < min || min === undefined) {
+              min = Number.parseFloat(current_number).toFixed(2);
+            }
+            if (current_number > max || max === undefined) {
+              max = Number.parseFloat(current_number).toFixed(2);
+            }
+        });
 
-if (document.querySelector('#s4_chart01') != null) {
-  s4_1_chart.render()
-}
-let s4_chart02_week = {
-  chart: {
-    id: 's4_chart02',
-    group: 'n2-3',
-    type: 'line',
-  },
-  series: [
-    {
-      name: 'Temperature',
-      data: [
-        { x: 'Monday', y: '-24' },
-        { x: 'Tuesday', y: '-29' },
-        { x: 'Wednesday', y: '-4' },
-        { x: 'Thursday', y: '-10' },
-        { x: 'Friday', y: '-5' },
-        { x: 'Saturday', y: '-1' },
-        { x: 'Sunday', y: '-7' },
-      ],
-    },
-  ],
-}
-let s4_2_chart = new ApexCharts(document.querySelector('#s4_chart02'), s4_chart02_week)
+        let graph = newGraph(chartConfig, dataValues)
+        
 
-if (document.querySelector('#s4_chart02') != null) {
-  s4_2_chart.render()
-}
-let s4_chart03_month = {
-  chart: {
-    id: 's4_chart02',
-    group: 'n3-4',
-    type: 'line',
-  },
-  series: [
-    {
-      name: 'Temperature',
-      data: [
-        { x: 'Week 1', y: '0' },
-        { x: 'Week 2', y: '-16' },
-        { x: 'Week 3', y: '-7' },
-        { x: 'Week 4', y: '-9' },
-      ],
-    },
-  ],
-}
-let s4_3_chart = new ApexCharts(document.querySelector('#s4_chart03'), s4_chart03_month)
+        if (chartConfig.type === realTime) {
+          myChart = new ApexCharts(document.querySelector('#device'+chartConfig.device), graph)
+          $(".current-temp" + chartConfig.device).text(Number.parseFloat(dataValues.at(-1)).toFixed(2).toString() + "°C")
+          $(".min-temp-" + chartConfig.device).text(min);
+          $(".max-temp-" + chartConfig.device).text(max);
+          myChart.render()
+        } else if (chartConfig.type === dayAvg) {
+          myChart = new ApexCharts(document.querySelector('#day-avg-'+chartConfig.device), graph)
+          myChart.render()
+          $(".min-temp-day-avg-" + chartConfig.device).text(min);
+          $(".max-temp-day-avg-" + chartConfig.device).text(max);
+        } else if (chartConfig.type === weekAvgPerDay) {
+          myChart = new ApexCharts(document.querySelector('#week-avg-per-day-'+chartConfig.device), graph)
+          myChart.render()
+          $(".min-temp-week-avg-per-day-" + chartConfig.device).text(min);
+          $(".max-temp-week-avg-per-day-" + chartConfig.device).text(max);
+        } else if (chartConfig.type === weekAvgPerHour) {
+          myChart = new ApexCharts(document.querySelector('#week-avg-per-hour-'+chartConfig.device), graph)
+          myChart.render()
+          $(".min-temp-week-avg-per-hour-" + chartConfig.device).text(min);
+          $(".max-temp-week-avg-per-hour-" + chartConfig.device).text(max);
+        }
 
-if (document.querySelector('#s4_chart03') != null) {
-  s4_3_chart.render()
+    });
+  return {myChart, lastTimeStamp, dataValues, min, max}
 }
+
+
+async function getDataFeed(chartConfig, chartSettings){
+  let url = window.conf.api_url + "company/" + chartConfig.scope + "/device/" + chartConfig.device + "/data/feed?timestamp=" + chartSettings.lastTimeStamp
+  var settingsFeed = {
+      "url": url,
+      "method": "GET",
+      "timeout": 0,
+      "headers": {
+      "Authorization": "Bearer " + chartConfig.token,
+      },
+  };
+  await $.ajax(settingsFeed).done(function (response) {
+      if (response.length > 0) {
+          let dataValues = [];
+          response.forEach( element => {
+              chartSettings.lastTimeStamp = element["TimeStamp"];
+              dataValues.push(element["Value"]);
+              
+          });
+          let oldData = chartSettings.dataValues.slice(dataValues.length);
+          let data = [...oldData, ...dataValues];
+          chartSettings.myChart.updateSeries([{data:[...data]}]);
+          chartSettings.dataValues = data;
+
+          let max = Number.parseFloat(Math.max.apply(Math, data)).toFixed(2);
+          let min = Number.parseFloat(Math.min.apply(Math, data)).toFixed(2);
+
+          
+          if (max > chartSettings.max) { 
+            $(".max-temp-" + chartConfig.device).text(max);
+            chartSettings.max = max
+          }
+          if (min < chartSettings.max){
+            $(".min-temp-" + chartConfig.device).text(min);
+            chartSettings.min = min
+          }
+
+          $(".current-temp-" + chartConfig.device).text(Number.parseFloat(data.at(-1)).toFixed(2).toString() + "°C")
+      }                
+  });
+  return chartSettings
+}
+
+(function () {
+  
+  let token = getCookie("AuthBearer");
+  
+  if ((document.querySelector('.real-time-chart') != null)) {
+      $(".real-time-chart").each( function (index, element) {
+          let scope = $(element).attr("data-scope");
+          let device = $(element).attr("data-device");
+          let url = window.conf.api_url + "company/" + scope + "/device/" + device + "/data/list";
+
+          let chartConfig = {
+              scope,
+              device,
+              token,
+              url,
+              showLabels: false,
+              type: realTime,
+          };
+
+          chartListener(chartConfig);
+      });
+  }
+
+  if ((document.querySelector('.report-line-chart-dayavg') != null)) {
+      $(".report-line-chart-dayavg").each( function (index, element) {
+          let scope = $(element).attr("data-scope");
+          let device = $(element).attr("data-device");
+          let url = window.conf.api_url + "company/" + scope + "/device/" + device + "/data/dayavg";
+
+          let chartConfig = {
+              scope,
+              device,
+              token,
+              url,
+              showLabels: true,
+              type: dayAvg,
+          };
+          
+          chartInit(chartConfig);
+      });
+  }
+
+  $(".mt_tab").on("click", function(){
+    
+
+    let divId = $(this).attr("data-target");
+    
+
+    if( $("#"+divId).is(':empty')){
+      let div = $("#"+divId)
+      let scope = $(div).attr("data-scope");
+      let device = $(div).attr("data-device");
+      let url 
+  
+      let divType = $(div).attr("data-type");
+      let type
+      /* HARD CODED URL HERE */
+      if (divType === "dayavg"){
+        type = dayAvg
+        url = window.conf.api_url + "company/" + scope + "/device/" + device + "/data/dayavg";
+      } else if (divType === "weekavgperday"){  
+        type = weekAvgPerDay
+        url = window.conf.api_url + "company/" + scope + "/device/" + device + "/data/weekavgperday";
+      } else {
+        type = weekAvgPerHour
+        url = window.conf.api_url + "company/" + scope + "/device/" + device + "/data/weekavgperhour";
+      }
+  
+      let chartConfig = {
+          scope,
+          device,
+          token,
+          url,
+          showLabels: true,
+          type: type,
+      };
+  
+      chartInit(chartConfig);
+    }
+  })
+})();
