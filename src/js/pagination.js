@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-$(document).ready(function(){
+(function(){
 
     let searchParams = new URLSearchParams(window.location.search)
     if (searchParams.has('limit')) {
@@ -30,4 +30,4 @@ $(document).ready(function(){
         let deleteModalID = $(this).attr("data-modal")
         cash("#"+deleteModalID).modal("show");
     });
-})
+})()

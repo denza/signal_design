@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-$(document).ready(function(){
+(function(){
     $(".column-header").on("click", function () { 
         let i = $(this).find("i")
         let type = i.attr("data-sort")
@@ -121,7 +121,7 @@ $(document).ready(function(){
         FilterSearch(true);
     });
     
-})
+})()
 
 function AppendListItem(model){
     let list_item = $("#hidden_list_item").clone().removeClass("hidden").removeAttr("id").hide()

@@ -1,8 +1,8 @@
 import $ from 'jquery';
 
-$(document).ready(function(){
+(function(){
     $(".delete_modal").on("click", function () { 
         let deleteModalID = $(this).attr("data-modal")
         cash("#"+deleteModalID).modal("show");
     });
-})
+})()

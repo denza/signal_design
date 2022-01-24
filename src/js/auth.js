@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-$(document).ready(function(){
+(function(){
     $("#login_form").on("submit", function(e) {
 
         e.preventDefault(); // avoid to execute the actual submit of the form.
@@ -21,4 +21,4 @@ $(document).ready(function(){
             }
         })
     });
-})
+})()
