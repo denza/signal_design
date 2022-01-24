@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 $(document).ready(function(){
     $("#form").on("submit", function(e) {
 
@@ -17,7 +19,7 @@ $(document).ready(function(){
 
             $(".error").remove()
             Object.keys(formErrors).forEach(function (input){
-                formError = '<span class="error inline-flex text-sm text-red" style="display: none;">'+ formErrors[input] +'</span>'
+                let formError = '<span class="error inline-flex text-sm text-red" style="display: none;">'+ formErrors[input] +'</span>'
                 $("#"+input).closest("div").append(formError)
                 $(".error").fadeIn("slow")
             })

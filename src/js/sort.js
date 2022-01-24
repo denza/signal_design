@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 $(document).ready(function(){
     $(".column-header").on("click", function () { 
         let i = $(this).find("i")
@@ -123,7 +125,6 @@ $(document).ready(function(){
 
 function AppendListItem(model){
     let list_item = $("#hidden_list_item").clone().removeClass("hidden").removeAttr("id").hide()
-    console.log(model)
     Object.keys(model).forEach(function (key){
         /* check if the field is an object and than loop trough it's fields  */
         if (typeof model[key] === 'object' && model[key] !== null){
