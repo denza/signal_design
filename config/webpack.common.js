@@ -240,6 +240,17 @@ module.exports = {
         removeAttributeQuotes: true,
       },
     }),
+    new HtmlWebpackPlugin({
+      title: 'Simple text',
+      favicon: paths.src + '/images/favicon/favicon.ico',
+      template: paths.src + '/views/admin/preview-form.html', // template file
+      filename: 'preview-form/index.html', // output file
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
     // new HtmlWebpackPartialsPlugin({
     //   path: path.join(__dirname, '../src/views/htmlPartials/body/footer.html'),
     //   location: 'footer',

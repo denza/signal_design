@@ -1,5 +1,5 @@
 .btn {
-  @apply cursor-pointer flex flex-row lg:min-w-32 max-h-10 h-10 relative justify-start items-stretch transition-all duration-150 ease-in-out border;
+  @apply overflow-hidden cursor-pointer flex flex-row lg:min-w-32 max-h-10 h-10 relative justify-start items-stretch transition-all duration-150 ease-in-out border;
 
   span.svg {
     @apply py-2 px-4 text-center items-center justify-center inline-flex ease-out duration-300 translate-x-0;
@@ -20,10 +20,23 @@
     span.label {
       @apply translate-x-2;
     }
+
+    &:before {
+      @apply bg-white-70;
+      left: 130%;
+    }
   }
 
   &:focus {
     @apply outline-none ring-2 ring-offset-2 ring-white-30;
+  }
+
+  &:before {
+    @apply w-full h-full absolute -left-full -ml-10 bg-white-70 opacity-20;
+    content: '';
+
+    transform: skewX(-20deg);
+    transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
   }
 
   &.btn-thin {
