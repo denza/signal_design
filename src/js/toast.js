@@ -1,5 +1,6 @@
 // import { AlpineToast } from 'alpine-toast'
 import { AlpineToast } from './alpinetoast.js'
+import $ from 'jquery';
 
 const toasterConfig = {
   containerClasses: 'fixed max-w-16  right-6 top-3 overflow-x-hidden space-y-2 z-90',
@@ -65,3 +66,24 @@ if (document.getElementById('errorBtn') != null) {
     toaster.newToast(document.getElementById('errorBtn').dataset.toast, error, { duration: 4000 })
   }
 }
+
+(function () {
+    $(document.body).on('click', '.GetTokenLink' ,function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        let url = $(this).attr('href');
+        $.ajax({
+            type: "GET",
+            url: url,
+     }).done(function (data){
+         if (data.includes("Error") ) {
+          toaster.newToast("Error getting agent token", error, { duration: 2000 })
+         } else {
+            navigator.clipboard.writeText(data);
+            toaster.newToast("Token copied to clipboard", success, {
+              duration: 2000,
+            })
+         }
+     })
+    })
+})()
