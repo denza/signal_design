@@ -77,11 +77,11 @@ if (document.getElementById('errorBtn') != null) {
             url: url,
      }).done(function (data){
          if (data.includes("Error") ) {
-          toaster.newToast("Error getting agent token", error, { duration: 4000 })
+          toaster.newToast("Error getting agent token", error, { duration: 2000 })
          } else {
             navigator.clipboard.writeText(data);
             toaster.newToast("Token copied to clipboard", success, {
-              duration: 4000,
+              duration: 2000,
             })
          }
      })

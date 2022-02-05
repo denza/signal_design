@@ -73,6 +73,11 @@ let chart_global_options = {
   },
   yaxis: {
     tickAmount: 5,
+    labels: {
+      "formatter": function (val) {
+          return val.toFixed(2)
+      }
+  }
   },
   fill: {
     type: 'gradient',
@@ -136,7 +141,7 @@ let chart_global_options = {
       return (
         '<div class="gi_value_tooltip">' +
         '<span>' +
-        series[seriesIndex][dataPointIndex] +
+        series[seriesIndex][dataPointIndex].toFixed(2) +
         ' </span></div>'
       )
     },
@@ -181,9 +186,6 @@ function newGraph(chartConfig, dataValues) {
       },
       markers: {
         size: 0,
-      },
-      tooltip: {
-        enabled: false,
       },
     }
   } else if (chartConfig.type === dayAvg) {

@@ -198,7 +198,7 @@ function FilterSearch(isReset){
     
     let url
     if (filterValue != ""){
-        filterParam = column + "__" + filterType + "::" + filterValue
+        let filterParam = column + "__" + filterType + "::" + filterValue
         
         let searchParams = new URLSearchParams(window.location.search)
         searchParams.set("filter",filterParam)
